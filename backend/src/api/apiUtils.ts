@@ -3,11 +3,10 @@
  */
 
 import { Request, Response, NextFunction } from 'express';
-import { noop, isString, isArray, pick } from 'lodash';
+import { noop, isString, isArray, pick, isObject } from 'lodash';
 
 import { CodedError, CODES, CODES as ERROR_CODES } from '~/errors';
-// TODO: DO THIS.
-// import i18n from '~/internationalization';
+import i18n from '~/internationalization';
 import { logger, LABELS } from '~/utils/logger';
 import { APIErrorResponse, APISuccessResponse } from '~/types/APIResults';
 import CONFIG from '~/config';
@@ -41,6 +40,23 @@ const chooseResponseCodeByError = (error: CodedError): number => {
 };
 
 /**
+ * Gets the language from the request.
+ * @param req Request object from Express.
+ */
+export const getLanguageFromRequest = (req: Request): string | undefined => {
+  if (!isObject(req.headers)) {
+    return undefined;
+  }
+  const header: string = req.headers['accept-language'] || '';
+  const arrHeader = header.split(/(-|_)/);
+  const lang = arrHeader.shift() || '';
+  if (lang.trim() === '') {
+    return undefined;
+  }
+  return lang;
+};
+
+/**
  * Logs the request IP.
  * @param req  Request from express.
  * @param res Response from express.
@@ -71,11 +87,12 @@ export const logIP = (req: Request, res: Response, next: NextFunction): void => 
  */
 export const sendError = (req: Request, res: Response, error: CodedError, code = 500): void => {
   noop(req);
+  const language = getLanguageFromRequest(req);
+  const message = i18n.get(`Error.${error.code}`, language);
   const response: APIErrorResponse = {
     code,
+    message,
     error: error.code,
-    // TODO: ADD THIS.
-    message: error.code, // i18n.getErrorDescription(req, error),
     success: false,
   };
   res.statusCode = code;
@@ -160,6 +177,7 @@ export const handleError = (
 
 export default {
   logIP,
+  getLanguageFromRequest,
   sendError,
   sendResponse,
   rejectIfNotAuthorized,

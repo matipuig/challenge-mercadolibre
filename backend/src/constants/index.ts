@@ -8,6 +8,8 @@ import ROUTES from './routes';
 import SECURITY from './security';
 import SERVICES from './services';
 
-export const CONSTANTS = { AUTHOR, LOGS, ROUTES, SECURITY, SERVICES };
+const DEFAULT_LANGUAGE = 'es';
+
+export const CONSTANTS = { AUTHOR, DEFAULT_LANGUAGE, LOGS, ROUTES, SECURITY, SERVICES };
 
 export default CONSTANTS;

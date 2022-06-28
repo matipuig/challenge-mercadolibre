@@ -31,4 +31,5 @@ const emptyFolder = function emptyFolder(dirPath) {
 
 console.log(`Emptying folder "${FOLDER_TO_EMPTY}"...`);
 emptyFolder(FOLDER_TO_EMPTY);
+fs.mkdirSync(FOLDER_TO_EMPTY);
 console.log('Folder emptied.');
