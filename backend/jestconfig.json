@@ -1,0 +1,17 @@
+{
+  "transform": {
+    "^.+\\.(t|j)sx?$": "ts-jest"
+  },
+  "testEnvironment": "node",
+  "testRegex": "/.*\\.test\\.(js|ts)$",
+  "moduleDirectories": ["node_modules", "~"],
+  "moduleFileExtensions": ["ts", "js","json", "node"],
+  "moduleNameMapper": {
+    "~(.*)$": "<rootDir>/src/$1"
+  },
+  "reporters": [
+    "default"
+  ],
+  "setupFiles": ["./package_utils/prepareTests.js", "dotenv/config"],
+  "verbose": true
+}

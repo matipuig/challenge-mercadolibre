@@ -1,0 +1,65 @@
+{
+  "name": "challenge-mercadolibre-backend",
+  "description": "Backend for the MercadoLibre challenge.",
+  "version": "0.0.1",
+  "author": "Matías Puig",
+  "license": "NONE",
+  "homepage": "",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "private": true,
+  "keywords": [
+    "mercadolibre",
+    "challenge",
+    "backend"
+  ],
+  "scripts": {
+    "_clean": "node ./package_utils/cleanBuild.js",
+    "_copy-files": "copyfiles -e \"**/*.{js,ts,tsx,jsx}\" -u 1 --soft -V \"src/**/*\" build",
+    "_control": "npm run lint && npm run format && npm run test:unit && npm run test:integration",
+    "lint": "eslint src -c .eslintrc.json --ext .ts --ext js --fix --cache",
+    "format": "prettier --write --config .prettierrc src",
+    "dev": "npm run _clean && npm run _copy-files && link-module-alias && tsc-watch --onSuccess \"node -r dotenv/config ./build/index.js dotenv_config_path=./.env\" --onFailure \"echo Error!\" --noClear",
+    "test:unit": "jest --no-cache --forceExit --config jestconfig.json --detectOpenHandles ./tests/unit",
+    "test:integration": "jest --no-cache --forceExit --config jestconfig.json --runInBand --detectOpenHandles ./tests/integration",
+    "compile": "npm run _clean && tsc --project tsconfig.json && npm run _copy-files",
+    "build": " npm run _control && npm run compile && npm run generate-docs && npm audit --production  && echo \"Finished!\"",
+    "start": "link-module-alias && node -r dotenv/config ./build/index.js dotenv_config_path=./.env",
+    "start-from-docker": "link-module-alias >/dev/null 2>&1 && node ./build/index.js"
+  },
+  "dependencies": {
+    "@types/stack-trace": "0.0.30",
+    "ajv": "8.11.0",
+    "axios": "0.27.2",
+    "copyfiles": "2.4.1",
+    "dotenv": "16.0.1",
+    "express": "4.18.1",
+    "link-module-alias": "1.2.0",
+    "stack-trace": "0.0.10",
+    "winston": "3.8.0"
+  },
+  "devDependencies": {
+    "@types/express": "4.17.13",
+    "@types/lodash": "4.14.182",
+    "@types/node": "18.0.0",
+    "@typescript-eslint/eslint-plugin": "5.30.0",
+    "@typescript-eslint/parser": "5.30.0",
+    "eslint": "8.18.0",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-import-resolver-typescript": "3.1.1",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-prettier": "4.1.0",
+    "lodash": "4.17.21",
+    "prettier": "2.7.1",
+    "ts-node": "10.8.1",
+    "tsc-watch": "5.0.3",
+    "typescript": "4.7.4"
+  },
+  "files": [
+    "build/**/*"
+  ],
+  "_moduleAliases": {
+    "~": "build"
+  }
+}

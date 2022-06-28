@@ -1,0 +1,110 @@
+/**
+ * @packageDocumentation
+ * @module API/Routes
+ * API routes for every API.
+ */
+
+import { isUndefined, noop } from 'lodash';
+import express, { Request, Response } from 'express';
+import multer from 'multer';
+// import { createProxyMiddleware } from 'http-proxy-middleware';
+// import https from 'https';
+
+import CONFIG from '~/config';
+import apiUtils from './apiUtils';
+import redirector from './handlers/redirect';
+import ROUTES from '~/constants/routes';
+import CodedError, { CODES } from '~/errors';
+
+const api = express.Router();
+
+const storage = multer.diskStorage({
+  //  destination: (req, file, cb) => {
+  //    noop(req, file);
+  //    cb(null, '/home/node/app'
+  //    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
+  //    cb(null, file.fieldname + '-' + uniqueSuffix);
+  //  },
+});
+const upload = multer({ storage });
+
+/**
+ * Testing.
+ * NOTE: Do NOT delete this route, because it's used to test.
+ */
+api.get(ROUTES.API.TESTING, (req: Request, res: Response): boolean => {
+  noop(req);
+  return apiUtils.sendResponse(res, true);
+});
+
+/**
+ * Control you have the API KEY.
+ */
+api.use((req, res, next) => {
+  if (req.query['api-key'] !== CONFIG.AUTH.API_KEY) {
+    const error = new CodedError(CODES.NOT_AUTHORIZED);
+    apiUtils.sendError(req, res, error, 403);
+    return;
+  }
+  next();
+});
+
+/**
+ * Control you have an URL to send to.
+ */
+api.use((req, res, next) => {
+  if (isUndefined(req.query.url)) {
+    const error = new CodedError(CODES.URL_NOT_DEFINED);
+    apiUtils.sendError(req, res, error, 403);
+    return;
+  }
+  next();
+});
+
+/**
+ * Proxy Prometea.
+ */
+
+// const agentOptions = {
+//   rejectUnauthorized: false,
+// };
+// const httpsAgent = new https.Agent(agentOptions);
+// const proxyPrometea = createProxyMiddleware({
+//   target: 'https://prometea.innovacion.mpfciudad.gob.ar/api_excel.php',
+//   selfHandleResponse: true,
+//   secure: true,
+//   agent: httpsAgent,
+//   // custom rewriting, returning Promise
+//   pathRewrite: async (path, req) => {
+//     noop(path);
+//     console.log(['path', path]);
+//     let url = req.query.url?.toString() || '';
+//     url = url.replace('https://prometea.innovacion.mpfciudad.gob.ar/api_excel.php', '');
+//     if (!url.endsWith('?')) {
+//       url += '?';
+//     }
+//     Object.keys(req.query).forEach((key) => {
+//       if (key !== 'api-key' && key !== 'url') {
+//         url += `&${key}=${req.query[key]}`;
+//       }
+//     });
+//     console.log(['Final url', url]);
+//     return url;
+//   },
+// });
+// api.use('/prometea', proxyPrometea);
+// api.use('//prometea', proxyPrometea);
+
+/**
+ * Redirect.
+ */
+api.use(upload.any());
+api.use(redirector.redirect);
+
+/**
+ * Error handling.
+ */
+api.all('*', apiUtils.sendMethodNotFound);
+api.use(apiUtils.handleError);
+
+export default api;
