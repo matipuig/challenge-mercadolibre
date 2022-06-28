@@ -3,9 +3,10 @@
  */
 
 export interface SearchParams {
-  q: string;
-  offset?: number;
-  limit?: number;
+  q?: string;
+  offset?: string | number;
+  limit?: string | number;
+  [k: string]: unknown;
 }
 
 export interface Author {
@@ -29,6 +30,7 @@ export interface Item {
 }
 
 export interface DetailedItem extends Item {
+  categories: string[];
   sold_quantity: number;
   description: string;
 }

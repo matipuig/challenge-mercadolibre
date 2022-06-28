@@ -1,20 +1,12 @@
 /**
- * @packageDocumentation
- * @hidden
- * Contains the router constants.
- * NOTE: Control interval are quite high (the let too many requests) because it's a microservice. It might receive a lot of requests per sec frmo the same IPs.
+ * Containts security constants.
  */
 
 export default {
   /**
-   * Constants for bodyparser.
+   * Max body size per requests.
    */
-  BODY_PARSER: {
-    /**
-     * Body size limit for requests.
-     */
-    LIMIT: '50mb',
-  },
+  MAX_REQUEST_BODY_SIZE: '200mb',
 
   /**
    * Constants for rate limit.
@@ -26,7 +18,7 @@ export default {
     WINDOW_MS: 1000,
 
     /**
-     * Max count of requests allowed in the windows.
+     * Max count of requests allowed in the window.
      */
     MAX: 200,
   },

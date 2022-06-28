@@ -1,28 +1,30 @@
 /**
- * @packageDocumentation
- * @hidden
- * Contains the router constants.
- * NOTE: Control interval are quite high (the let too many requests) because it's a microservice. It might receive a lot of requests per sec frmo the same IPs.
+ * Contains the routes of the APIs.
  */
 
 export default {
-  /**
-   * Documentation location.
-   */
-  DOCS: '/docs',
-
   /**
    * API routes.
    */
   API: {
     /**
-     * GraphQL route.
+     * Base API route.
      */
-    GRAPHQL: '/graphql',
+    BASE: '/api',
 
     /**
-     * Testing URL.
+     * Mercado Libre routes.
      */
-    TESTING: '/testing',
+    MERCADO_LIBRE: {
+      /**
+       * Search products by query route.
+       */
+      SEARCH_BY_QUERY: '/items/',
+
+      /**
+       * Get item by its ID.
+       */
+      GET_ITEM_BY_ID: '/items/:id',
+    },
   },
 };

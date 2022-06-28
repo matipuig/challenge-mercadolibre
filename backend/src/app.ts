@@ -6,8 +6,7 @@ import express from 'express';
 
 import CONFIG from './config';
 import { logger, LABELS } from '~/utils/logger';
-// import api from './api';
-import mercadoLibre from './controller/mercadoLibre';
+import api from './api';
 
 const { APP_NAME } = CONFIG;
 const app = express();
@@ -15,13 +14,7 @@ const app = express();
 const start = async function start(): Promise<void> {
   try {
     app.set('trust-proxy', true); // Trust the proxy!
-    // TODO: REMOVE THIS.
-    const params = { q: 'shitzu', limit: 50, offset: 30 };
-    const results = await mercadoLibre.getItemsBySearch(params);
-    const detailedItem = await mercadoLibre.getItemById(results.items[0].id);
-    console.log(detailedItem);
-    // TODO: ADD THIS.
-    //     app.use(api);
+    app.use(api);
     logger.info(`${APP_NAME} started.`, LABELS.MAIN);
   } catch (err) {
     const error = err as Error;

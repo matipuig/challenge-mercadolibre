@@ -8,9 +8,9 @@ export default {
    */
   LABELS: {
     /**
-     * API consumption.
+     * API layer.
      */
-    API_CONSUMPTION: 'API_CONSUMPTION',
+    API: 'API',
 
     /**
      * Environment related logs.
@@ -36,5 +36,10 @@ export default {
      * Server related logs.
      */
     SERVER: 'SERVER',
+
+    /**
+     * Service consumption.
+     */
+    SERVICE_CONSUMPTION: 'SERVICE_CONSUMPTION',
   },
 };

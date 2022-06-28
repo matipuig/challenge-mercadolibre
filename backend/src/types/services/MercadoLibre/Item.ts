@@ -68,3 +68,22 @@ export interface MELIItemDescription {
   date_created: string;
   snapshot: unknown;
 }
+
+export interface MELIRawCategory {
+  id: string;
+  name: string;
+  picture: string;
+  permalink: string;
+  total_items_in_this_category: number;
+  path_from_root: {
+    id: string;
+    name: string;
+  }[];
+  children_categories: unknown[];
+  attribute_types: 'attributes';
+  settings: Record<string, unknown>;
+  channels_settings: unknown[];
+  meta_categ_id: unknown;
+  attributable: boolean;
+  date_created: string;
+}

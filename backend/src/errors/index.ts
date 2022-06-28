@@ -45,11 +45,6 @@ class CodedError extends Error {
   message = '';
 
   /**
-   * Replaces to insert in the final message.
-   */
-  replaces: string[] = [];
-
-  /**
    * Context of the error.
    */
   context: Context = {};

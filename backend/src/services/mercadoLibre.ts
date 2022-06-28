@@ -8,7 +8,11 @@ import CONSTANTS from '~/constants';
 import { CodedError, CODES } from '~/errors';
 import { handleError, handleResult } from '~/utils/axiosHelper';
 import { MELISeachByQueryResults } from '~/types/services/MercadoLibre/SearchResult';
-import { MELIItemDescription, MELIRawItem } from '~/types/services/MercadoLibre/Item';
+import {
+  MELIRawCategory,
+  MELIItemDescription,
+  MELIRawItem,
+} from '~/types/services/MercadoLibre/Item';
 import { SearchParams } from '~/types/MercadoLibre';
 
 const { BASE_URL, TIMEOUT_MS } = CONSTANTS.SERVICES.MERCADO_LIBRE;
@@ -18,15 +22,37 @@ const APIClient = axios.create({
   timeout: TIMEOUT_MS,
 });
 
+const GET_CATEGORY_URL = '/categories/:id';
 const GET_ITEM_URL = '/items/:id';
 const GET_ITEM_DESCRIPTION_URL = '/items/:id/description';
 const SEARCH_ITEMS_URL = '/sites/MLA/search';
 
+const NOT_FOUND_CODE = 404;
+
 /**
- * Return the item data from the specified item.
+ * Return the category data from the specified id. Returns null if not found.
+ * @param id Id of the category to get information from.
+ */
+export const getCategoryById = async (id: string): Promise<MELIRawCategory | null> => {
+  try {
+    const url = GET_CATEGORY_URL.replace(':id', id);
+    const result = await APIClient.get<MELIRawCategory>(url);
+    const parsedResult = handleResult<MELIRawCategory>(result);
+    return parsedResult.payload;
+  } catch (err) {
+    const serviceError = handleError(err as AxiosError);
+    if (serviceError.code === NOT_FOUND_CODE) {
+      return null;
+    }
+    throw new CodedError(CODES.SERVICE_MERCADO_LIBRE_ITEM_ERROR, { serviceError });
+  }
+};
+
+/**
+ * Return the item data from the specified item. Returns null if not found.
  * @param id Id of the item to get information from.
  */
-export const getItemById = async (id: string): Promise<MELIRawItem> => {
+export const getItemById = async (id: string): Promise<MELIRawItem | null> => {
   try {
     const url = GET_ITEM_URL.replace(':id', id);
     const result = await APIClient.get<MELIRawItem>(url);
@@ -34,15 +60,18 @@ export const getItemById = async (id: string): Promise<MELIRawItem> => {
     return parsedResult.payload;
   } catch (err) {
     const serviceError = handleError(err as AxiosError);
+    if (serviceError.code === NOT_FOUND_CODE) {
+      return null;
+    }
     throw new CodedError(CODES.SERVICE_MERCADO_LIBRE_ITEM_ERROR, { serviceError });
   }
 };
 
 /**
- * Return the item description from the specified id.
+ * Return the item description from the specified id. Returns null if not found.
  * @param id Id of the item to get description from.
  */
-export const getItemDescriptionById = async (id: string): Promise<MELIItemDescription> => {
+export const getItemDescriptionById = async (id: string): Promise<MELIItemDescription | null> => {
   try {
     const url = GET_ITEM_DESCRIPTION_URL.replace(':id', id);
     const result = await APIClient.get<MELIItemDescription>(url);
@@ -50,6 +79,9 @@ export const getItemDescriptionById = async (id: string): Promise<MELIItemDescri
     return parsedResult.payload;
   } catch (err) {
     const serviceError = handleError(err as AxiosError);
+    if (serviceError.code === NOT_FOUND_CODE) {
+      return null;
+    }
     throw new CodedError(CODES.SERVICE_MERCADO_LIBRE_ITEM_DESCRIPTION_ERROR, { serviceError });
   }
 };
@@ -73,4 +105,4 @@ export const searchProductsByQuery = async (
   }
 };
 
-export default { getItemById, getItemDescriptionById, searchProductsByQuery };
+export default { getCategoryById, getItemById, getItemDescriptionById, searchProductsByQuery };

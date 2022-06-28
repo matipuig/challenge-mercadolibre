@@ -21,7 +21,7 @@ const getRequestInformation = (
  */
 export const handleResult = <Payload>(response: AxiosResponse): APISuccessResult<Payload> => {
   const requestInformation = getRequestInformation(response);
-  logger.debug(`API consumed successfully.`, LABELS.API_CONSUMPTION, { requestInformation });
+  logger.debug(`API consumed successfully.`, LABELS.SERVICE_CONSUMPTION, { requestInformation });
   return {
     success: true,
     code: response.status,
@@ -36,7 +36,7 @@ export const handleResult = <Payload>(response: AxiosResponse): APISuccessResult
 export const handleError = (axiosError: AxiosError): APIErrorResult => {
   const requestInformation = getRequestInformation(axiosError);
   const responseInformation = pick(axiosError.response, ['status', 'data']);
-  logger.debug(`API consumed with error.`, LABELS.API_CONSUMPTION, {
+  logger.debug(`API consumed with error.`, LABELS.SERVICE_CONSUMPTION, {
     requestInformation,
     responseInformation,
   });
