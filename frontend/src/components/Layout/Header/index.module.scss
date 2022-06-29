@@ -1,24 +1,23 @@
-@import '~/scss/variables/colors';
-@import '~/scss/variables/layout';
+@use '~/scss/variables/colors' as colors;
+@use '~/scss/variables/layout' as layout;
 
 .header {
+  background-color: colors.$primary;
   display: flex;
   flex-direction: row;
+  height: layout.$headerHeight;
   max-width: 100%;
-  min-width: $layoutMinWidth;
   width: 100%;
-  background-color: $primaryColor;
-  height: $headerHeight;
 
   &--dark {
-    background-color: $primaryColor--dark;
+    background-color: colors.$primary--dark;
   }
 
   .controlsContainer {
     align-items: center;
     display: flex;
-    height: 100%;
     gap: 15px;
+    height: 100%;
     margin: 0 auto;
     text-align: center;
     width: 80%;

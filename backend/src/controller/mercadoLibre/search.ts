@@ -1,6 +1,7 @@
 /**
  * Executes products search in MercadoLibre.
  */
+/* eslint-disable camelcase */
 
 import { isNull, isString, isUndefined } from 'lodash';
 import mercadoLibreService from '~/services/mercadoLibre';

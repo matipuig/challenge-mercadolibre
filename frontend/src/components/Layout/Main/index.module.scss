@@ -1,20 +1,20 @@
-@import '~/scss/containers';
-@import '~/scss/variables/colors';
-@import '~/scss/variables/layout';
+@use '~/scss/containers' as containers;
+@use '~/scss/variables/colors' as colors;
+@use '~/scss/variables/layout' as layout;
 
 .main {
-  @include setWidth(100%);
-  min-height: calc(100vh - $headerHeight - $footerHeight);
-  background-color: $backgroundColor;
+  @include containers.setWidth(100%);
+  background-color: colors.$background;
+  min-height: calc(100vh - layout.$headerHeight - layout.$footerHeight);
 
   &--dark {
-    background-color: $backgroundColor--dark;
+    background-color: colors.$background--dark;
   }
 
   .componentsContainer {
     margin: 0 auto;
     max-width: 1000px;
     overflow: hidden;
-    width: 100%;
+    width: 90%;
   }
 }

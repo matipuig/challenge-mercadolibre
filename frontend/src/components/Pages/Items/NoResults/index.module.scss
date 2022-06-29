@@ -1,0 +1,11 @@
+@use '~/scss/containers' as containers;
+@use '~/scss/variables/colors' as colors;
+@use '~/scss/variables/fontSizes' as fontSizes;
+
+.noResultsContainer {
+  @include containers.setWidth(100%);
+  font-size: fontSizes.$xxLarge;
+  margin: 0 auto;
+  padding-top: 20px;
+  text-align: center;
+}

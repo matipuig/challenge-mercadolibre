@@ -70,7 +70,7 @@ export const logIP = (req: Request, res: Response, next: NextFunction): void => 
   let ip;
   if (isForwarded) {
     const arrHeader = isArray(headerForwarded) ? headerForwarded[0] : headerForwarded || '';
-    ip = arrHeader.split(',')[0];
+    [ip] = arrHeader.split(',');
   }
   ip = ip || req.connection.remoteAddress || req.socket.remoteAddress || req.ip;
   logger.http('IPS', LABELS.HTTP_REQUEST, { ip, method, baseUrl, url });
@@ -166,7 +166,7 @@ export const handleError = (
     'query',
     'headers',
   ]);
-  logger.error(error.code, LABELS.API, { error: error, request: requestData });
+  logger.error(error.code, LABELS.API, { error, request: requestData });
   sendError(req, res, error, errorCode);
 };
 

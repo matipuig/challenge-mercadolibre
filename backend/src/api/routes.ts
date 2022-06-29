@@ -4,9 +4,9 @@
 
 import express from 'express';
 
+import ROUTES from '~/constants/routes';
 import apiUtils from './apiUtils';
 import mercadoLibreHandler from './handlers/mercadoLibre';
-import ROUTES from '~/constants/routes';
 
 const api = express.Router();
 const { MERCADO_LIBRE } = ROUTES.API;

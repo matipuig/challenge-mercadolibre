@@ -3,7 +3,9 @@
  */
 
 import { Dispatch } from 'react';
+
 import { SearchResultWithCategories } from '~/types/services/backend';
+
 import { DispachableStateAction } from './common';
 
 export interface SearchResultsState extends SearchResultWithCategories {

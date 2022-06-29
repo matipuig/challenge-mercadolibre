@@ -1,9 +1,9 @@
 // Contains containers functions.
 
 @mixin setHeight($height) {
+  height: $height;
   max-height: $height;
   min-height: $height;
-  height: $height;
 }
 
 @mixin setWidth($width) {

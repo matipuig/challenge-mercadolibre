@@ -4,8 +4,8 @@
 
 import axios, { AxiosError } from 'axios';
 
-import CONFIG from '~/config';
-import CONSTANTS from '~/constants';
+import { CONFIG } from '~/config';
+import { CONSTANTS } from '~/constants';
 import { ItemResult, SearchParams, SearchResultWithCategories } from '~/types/services/backend';
 import { handleError, handleResult } from '~/utils/axiosHelper';
 
@@ -24,10 +24,10 @@ const SEARCH_URL = '/api/items';
 const GET_ITEM_URL = '/api/items/:id';
 
 /**
- * Return the item data from the specified item.
+ * Return the item data from the specified item. Returns null if this is not found.
  * @param id Id of the item to get information from.
  */
-export const getItemById = async (id: string): Promise<ItemResult> => {
+export const getItemById = async (id: string): Promise<ItemResult | null> => {
   try {
     const url = GET_ITEM_URL.replace(':id', id);
     const result = await APIClient.get<ItemResult>(url);
@@ -35,6 +35,9 @@ export const getItemById = async (id: string): Promise<ItemResult> => {
     return parsedResult.payload;
   } catch (err) {
     const serviceError = handleError(err as AxiosError);
+    if (serviceError.code === 404) {
+      return null;
+    }
     throw new Error(serviceError.description);
   }
 };

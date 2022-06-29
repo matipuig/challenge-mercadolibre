@@ -1,4 +1,4 @@
-@import '~/scss/variables/colors';
+@use '~/scss/variables/colors' as colors;
 
 .breadcrumbsContainer {
   display: flex;
@@ -9,7 +9,7 @@
 }
 
 .breadcrumb {
-  color: $secondaryColor;
+  color: colors.$secondary;
   text-decoration: none;
 
   &:hover {

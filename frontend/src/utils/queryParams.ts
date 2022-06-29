@@ -2,8 +2,9 @@
  * Contains some useful functions to work with query params.
  */
 
-import { isArray, isUndefined } from 'lodash';
 import { ParsedUrlQuery } from 'querystring';
+
+import { isArray, isUndefined } from 'lodash';
 
 /**
  * Returns the searched query param by its name or undefined.

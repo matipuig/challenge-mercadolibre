@@ -2,15 +2,19 @@
  * Contains the search results state management.
  */
 
-import { noop } from 'lodash';
 import { createContext, PropsWithChildren, useReducer } from 'react';
+
+import { noop } from 'lodash';
+
 import { SearchResultsState, SearchResultsStateActions } from '~/types/state/searchResults';
 
 export const initialState: SearchResultsState = {
   author: { name: '', lastname: '' },
   items: [],
   categories: [],
-  dispatch: () => {},
+  dispatch: () => {
+    noop();
+  },
 };
 
 const reducer = (
@@ -22,6 +26,8 @@ const reducer = (
       return { ...state, ...action.payload };
     case 'EMPTY':
       return { ...state, categories: [], items: [] };
+    default:
+      throw new Error(`Not available method in search results reducer.`);
   }
 };
 
@@ -40,6 +46,7 @@ export const SearchResultsProvider = ({
   const [searchResultsState, dispatch] = useReducer(reducer, initialState);
   const state = { ...searchResultsState, dispatch };
   return (
+    /* eslint-disable react/jsx-no-constructed-context-values  */
     <SearchResultsContext.Provider value={{ ...state }}>{children}</SearchResultsContext.Provider>
   );
 };

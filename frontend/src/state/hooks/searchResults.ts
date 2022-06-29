@@ -1,15 +1,14 @@
 /**
  * Contains the hooks to interact with the search results context.
  */
-
-import { isUndefined } from 'lodash';
+/* eslint-disable react-hooks/rules-of-hooks  */
 import { Dispatch, useContext } from 'react';
 
-import { SearchResultsContext } from '~/state/contexts/searchResults';
-import { Author, Item, SearchResultWithCategories } from '~/types/services/backend';
-import { SearchResultsState, SearchResultsStateActions } from '~/types/state/searchResults';
+import { isUndefined } from 'lodash';
 
-type SearchResultsDispatcher = (searchResults: SearchResultWithCategories) => void;
+import { SearchResultsContext } from '~/state/contexts/searchResults';
+import { Author, Item, ItemCategory, SearchResultWithCategories } from '~/types/services/backend';
+import { SearchResultsState, SearchResultsStateActions } from '~/types/state/searchResults';
 
 const getContext = (): SearchResultsState => {
   const context = useContext(SearchResultsContext);
@@ -32,7 +31,7 @@ export const getItems = (): Item[] => getContext().items;
 /**
  * Returns the categories.
  */
-export const getCategories = (): string[] => getContext().categories;
+export const getCategories = (): ItemCategory[] => getContext().categories;
 
 /**
  * Returns the dispatcher.

@@ -66,10 +66,10 @@ export const searchByParams = async (
   try {
     const searchParams = getValidatedSearchParams(req);
     result = await mercadoLibreController.getItemsBySearch(searchParams);
-    return apiUtils.sendResponse(res, result);
+    apiUtils.sendResponse(res, result);
+    return;
   } catch (error) {
     next(error);
-    return;
   }
 };
 
@@ -86,12 +86,13 @@ export const getById = async (req: Request, res: Response, next: NextFunction): 
     result = await mercadoLibreController.getItemById(id);
     if (isNull(result)) {
       const error = new CodedError(CODES.SERVICE_MERCADO_LIBRE_ITEM_NOT_FOUND, { id });
-      return apiUtils.sendError(req, res, error, 404);
+      apiUtils.sendError(req, res, error, 404);
+      return;
     }
-    return apiUtils.sendResponse(res, result);
+    apiUtils.sendResponse(res, result);
+    return;
   } catch (error) {
     next(error);
-    return;
   }
 };
 

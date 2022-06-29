@@ -1,6 +1,7 @@
 /**
  * Contains the logger types.
  */
+/* eslint-disable no-shadow */
 
 export enum LogLevels {
   error = 'error',

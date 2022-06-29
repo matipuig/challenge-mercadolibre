@@ -4,6 +4,7 @@
 import { ReactElement } from 'react';
 
 import { getAuthor } from '~/state/hooks/searchResults';
+
 import styles from './index.module.scss';
 
 export const Footer = (): ReactElement => {

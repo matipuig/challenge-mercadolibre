@@ -6,7 +6,7 @@ import { AxiosError, AxiosResponse } from 'axios';
 import { pick } from 'lodash';
 
 import { APIErrorResult, APISuccessResult } from '~/types/services/common';
-import logger, { LABELS } from '~/utils/logger';
+import { logger, LABELS } from '~/utils/logger';
 
 const getRequestInformation = (
   axiosResponse: AxiosResponse | AxiosError,
@@ -33,9 +33,7 @@ export const handleResult = <Payload>(response: AxiosResponse): APISuccessResult
  * Gets the axios response and returns it as an API expected result.
  * @param axiosError Axios error response.
  */
-export const handleError = <ErroredPayload>(
-  axiosError: AxiosError,
-): APIErrorResult<ErroredPayload> => {
+export const handleError = (axiosError: AxiosError): APIErrorResult => {
   const requestInformation = getRequestInformation(axiosError);
   const responseInformation = pick(axiosError.response, ['status', 'data']);
   logger.debug(`API consumed with error.`, LABELS.SERVICE_CONSUMPTION, {
@@ -45,12 +43,10 @@ export const handleError = <ErroredPayload>(
   const response = axiosError.response as AxiosResponse;
   const code = response.status;
   const description = axiosError.message;
-  const payload = response.data as ErroredPayload;
   return {
     code,
     description,
     success: false,
-    payload: payload,
   };
 };
 

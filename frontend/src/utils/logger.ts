@@ -6,8 +6,8 @@
 import { cloneDeep } from 'lodash';
 import winston from 'winston';
 
-import CONFIG from '~/config';
-import CONSTANTS from '~/constants';
+import { CONFIG } from '~/config';
+import { CONSTANTS } from '~/constants';
 import { LogContext, LogLevels } from '~/types/logger';
 
 const LOG_LABELS = CONSTANTS.LOGS.LABELS;
@@ -15,7 +15,7 @@ const LOG_LABELS = CONSTANTS.LOGS.LABELS;
 const { combine, prettyPrint, json } = winston.format;
 
 const consoleTransport = new winston.transports.Console();
-const transports = [consoleTransport];
+const transports: winston.transport[] = [consoleTransport];
 const winstonLogger = winston.createLogger({
   transports,
   level: CONFIG.LOGS_LEVEL,

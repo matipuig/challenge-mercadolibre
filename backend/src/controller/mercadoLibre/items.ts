@@ -1,6 +1,7 @@
 /**
  * Get specific information from MercadoLibre items.
  */
+/* eslint-disable camelcase */
 
 import { isNull } from 'lodash';
 import mercadoLibreService from '~/services/mercadoLibre';

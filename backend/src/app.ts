@@ -4,8 +4,8 @@
 
 import express from 'express';
 
-import CONFIG from './config';
 import { logger, LABELS } from '~/utils/logger';
+import CONFIG from './config';
 import api from './api';
 
 const { APP_NAME } = CONFIG;

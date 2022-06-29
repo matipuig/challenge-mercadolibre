@@ -1,6 +1,7 @@
 /**
  * Contains MercadoLibre common functions.
  */
+/* eslint-disable camelcase */
 
 import { isNull, pick } from 'lodash';
 import CONSTANTS from '~/constants';
@@ -14,32 +15,12 @@ const { NAME, LAST_NAME } = CONSTANTS.AUTHOR;
 type MELIItemResult = MELIRawItem | MELISearchProductResult;
 
 /**
- * Extracts the required information from the service product.
- * @param product Service result to get the information from.
- */
-export const extractInformationFromProductResult = (product: MELIItemResult): Item => {
-  const { id, title, seller_address, condition, shipping, thumbnail } = product;
-  const price = getPriceInformation(product);
-  return {
-    id,
-    title,
-    price,
-    condition,
-    picture: thumbnail,
-    free_shipping: shipping.free_shipping,
-    seller_address: pick(seller_address, ['state', 'country', 'city']) as SellerAddress,
-  };
-};
-
-/**
  * Returns the author of the app.
  */
-export const getAuthor = (): Author => {
-  return {
-    name: NAME,
-    lastname: LAST_NAME,
-  };
-};
+export const getAuthor = (): Author => ({
+  name: NAME,
+  lastname: LAST_NAME,
+});
 
 /**
  * Returns the category breadcrumb by its ID.
@@ -71,9 +52,27 @@ export const getPriceInformation = (product: MELIItemResult): Price => {
   return { currency: currency_id, amount, decimals };
 };
 
+/**
+ * Extracts the required information from the service product.
+ * @param product Service result to get the information from.
+ */
+export const extractInformationFromProductResult = (product: MELIItemResult): Item => {
+  const { id, title, seller_address, condition, shipping, thumbnail } = product;
+  const price = getPriceInformation(product);
+  return {
+    id,
+    title,
+    price,
+    condition,
+    picture: thumbnail,
+    free_shipping: shipping.free_shipping,
+    seller_address: pick(seller_address, ['state', 'country', 'city']) as SellerAddress,
+  };
+};
+
 export default {
-  extractInformationFromProductResult,
   getAuthor,
   getCategoryBreadcrumb,
   getPriceInformation,
+  extractInformationFromProductResult,
 };

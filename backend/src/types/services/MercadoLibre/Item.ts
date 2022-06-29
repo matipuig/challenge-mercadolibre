@@ -36,7 +36,7 @@ export interface MELIRawItem {
   non_mercado_pago_payment_methods: unknown[];
   shipping: ShippingType;
   international_delivery_mode: string;
-  seller_address: {} | SellerAddress;
+  seller_address: SellerAddress;
   seller_contact: unknown;
   location: unknown;
   coverage_areas: unknown[];

@@ -9,6 +9,11 @@ export default {
   MAIN: '/',
 
   /**
+   * Contains the list item screen of the application.
+   */
+  ITEMS: '/items',
+
+  /**
    * Item specific page.
    */
   ITEM: '/items/:id',

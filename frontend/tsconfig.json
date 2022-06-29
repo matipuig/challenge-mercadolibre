@@ -9,11 +9,7 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "jsx": "preserve",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "module": "commonjs",
     "moduleResolution": "node",
     "noEmit": true,
@@ -24,9 +20,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "paths": {
-      "~/*": [
-        "./src/*"
-      ]
+      "~/*": ["./src/*"]
     },
     "preserveConstEnums": true,
     "removeComments": true,
@@ -36,30 +30,13 @@
     "strict": true,
     "strictNullChecks": true,
     "target": "es5",
-    "typeRoots": [
-      "node_modules/@types",
-      "src/types"
-    ],
+    "typeRoots": ["node_modules/@types", "src/types"],
     "isolatedModules": true,
     "incremental": true,
-    "plugins": [
-      { "transform": "ts-auto-mock/transformer", "cacheBetweenTests": false }
-    ],
+    "plugins": [{ "transform": "ts-auto-mock/transformer", "cacheBetweenTests": false }]
   },
-  "exclude": [
-    "node_modules",
-    "docs",
-    "build",
-    "dist",
-    "out",
-    "tests",
-    "next.config.js"
-  ],
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ],
+  "exclude": ["node_modules", "docs", "build", "dist", "out", "tests", "next.config.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/types/react.ts"],
   "watchOptions": {
     "fallbackPolling": "dynamicPriority",
     "watchDirectory": "useFsEvents",
