@@ -1,0 +1,7 @@
+// Contains containers functions.
+
+@mixin setWidth($width) {
+  max-width: $width;
+  min-width: $width;
+  width: $width;
+}

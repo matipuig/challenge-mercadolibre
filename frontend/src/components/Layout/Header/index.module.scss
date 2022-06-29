@@ -1,0 +1,30 @@
+@import '~/scss/variables/colors';
+@import '~/scss/variables/layout';
+
+.header {
+  display: flex;
+  flex-direction: row;
+  max-width: 100%;
+  min-width: $layoutMinWidth;
+  width: 100%;
+  background-color: $primaryColor;
+  height: $headerHeight;
+
+  &--dark {
+    background-color: $primaryColor--dark;
+  }
+
+  .controlsContainer {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    gap: 15px;
+    margin: 0 auto;
+    text-align: center;
+    width: 80%;
+
+    .searchTextForm {
+      flex-grow: 1;
+    }
+  }
+}

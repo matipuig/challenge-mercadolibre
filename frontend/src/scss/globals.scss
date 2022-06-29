@@ -1,7 +1,11 @@
 // Global styles for the app.
+@import '~/scss/variables/colors';
+@import '~/scss/variables/fontSizes';
 
 * {
   box-sizing: border-box;
+  color: $black;
+  font-size: $baseFontSize;
   margin: 0;
   padding: 0;
 }

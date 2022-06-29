@@ -1,0 +1,13 @@
+@import '~/scss/containers';
+@import '~/scss/variables/colors';
+@import '~/scss/variables/layout';
+
+.main {
+  @include setWidth(100%);
+  min-height: calc(100vh - $headerHeight - $footerHeight);
+  background-color: $backgroundColor;
+
+  &--dark {
+    background-color: $backgroundColor--dark;
+  }
+}

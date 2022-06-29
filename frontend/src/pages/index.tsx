@@ -2,7 +2,7 @@
  * Contains the main page of the app.
  */
 
-import { Fragment, useContext, useEffect } from 'react';
+import { Fragment, useEffect } from 'react';
 import { GetServerSideProps } from 'next';
 import { NextSeo } from 'next-seo';
 
@@ -10,7 +10,7 @@ import CONSTANTS from '~/constants';
 import backend from '~/services/backend';
 import { FunctionalComponent } from '~/types/react';
 import { SearchResultWithCategories } from '~/types/services/backend';
-import { SearchResultsContext } from '~/state/contexts/searchResults';
+import { getDispatcher, dispatchSearchResults } from '~/state/hooks/searchResults';
 import { getQueryParamValue, getQueryParamValueAsPositiveInteger } from '~/utils/queryParams';
 
 // TODO: USE I18N.
@@ -31,11 +31,12 @@ export const getServerSideProps: GetServerSideProps<SearchResultWithCategories> 
  * Home Page component.
  */
 export const HomePage: FunctionalComponent<SearchResultWithCategories> = (props) => {
-  const { dispatch } = useContext(SearchResultsContext);
   const { items } = props;
+  const dispatcher = getDispatcher();
   useEffect(() => {
-    dispatch({ type: 'SET', payload: props });
+    dispatchSearchResults(dispatcher, props);
   }, [props]);
+
   return (
     <Fragment>
       <NextSeo title={'Title'} description={'Description'} />

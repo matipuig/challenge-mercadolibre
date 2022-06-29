@@ -2,13 +2,14 @@
 // Contains colors to be used across all sass files.
 
 $black: #333;
-$white: #fff;
+$gray: #999;
+$white: #eee;
 $transparent: transparent;
 
-$background: #eeeeee;
-$primary: #ffe600;
-$secondary: #3982f3;
+$backgroundColor: $white;
+$primaryColor: #ffe600;
+$secondaryColor: #3982f3;
 
-$background--dark: #1e1e1e;
-$primary--dark: #ffe600;
-$secondary--dark: #3982f3;
+$backgroundColor--dark: #1e1e1e;
+$primaryColor--dark: #ffe600;
+$secondaryColor--dark: #3982f3;

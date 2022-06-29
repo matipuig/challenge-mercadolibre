@@ -1,0 +1,23 @@
+@import '~/scss/variables/colors';
+@import '~/scss/variables/fontSizes';
+@import '~/scss/variables/layout';
+
+.footer {
+  background-color: $primaryColor;
+  height: $footerHeight;
+  max-width: 100%;
+  min-width: $layoutMinWidth;
+  padding: 15px;
+  width: 100%;
+
+  &--dark {
+    background-color: $primaryColor--dark;
+  }
+
+  .authorContainer {
+    font-size: $largeFont;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+  }
+}

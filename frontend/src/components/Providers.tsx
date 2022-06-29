@@ -2,11 +2,12 @@
  * Gives all providers to the children.
  */
 
+import { PropsWithChildren } from 'react';
+
 import {
   SearchResultsProvider,
   initialState as SearchResultsInitialState,
 } from '~/state/contexts/searchResults';
-import { PropsWithChildren } from 'react';
 
 export const Providers = ({ children }: PropsWithChildren) => (
   <SearchResultsProvider value={{ ...SearchResultsInitialState }}>{children}</SearchResultsProvider>
