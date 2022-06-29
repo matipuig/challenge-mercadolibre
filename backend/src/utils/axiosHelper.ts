@@ -31,7 +31,7 @@ export const handleResult = <Payload>(response: AxiosResponse): APISuccessResult
 
 /**
  * Gets the axios response and returns it as an API expected result.
- * @param response Response sent by axios.
+ * @param axiosError Axios error response.
  */
 export const handleError = (axiosError: AxiosError): APIErrorResult => {
   const requestInformation = getRequestInformation(axiosError);

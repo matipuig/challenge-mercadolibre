@@ -39,3 +39,8 @@ export interface SellerAddress {
   latitude: string;
   longitude: string;
 }
+
+export interface ProductCategory {
+  id: string;
+  name: string;
+}

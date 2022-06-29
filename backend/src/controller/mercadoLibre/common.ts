@@ -2,10 +2,10 @@
  * Contains MercadoLibre common functions.
  */
 
-import { isNull } from 'lodash';
+import { isNull, pick } from 'lodash';
 import CONSTANTS from '~/constants';
 import mercadoLibreService from '~/services/mercadoLibre';
-import { Price, Author, Item } from '~/types/MercadoLibre';
+import { Price, Author, Item, ItemCategory, SellerAddress } from '~/types/MercadoLibre';
 import { MELIRawItem } from '~/types/services/MercadoLibre/Item';
 import { MELISearchProductResult } from '~/types/services/MercadoLibre/SearchResult';
 
@@ -18,15 +18,16 @@ type MELIItemResult = MELIRawItem | MELISearchProductResult;
  * @param product Service result to get the information from.
  */
 export const extractInformationFromProductResult = (product: MELIItemResult): Item => {
-  const { id, title, condition, shipping, thumbnail } = product;
+  const { id, title, seller_address, condition, shipping, thumbnail } = product;
   const price = getPriceInformation(product);
   return {
     id,
     title,
     price,
-    picture: thumbnail,
     condition,
+    picture: thumbnail,
     free_shipping: shipping.free_shipping,
+    seller_address: pick(seller_address, ['state', 'country', 'city']) as SellerAddress,
   };
 };
 
@@ -44,13 +45,13 @@ export const getAuthor = (): Author => {
  * Returns the category breadcrumb by its ID.
  * @param id Id of the category.
  */
-export const getCategoryBreadcrumb = async (id: string): Promise<string[]> => {
+export const getCategoryBreadcrumb = async (id: string): Promise<ItemCategory[]> => {
   try {
     const category = await mercadoLibreService.getCategoryById(id);
     if (isNull(category)) {
       return [];
     }
-    return category.path_from_root.map((e) => e.name);
+    return category.path_from_root;
   } catch (error) {
     throw error;
   }

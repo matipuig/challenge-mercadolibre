@@ -1,7 +1,18 @@
 // Contains containers functions.
 
+@mixin setHeight($height) {
+  max-height: $height;
+  min-height: $height;
+  height: $height;
+}
+
 @mixin setWidth($width) {
   max-width: $width;
   min-width: $width;
   width: $width;
+}
+
+@mixin setFullSize() {
+  @include setWidth(100%);
+  @include setHeight(100%);
 }

@@ -21,7 +21,7 @@ export const Header = (): ReactElement => {
         <Link href={ROUTES.MAIN}>
           <a>
             <div className={styles.logo}>
-              <Image src={'/logos/logo-medium.png'} width={75} height={30} />
+              <Image src={'/logos/logo-medium.png'} width={50} height={34} />
             </div>
           </a>
         </Link>

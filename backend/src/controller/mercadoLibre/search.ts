@@ -4,7 +4,7 @@
 
 import { isNull, isString, isUndefined } from 'lodash';
 import mercadoLibreService from '~/services/mercadoLibre';
-import { SearchParams, SearchResultWithCategories } from '~/types/MercadoLibre';
+import { ItemCategory, SearchParams, SearchResultWithCategories } from '~/types/MercadoLibre';
 import { MELISeachByQueryResults } from '~/types/services/MercadoLibre/SearchResult';
 import { extractInformationFromProductResult, getAuthor, getCategoryBreadcrumb } from './common';
 
@@ -43,7 +43,7 @@ const getCategoryIdFromAvailableFiltersByMaxResultsCount = (
 
 const getCategoryBreadcrumbBySearchResult = async (
   searchResults: MELISeachByQueryResults,
-): Promise<string[]> => {
+): Promise<ItemCategory[]> => {
   try {
     // If all the results belongs to the same filter. The category appears in "filters".
     const appliedFilterCategoryId = getCategoryIdFromAppliedFilter(searchResults);

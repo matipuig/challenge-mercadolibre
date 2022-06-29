@@ -17,7 +17,7 @@ const MyApp: FunctionalComponent<AppProps> = ({ Component, pageProps }) => {
   return (
     <Providers>
       <Layout>
-        <Component {...pageProps} />;
+        <Component {...pageProps} />
       </Layout>
     </Providers>
   );

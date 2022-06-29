@@ -31,6 +31,7 @@ const getValidatedSearchParams = (req: Request): SearchParams => {
     q: getQueryParamAsStringOrUndefined(req, 'q'),
     limit: getQueryParamAsStringOrUndefined(req, 'limit'),
     offset: getQueryParamAsStringOrUndefined(req, 'offset'),
+    category: getQueryParamAsStringOrUndefined(req, 'category'),
   };
   const invalidParamsError = new CodedError(CODES.API_INVALID_PARAMS, { searchParams });
   const { limit, offset } = searchParams;

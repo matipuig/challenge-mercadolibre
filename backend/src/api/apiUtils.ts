@@ -8,7 +8,7 @@ import { noop, isString, isArray, pick, isObject } from 'lodash';
 import { CodedError, CODES, CODES as ERROR_CODES } from '~/errors';
 import i18n from '~/internationalization';
 import { logger, LABELS } from '~/utils/logger';
-import { APIErrorResponse, APISuccessResponse } from '~/types/APIResults';
+import { APIErrorResponse } from '~/types/APIResults';
 import CONFIG from '~/config';
 
 /**
@@ -106,13 +106,8 @@ export const sendError = (req: Request, res: Response, error: CodedError, code =
  * @param code Status code the user will receive.
  */
 export const sendResponse = (res: Response, payload: unknown, code = 200): void => {
-  const send: APISuccessResponse = {
-    code,
-    payload,
-    success: true,
-  };
   res.statusCode = code;
-  res.json(send);
+  res.json(payload);
 };
 
 /**
