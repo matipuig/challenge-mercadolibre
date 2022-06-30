@@ -9,7 +9,7 @@ import {
   initialState as SearchResultsInitialState,
 } from '~/state/contexts/searchResults';
 
-export const Providers = ({ children }: PropsWithChildren) => (
+export const Providers = ({ children }: PropsWithChildren<unknown>) => (
   <SearchResultsProvider value={{ ...SearchResultsInitialState }}>{children}</SearchResultsProvider>
 );
 

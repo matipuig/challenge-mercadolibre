@@ -9,6 +9,6 @@ export interface DispachableStateAction<ActionType, Payload> {
   payload: Payload;
 }
 
-export interface ProviderWithState<StateType> extends PropsWithChildren {
+export interface ProviderWithState<StateType> extends PropsWithChildren<unknown> {
   value: StateType;
 }

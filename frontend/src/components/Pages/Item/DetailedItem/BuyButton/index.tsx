@@ -5,7 +5,6 @@ import { ReactElement } from 'react';
 
 import { useTranslation } from 'react-i18next';
 import swal from 'sweetalert2';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 import { getAvailableI18nTexts } from '~/i18n';
 import { DetailedItem } from '~/types/services/backend';

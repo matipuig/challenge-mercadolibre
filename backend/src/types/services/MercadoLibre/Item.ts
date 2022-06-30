@@ -4,6 +4,15 @@
 
 import { ConditionType, SellerAddress, ShippingType } from './common';
 
+export interface MELIRawItemPicture {
+  id: string;
+  url: string;
+  secure_url: string;
+  size: string;
+  max_size: string;
+  quality: string;
+}
+
 export interface MELIRawItem {
   id: string;
   site_id: string;
@@ -29,7 +38,7 @@ export interface MELIRawItem {
   thumbnail_id: string;
   thumbnail: string;
   secure_thumbnail: string;
-  pictures: string[];
+  pictures: MELIRawItemPicture[];
   video_id: unknown;
   descriptions: unknown[];
   accepts_mercadopago: boolean;

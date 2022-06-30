@@ -24,7 +24,7 @@ const texts = getAvailableI18nTexts();
 const { text, title } = texts.components.errorBoundary;
 
 export class ErrorBoundary extends Component {
-  constructor(props: PropsWithChildren) {
+  constructor(props: PropsWithChildren<unknown>) {
     super(props);
     this.state = { hasError: false };
   }

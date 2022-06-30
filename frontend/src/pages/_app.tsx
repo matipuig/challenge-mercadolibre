@@ -11,6 +11,7 @@ import { ErrorBoundary } from '~/components/ErrorBoundary';
 import { Layout } from '~/components/Layout';
 import { Providers } from '~/components/Providers';
 import { i18n } from '~/i18n';
+
 import '~/scss/globals.scss';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {

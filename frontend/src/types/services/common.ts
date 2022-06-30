@@ -14,6 +14,4 @@ export interface APIErrorResult {
   description: string;
 }
 
-export type APIResult<Payload, ErroredPayload> =
-  | APISuccessResult<Payload>
-  | APIErrorResult<ErroredPayload>;
+export type APIResult<Payload> = APISuccessResult<Payload> | APIErrorResult;
