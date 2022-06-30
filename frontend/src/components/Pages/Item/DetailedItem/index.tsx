@@ -1,22 +1,22 @@
 /**
- * Contains the no results screen.
+ * Contains the detailed item component.
  */
 import { ReactElement } from 'react';
+import { useTranslation } from 'react-i18next';
 
-import Image from 'next/image';
-import Link from 'next/Link';
-
-import { CONSTANTS } from '~/constants';
-import { Item, Price, SellerAddress } from '~/types/services/backend';
+import { BuyButton } from './BuyButton';
+import { getAvailableI18nTexts } from '~/i18n';
+import { PicturesContainer } from './PicturesContainer';
+import { DetailedItem as DetailedItemType, Price } from '~/types/services/backend';
 import { makeHumanFriendly } from '~/utils/conversors';
-
 import styles from './index.module.scss';
 
-interface ListItemsProps {
-  items: Item[];
+interface DetailedItemProps {
+  detailedItem: DetailedItemType;
 }
 
-const { ROUTES } = CONSTANTS;
+const texts = getAvailableI18nTexts();
+const { conditionAndSoldCount, descriptionLabel, picturesAlt } = texts.components.item.detailedItem;
 
 const getPrice = (price: Price): string => {
   const { currency, amount } = price;
@@ -25,51 +25,52 @@ const getPrice = (price: Price): string => {
   return `${currencySign} ${humanFriendlyAmount}`;
 };
 
-const getAddress = (sellerAddress: SellerAddress): string => {
-  const { city, state } = sellerAddress;
-  return `${state.name}, ${city.name}`;
+const getDecimals = (decimals: number): string => {
+  const strDecimals = decimals.toString();
+  return strDecimals.length < 2 ? `0${strDecimals}` : strDecimals;
 };
 
-const getIitemLinkDirection = (listItem: Item): string => ROUTES.ITEM.replace(':id', listItem.id);
-
-export const ListItems = ({ items }: ListItemsProps): ReactElement => (
-  <section className={styles.container}>
-    {items.map((item) => (
-      <article key={item.id} className={styles.listItem}>
-        <figure className={styles.imageContainer}>
-          <Link href={getIitemLinkDirection(item)}>
-            <a>
-              <Image
-                className={styles.image}
-                src={item.picture}
-                width={160}
-                height={160}
-                quality="100"
-              />
-            </a>
-          </Link>
-        </figure>
-        <div className={styles.descriptionContainer}>
-          <div className={styles.descriptionUpperPart}>
-            <div className={styles.priceAndShippingContainer}>
-              <div className={styles.price}>{getPrice(item.price)}</div>
-              <div className={styles.freeShipping}>
-                {item.free_shipping || (
-                  <Image src="/icons/shipping-small.png" alt="" height={16} width={16} />
-                )}
-              </div>
-            </div>
-            <div className={styles.address}>{getAddress(item.seller_address)}</div>
+export const DetailedItem = ({ detailedItem }: DetailedItemProps): ReactElement => {
+  const { t } = useTranslation();
+  const itemCondition = detailedItem.condition;
+  const strSoldQuantity = detailedItem.sold_quantity.toString();
+  return (
+    <section>
+      <article className={styles.container}>
+        <div className={styles.mainInfoContainer}>
+          <div className={styles.picturesContainer}>
+            <PicturesContainer
+              pictures={detailedItem.all_pictures}
+              altText={t(picturesAlt).replace('[?]', detailedItem.title)}
+            />
           </div>
-          <Link href={getIitemLinkDirection(item)}>
-            <a>
-              <div className={styles.title}>{item.title}</div>
-            </a>
-          </Link>
+          <div className={styles.informationContainer}>
+            <div className={styles.conditionAndSoldCount}>
+              {`${
+                itemCondition === 'new'
+                  ? t(conditionAndSoldCount.new.replace('[?]', strSoldQuantity))
+                  : t(conditionAndSoldCount.used.replace('[?]', strSoldQuantity))
+              }`}
+            </div>
+            <h1 className={styles.title}>{detailedItem.title}</h1>
+            <div className={styles.price}>
+              <span className={styles.amount}>{getPrice(detailedItem.price)}</span>
+              <span className={styles.decimals}>
+                <sup>{getDecimals(detailedItem.price.decimals)}</sup>
+              </span>
+            </div>
+            <div className={styles.buyButtonContainer}>
+              <BuyButton detailedItem={detailedItem} />
+            </div>
+          </div>
+        </div>
+        <div className={styles.descriptionContainer}>
+          <h2 className={styles.descriptionLabel}>{t(descriptionLabel)}</h2>
+          <p className={styles.description}>{detailedItem.description}</p>
         </div>
       </article>
-    ))}
-  </section>
-);
+    </section>
+  );
+};
 
-export default ListItems;
+export default DetailedItem;

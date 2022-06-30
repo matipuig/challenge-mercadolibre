@@ -3,9 +3,16 @@
  */
 
 import { NextSeo } from 'next-seo';
+import { useTranslation } from 'react-i18next';
 
-// TODO: USE I18N.
+import { getAvailableI18nTexts } from '~/i18n';
 
-export const HomePage = () => <NextSeo title="Title" description="Description" />;
+const texts = getAvailableI18nTexts();
+const { title, description } = texts.pages.home;
+
+export const HomePage = () => {
+  const { t } = useTranslation();
+  return <NextSeo title={t(title)} description={t(description)} />;
+};
 
 export default HomePage;

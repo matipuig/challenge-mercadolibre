@@ -15,8 +15,7 @@ const APIClient = axios.create({
   baseURL: BASE_URL,
   timeout: CONSTANTS.SERVICES.BACKEND.TIMEOUT_MS,
   headers: {
-    // TODO: FIX THIS
-    'X-API-KEY': API_KEY as string,
+    'X-API-KEY': API_KEY,
   },
 });
 

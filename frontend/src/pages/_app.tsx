@@ -3,11 +3,14 @@
  * Should have all the main functionalities like loading things from APIs etc in the useEffect.
  */
 import { useEffect } from 'react';
+import { I18nextProvider } from 'react-i18next';
 
 import type { AppProps } from 'next/app';
 
+import ErrorBoundary from '~/components/ErrorBoundary';
 import { Layout } from '~/components/Layout';
 import { Providers } from '~/components/Providers';
+import { i18n } from '~/i18n';
 import '~/scss/globals.scss';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
@@ -15,11 +18,15 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     // TODO: Do whatever you should do when your app starts.
   }, []);
   return (
-    <Providers>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </Providers>
+    <I18nextProvider i18n={i18n}>
+      <ErrorBoundary>
+        <Providers>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </Providers>
+      </ErrorBoundary>
+    </I18nextProvider>
   );
 };
 

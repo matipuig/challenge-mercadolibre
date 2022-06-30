@@ -3,17 +3,17 @@
  */
 
 import { Fragment } from 'react';
-
-import { isNull } from 'lodash';
 import { GetServerSideProps } from 'next';
 import { NextSeo } from 'next-seo';
 
+import { isNull } from 'lodash';
+
 import { Breadcrumbs } from '~/components/Pages/Common/Breadcrumbs';
+import { NotFound } from '~/components/Pages/NotFound';
+import { DetailedItem as DetailedItemComponent } from '~/components/Pages/Item/DetailedItem';
 import { getItemById } from '~/services/backend';
 import { DetailedItem } from '~/types/services/backend';
 import { getQueryParamValue } from '~/utils/queryParams';
-
-// TODO: USE I18N.
 
 interface DetailedItemPageProps {
   detailedItem: DetailedItem | null;
@@ -30,13 +30,13 @@ export const getServerSideProps: GetServerSideProps<DetailedItemPageProps> = asy
 export const DetailedItemPage = (props: DetailedItemPageProps) => {
   const { detailedItem } = props;
   if (isNull(detailedItem)) {
-    return ' // TODO: no existe';
+    return <NotFound />;
   }
   return (
     <Fragment>
-      <NextSeo title="Title" description="Description" />
+      <NextSeo title={detailedItem.title} description={detailedItem.description} />
       <Breadcrumbs categories={detailedItem.categories} />
-      {JSON.stringify(detailedItem)}
+      <DetailedItemComponent detailedItem={detailedItem} />
     </Fragment>
   );
 };

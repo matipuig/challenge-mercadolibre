@@ -54,7 +54,14 @@ export interface ItemCategory {
   name: string;
 }
 
+export interface ItemPicture {
+  url: string;
+  width: number;
+  height: number;
+}
+
 export interface DetailedItem extends Item {
+  all_pictures: ItemPicture[];
   categories: ItemCategory[];
   sold_quantity: number;
   description: string;

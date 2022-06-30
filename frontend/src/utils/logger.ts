@@ -95,7 +95,6 @@ export const logger = {
  * Overwrite console methods to unify all the logs across the system.
  * Only if in production. During development it also affects next js developing framework.
  */
-// TODO: PASS THIS TO CONFIG.
 if (process.env.NODE_ENV === 'production') {
   console.log = (...args: unknown[]) => logger.info('Console.log', LogLevels.info, { args });
   console.error = (...args: unknown[]) => logger.error('Console.error', LogLevels.error, { args });

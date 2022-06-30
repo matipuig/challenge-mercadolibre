@@ -1,0 +1,22 @@
+@use '~/scss/variables/colors' as colors;
+@use '~/scss/variables/fontSizes' as fontSizes;
+
+.button {
+  background-color: colors.$secondary;
+  border: 0;
+  border-radius: 5%;
+  color: colors.$white;
+  cursor: pointer;
+  font-size: fontSizes.$medium;
+  padding: 15px;
+  height: 100%;
+  width: 100%;
+
+  &:hover {
+    filter: brightness(80%);
+  }
+
+  &:active {
+    filter: brightness(60%);
+  }
+}

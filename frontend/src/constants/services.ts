@@ -15,6 +15,11 @@ export default {
        * Default limit count for the results.
        */
       DEFAULT_LIMIT_COUNT: 4,
+
+      /**
+       * Max limit the request can have
+       */
+      MAX_LIMIT_COUNT: 50,
     },
 
     /**

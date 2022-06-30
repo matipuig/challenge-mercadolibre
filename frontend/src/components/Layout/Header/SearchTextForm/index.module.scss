@@ -17,7 +17,15 @@
     border: 0;
     border-radius: 2px;
     cursor: pointer;
-    min-width: 30px;
-    padding: 8px;
+    min-height: 48px;
+    min-width: 48px;
+
+    &:hover {
+      filter: brightness(80%);
+    }
+
+    &:active {
+      filter: brightness(60%);
+    }
   }
 }
