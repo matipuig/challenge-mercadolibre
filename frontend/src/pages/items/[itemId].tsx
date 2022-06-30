@@ -3,14 +3,14 @@
  */
 
 import { Fragment } from 'react';
+
+import { isNull } from 'lodash';
 import { GetServerSideProps } from 'next';
 import { NextSeo } from 'next-seo';
 
-import { isNull } from 'lodash';
-
 import { Breadcrumbs } from '~/components/Pages/Common/Breadcrumbs';
-import { NotFound } from '~/components/Pages/NotFound';
 import { DetailedItem as DetailedItemComponent } from '~/components/Pages/Item/DetailedItem';
+import { NotFound } from '~/components/Pages/NotFound';
 import { getItemById } from '~/services/backend';
 import { DetailedItem } from '~/types/services/backend';
 import { getQueryParamValue } from '~/utils/queryParams';

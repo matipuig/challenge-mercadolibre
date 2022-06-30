@@ -2,6 +2,7 @@
  * Contains the errored page.
  */
 import { ReactElement, useEffect } from 'react';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -9,6 +10,7 @@ import { useTranslation } from 'react-i18next';
 
 import { CONSTANTS } from '~/constants';
 import { getAvailableI18nTexts } from '~/i18n';
+
 import styles from './index.module.scss';
 
 const { MAIN } = CONSTANTS.ROUTES;
@@ -28,10 +30,10 @@ export const ErrorPageContent = (): ReactElement => {
       <div className={styles.imageContainer}>
         <Image
           className={styles.image}
-          src={'/images/pictures/emojiSad.webp'}
+          src="/images/pictures/emojiSad.webp"
           width={250}
           height={100}
-          alt={''}
+          alt=""
         />
       </div>
       <h3 className={styles.mainText}>{t(mainText)} </h3>

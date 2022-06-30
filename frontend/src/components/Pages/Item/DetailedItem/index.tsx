@@ -2,14 +2,16 @@
  * Contains the detailed item component.
  */
 import { ReactElement } from 'react';
+
 import { useTranslation } from 'react-i18next';
 
-import { BuyButton } from './BuyButton';
 import { getAvailableI18nTexts } from '~/i18n';
-import { PicturesContainer } from './PicturesContainer';
 import { DetailedItem as DetailedItemType, Price } from '~/types/services/backend';
 import { makeHumanFriendly } from '~/utils/conversors';
+
+import { BuyButton } from './BuyButton';
 import styles from './index.module.scss';
+import { PicturesContainer } from './PicturesContainer';
 
 interface DetailedItemProps {
   detailedItem: DetailedItemType;

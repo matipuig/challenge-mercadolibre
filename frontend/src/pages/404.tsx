@@ -3,6 +3,7 @@
  */
 
 import { Fragment } from 'react';
+
 import { NextSeo } from 'next-seo';
 import { useTranslation } from 'react-i18next';
 

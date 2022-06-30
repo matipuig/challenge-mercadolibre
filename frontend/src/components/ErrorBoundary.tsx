@@ -3,7 +3,9 @@
  */
 
 import { PropsWithChildren, Component, ReactNode } from 'react';
+
 import { t } from 'i18next';
+import { noop } from 'lodash';
 import swal from 'sweetalert2';
 
 import { getAvailableI18nTexts } from '~/i18n';
@@ -28,11 +30,12 @@ export class ErrorBoundary extends Component {
   }
 
   static getDerivedStateFromError(error: Error) {
-    console.error(error);
+    noop(error);
     return { hasError: true };
   }
 
   componentDidCatch(error: Error, errorInfo: unknown) {
+    /* eslint-disable no-console */
     console.log({ error, errorInfo });
   }
 

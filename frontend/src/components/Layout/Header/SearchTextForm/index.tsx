@@ -2,6 +2,7 @@
  * Contains the text search form.
  */
 import { ReactElement } from 'react';
+
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
@@ -10,6 +11,7 @@ import { useTranslation } from 'react-i18next';
 import { CONSTANTS } from '~/constants';
 import { getAvailableI18nTexts } from '~/i18n';
 import { getQueryParamValue } from '~/utils/queryParams';
+
 import styles from './index.module.scss';
 
 interface SearchFormData {
@@ -52,7 +54,7 @@ export const SearchTextForm = (): ReactElement => {
         className={styles.searchButton}
         title={t(tooltip)}
       >
-        <Image src="/images/icons/search.svg" width={32} height={32} alt={''} quality={100} />
+        <Image src="/images/icons/search.svg" width={32} height={32} alt="" quality={100} />
       </button>
     </form>
   );

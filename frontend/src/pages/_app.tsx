@@ -3,11 +3,11 @@
  * Should have all the main functionalities like loading things from APIs etc in the useEffect.
  */
 import { useEffect } from 'react';
-import { I18nextProvider } from 'react-i18next';
 
 import type { AppProps } from 'next/app';
+import { I18nextProvider } from 'react-i18next';
 
-import ErrorBoundary from '~/components/ErrorBoundary';
+import { ErrorBoundary } from '~/components/ErrorBoundary';
 import { Layout } from '~/components/Layout';
 import { Providers } from '~/components/Providers';
 import { i18n } from '~/i18n';

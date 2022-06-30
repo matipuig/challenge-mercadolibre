@@ -7,6 +7,7 @@ import { isUndefined } from 'lodash';
 import { initReactI18next } from 'react-i18next';
 
 import { CONSTANTS } from '~/constants';
+
 import { es } from './es';
 
 const { DEFAULT_LANGUAGE } = CONSTANTS;

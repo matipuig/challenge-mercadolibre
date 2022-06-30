@@ -8,8 +8,9 @@ import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 
 import { CONSTANTS } from '~/constants';
-import styles from './index.module.scss';
 import { getAvailableI18nTexts } from '~/i18n';
+
+import styles from './index.module.scss';
 import { SearchTextForm } from './SearchTextForm';
 
 const { ROUTES } = CONSTANTS;

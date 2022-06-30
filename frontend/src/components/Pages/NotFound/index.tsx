@@ -2,12 +2,14 @@
  * Contains the not found page.
  */
 import { ReactElement } from 'react';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 
 import { CONSTANTS } from '~/constants';
 import { getAvailableI18nTexts } from '~/i18n';
+
 import styles from './index.module.scss';
 
 const texts = getAvailableI18nTexts();
@@ -20,10 +22,10 @@ export const NotFound = (): ReactElement => {
       <div className={styles.imageContainer}>
         <Image
           className={styles.image}
-          src={'/images/pictures/notFound.svg'}
+          src="/images/pictures/notFound.svg"
           width={250}
           height={100}
-          alt={''}
+          alt=""
         />
       </div>
       <h3 className={styles.mainText}>{t(mainText)}</h3>
