@@ -10,6 +10,7 @@ import { useTranslation } from 'react-i18next';
 
 import { CONSTANTS } from '~/constants';
 import { getAvailableI18nTexts } from '~/i18n';
+import { getURLForPublicContent } from '~/utils/components';
 import { getQueryParamValue } from '~/utils/queryParams';
 
 import styles from './index.module.scss';
@@ -18,20 +19,21 @@ interface SearchFormData {
   search: string;
 }
 const { ROUTES } = CONSTANTS;
-const texts = getAvailableI18nTexts();
-const { placeholder, tooltip } = texts.components.layout.header.searchTextForm;
+const { QUERY_PARAMS } = ROUTES;
 
 const getDestinationRoute = (data: SearchFormData): string => {
   const { search } = data;
   const queryParams = new URLSearchParams();
-  queryParams.set('search', search);
+  queryParams.set(QUERY_PARAMS.SEARCH, search);
   return `${ROUTES.ITEMS}?${queryParams}`;
 };
 
 export const SearchTextForm = (): ReactElement => {
   const { t } = useTranslation();
+  const texts = getAvailableI18nTexts();
+  const { placeholder, tooltip } = texts.components.layout.header.searchTextForm;
   const router = useRouter();
-  const search = getQueryParamValue(router.query, 'search') || '';
+  const search = getQueryParamValue(router.query, QUERY_PARAMS.SEARCH) || '';
   const defaultValues = { search };
   const executeSubmit = (data: SearchFormData) => {
     if (data.search.length <= 2) {
@@ -54,7 +56,13 @@ export const SearchTextForm = (): ReactElement => {
         className={styles.searchButton}
         title={t(tooltip)}
       >
-        <Image src="/images/icons/search.svg" width={32} height={32} alt="" quality={100} />
+        <Image
+          src={getURLForPublicContent('/images/icons/search.svg')}
+          width={32}
+          height={32}
+          alt=""
+          quality={100}
+        />
       </button>
     </form>
   );

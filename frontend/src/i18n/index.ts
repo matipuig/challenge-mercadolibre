@@ -3,30 +3,38 @@
  */
 
 import i18next from 'i18next';
-import { isUndefined } from 'lodash';
 import { initReactI18next } from 'react-i18next';
 
-import { CONSTANTS } from '~/constants';
+import { PUBLIC_CONFIG } from '~/config/public';
 
+import { en } from './en';
 import { es } from './es';
 
-const { DEFAULT_LANGUAGE } = CONSTANTS;
+type Translations = typeof es | typeof en;
 
-type Translations = typeof es;
+const { LANGUAGE } = PUBLIC_CONFIG;
 
 const resources = {
-  es: {
-    translation: { ...es },
-  },
+  es: { ...es },
+  en: { ...en },
 };
 
+const availableLanguages = Object.keys(resources);
+if (!availableLanguages.includes(LANGUAGE)) {
+  const languagesList = availableLanguages.join('" , "');
+  throw new Error(
+    `The setted language "${LANGUAGE}" is not valid. The available languages are "${languagesList}".`,
+  );
+}
+
 i18next.use(initReactI18next).init({
-  resources,
-  lng: DEFAULT_LANGUAGE,
-  initImmediate: true,
+  lng: LANGUAGE,
+  initImmediate: false,
   interpolation: {
     escapeValue: false,
   },
+  resources,
+  supportedLngs: Object.keys(resources),
 });
 
 /**
@@ -37,19 +45,8 @@ export const { t } = i18next;
 /**
  * Returns the available texts  by the language for translations.
  */
-export const getAvailableI18nTexts = (): Translations => {
-  // TODO: CHOOSE LANGUAGE HERE.
-  const language = DEFAULT_LANGUAGE;
-  const avilableTranslations = i18next.getDataByLanguage(language);
-  if (!isUndefined(avilableTranslations)) {
-    return avilableTranslations.translation as unknown as Translations;
-  }
-  const defaultTranslations = i18next.getDataByLanguage(DEFAULT_LANGUAGE);
-  if (isUndefined(defaultTranslations)) {
-    throw new Error('Default translations are not set!!');
-  }
-  return defaultTranslations.translation as unknown as Translations;
-};
+export const getAvailableI18nTexts = (): Translations =>
+  i18next.getDataByLanguage(LANGUAGE) as unknown as Translations;
 
 export const i18n = i18next;
 

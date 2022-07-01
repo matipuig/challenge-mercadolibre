@@ -6,7 +6,7 @@
 import { cloneDeep } from 'lodash';
 import winston from 'winston';
 
-import { CONFIG } from '~/config';
+import { SERVER_CONFIG } from '~/config/server';
 import { CONSTANTS } from '~/constants';
 import { LogContext, LogLevels } from '~/types/logger';
 
@@ -18,14 +18,18 @@ const consoleTransport = new winston.transports.Console();
 const transports: winston.transport[] = [consoleTransport];
 const winstonLogger = winston.createLogger({
   transports,
-  level: CONFIG.LOGS_LEVEL,
+  level: SERVER_CONFIG.LOGS_LEVEL,
   format: combine(json(), prettyPrint()),
   handleExceptions: true,
 });
 
 const log = (message: string, level: LogLevels, label: string, logContext = {}): boolean => {
   const contextCopy = cloneDeep(logContext);
-  const meta = { ...contextCopy, app: CONFIG.APP_NAME, appVersion: CONFIG.APP_VERSION };
+  const meta = {
+    ...contextCopy,
+    app: SERVER_CONFIG.APP_NAME,
+    appVersion: SERVER_CONFIG.APP_VERSION,
+  };
   const timestamp = new Date();
   winstonLogger.log(level, message, { label, timestamp, context: { ...meta } });
   return true;

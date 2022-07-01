@@ -1,8 +1,11 @@
 # Should ignore this things...
+node_modules
 .git
 .results
 scripts
 Dockerfile
 .dockerignore
 .pem
-#.env 
+.env
+.next
+.swc

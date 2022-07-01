@@ -20,20 +20,18 @@ import { getQueryParamValue, getQueryParamValueAsPositiveInteger } from '~/utils
 
 const { DEFAULT_LIMIT_COUNT, MAX_LIMIT_COUNT } = CONSTANTS.SERVICES.BACKEND.SEARCH;
 
-const texts = getAvailableI18nTexts();
-const { title, description } = texts.pages.items;
-
 interface ItemsPageProps {
   searchResult: SearchResultWithCategories;
 }
 
 export const getServerSideProps: GetServerSideProps<ItemsPageProps> = async (context) => {
+  const { SEARCH, LIMIT, CATEGORY, OFFSET } = CONSTANTS.ROUTES.QUERY_PARAMS;
   const { query } = context;
-  const q = getQueryParamValue(query, 'search');
-  const category = getQueryParamValue(query, 'category');
-  const limitInQuery = getQueryParamValueAsPositiveInteger(query, 'limit') || DEFAULT_LIMIT_COUNT;
+  const q = getQueryParamValue(query, SEARCH);
+  const category = getQueryParamValue(query, CATEGORY);
+  const limitInQuery = getQueryParamValueAsPositiveInteger(query, LIMIT) || DEFAULT_LIMIT_COUNT;
   const limit = limitInQuery < MAX_LIMIT_COUNT ? limitInQuery : DEFAULT_LIMIT_COUNT;
-  const offset = getQueryParamValueAsPositiveInteger(query, 'offset');
+  const offset = getQueryParamValueAsPositiveInteger(query, OFFSET);
   const searchResult = await searchProductsByQuery({ q, limit, offset, category });
   return { props: { searchResult } };
 };
@@ -41,6 +39,8 @@ export const getServerSideProps: GetServerSideProps<ItemsPageProps> = async (con
 export const ItemsPage = (props: ItemsPageProps) => {
   const { items, categories } = props.searchResult;
   const { t } = useTranslation();
+  const texts = getAvailableI18nTexts();
+  const { title, description } = texts.pages.items;
   const dispatcher = getDispatcher();
   useEffect(() => {
     dispatchSearchResults(dispatcher, props.searchResult);

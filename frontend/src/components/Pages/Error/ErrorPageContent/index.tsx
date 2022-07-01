@@ -10,16 +10,17 @@ import { useTranslation } from 'react-i18next';
 
 import { CONSTANTS } from '~/constants';
 import { getAvailableI18nTexts } from '~/i18n';
+import { getURLForPublicContent } from '~/utils/components';
 
 import styles from './index.module.scss';
 
 const { MAIN } = CONSTANTS.ROUTES;
-const texts = getAvailableI18nTexts();
-const { mainText, linkToMainManu } = texts.components.erroredPageContent;
 
 export const ErrorPageContent = (): ReactElement => {
   const router = useRouter();
   const { t } = useTranslation();
+  const texts = getAvailableI18nTexts();
+  const { mainText, linkToMainManu } = texts.components.erroredPageContent;
   useEffect(() => {
     const redirectorTimeout = setTimeout(() => router.replace(MAIN), 3000);
     return () => clearTimeout(redirectorTimeout);
@@ -30,7 +31,7 @@ export const ErrorPageContent = (): ReactElement => {
       <div className={styles.imageContainer}>
         <Image
           className={styles.image}
-          src="/images/pictures/emojiSad.webp"
+          src={getURLForPublicContent('/images/pictures/emojiSad.webp')}
           width={250}
           height={100}
           alt=""

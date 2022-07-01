@@ -40,3 +40,5 @@ export const getQueryParamValueAsPositiveInteger = (
   }
   return Number.parseInt(queryParamValue, 10);
 };
+
+export default { getQueryParamValue, getQueryParamValueAsPositiveInteger };

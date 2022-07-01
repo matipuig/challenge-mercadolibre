@@ -9,19 +9,17 @@ import { useTranslation } from 'react-i18next';
 
 import { CONSTANTS } from '~/constants';
 import { getAvailableI18nTexts } from '~/i18n';
+import { getURLForPublicContent } from '~/utils/components';
 
 import styles from './index.module.scss';
 import { SearchTextForm } from './SearchTextForm';
 
 const { ROUTES } = CONSTANTS;
 
-const texts = getAvailableI18nTexts();
-const { logo } = texts.components.layout.header;
-
-// TODO: Update the image to work in a subserver.
-
 export const Header = (): ReactElement => {
-  const { t } = useTranslation();
+  const [t] = useTranslation();
+  const texts = getAvailableI18nTexts();
+  const { logo } = texts.components.layout.header;
   return (
     <header className={styles.header}>
       <div className={styles.controlsContainer}>
@@ -32,7 +30,7 @@ export const Header = (): ReactElement => {
                 alt={t(logo.alt)}
                 height={52}
                 quality={100}
-                src="/images/logos/logo-medium.png"
+                src={getURLForPublicContent('/images/logos/logo-medium.png')}
                 width={76}
               />
             </div>

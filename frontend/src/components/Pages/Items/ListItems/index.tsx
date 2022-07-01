@@ -10,6 +10,7 @@ import { useTranslation } from 'react-i18next';
 import { CONSTANTS } from '~/constants';
 import { getAvailableI18nTexts } from '~/i18n';
 import { Item, Price, SellerAddress } from '~/types/services/backend';
+import { getURLForPublicContent } from '~/utils/components';
 import { makeHumanFriendly } from '~/utils/conversors';
 
 import styles from './index.module.scss';
@@ -19,8 +20,6 @@ interface ListItemsProps {
 }
 
 const { ROUTES } = CONSTANTS;
-const texts = getAvailableI18nTexts();
-const { productImageAlt, freeShippingImage } = texts.components.listItems;
 
 const getPrice = (price: Price): string => {
   const { currency, amount } = price;
@@ -38,6 +37,8 @@ const getIitemLinkDirection = (listItem: Item): string => ROUTES.ITEM.replace(':
 
 export const ListItems = ({ items }: ListItemsProps): ReactElement => {
   const { t } = useTranslation();
+  const texts = getAvailableI18nTexts();
+  const { productImageAlt, freeShippingImage } = texts.components.listItems;
   return (
     <section className={styles.container}>
       {items.map((item) => (
@@ -63,7 +64,7 @@ export const ListItems = ({ items }: ListItemsProps): ReactElement => {
                 <div className={styles.freeShipping}>
                   {item.free_shipping || (
                     <Image
-                      src="/images/icons/shipping-small.png"
+                      src={getURLForPublicContent('/images/icons/shipping-small.png')}
                       alt={t(freeShippingImage.alt).replace('[?]', item.title)}
                       title={t(freeShippingImage.title)}
                       width={16}

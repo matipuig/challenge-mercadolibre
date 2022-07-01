@@ -1,6 +1,7 @@
 /**
  * Contains the detailed item component.
  */
+
 import { ReactElement } from 'react';
 
 import { useTranslation } from 'react-i18next';
@@ -17,9 +18,6 @@ interface DetailedItemProps {
   detailedItem: DetailedItemType;
 }
 
-const texts = getAvailableI18nTexts();
-const { conditionAndSoldCount, descriptionLabel, picturesAlt } = texts.components.item.detailedItem;
-
 const getPrice = (price: Price): string => {
   const { currency, amount } = price;
   const currencySign = currency !== 'ARS' ? currency : '$';
@@ -34,6 +32,9 @@ const getDecimals = (decimals: number): string => {
 
 export const DetailedItem = ({ detailedItem }: DetailedItemProps): ReactElement => {
   const { t } = useTranslation();
+  const texts = getAvailableI18nTexts();
+  const { conditionAndSoldCount, descriptionLabel, picturesAlt } =
+    texts.components.item.detailedItem;
   const itemCondition = detailedItem.condition;
   const strSoldQuantity = detailedItem.sold_quantity.toString();
   return (

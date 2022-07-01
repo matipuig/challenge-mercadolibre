@@ -9,20 +9,20 @@ import { useTranslation } from 'react-i18next';
 
 import { CONSTANTS } from '~/constants';
 import { getAvailableI18nTexts } from '~/i18n';
+import { getURLForPublicContent } from '~/utils/components';
 
 import styles from './index.module.scss';
 
-const texts = getAvailableI18nTexts();
-const { mainText, linkToMainManu } = texts.components.erroredPageContent;
-
 export const NotFound = (): ReactElement => {
   const { t } = useTranslation();
+  const texts = getAvailableI18nTexts();
+  const { mainText, linkToMainManu } = texts.components.notFound;
   return (
     <section className={styles.container}>
       <div className={styles.imageContainer}>
         <Image
           className={styles.image}
-          src="/images/pictures/notFound.svg"
+          src={getURLForPublicContent('/images/pictures/notFound.svg')}
           width={250}
           height={100}
           alt=""

@@ -17,4 +17,29 @@ export default {
    * Item specific page.
    */
   ITEM: '/items/:id',
+
+  /**
+   * Query params.
+   */
+  QUERY_PARAMS: {
+    /**
+     * Search text query param.
+     */
+    SEARCH: 'search',
+
+    /**
+     * Limit query param.
+     */
+    LIMIT: 'limit',
+
+    /**
+     * Offset query param.
+     */
+    OFFSET: 'offset',
+
+    /**
+     * Category query param.
+     */
+    CATEGORY: 'category',
+  },
 };

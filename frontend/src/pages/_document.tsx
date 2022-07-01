@@ -3,12 +3,12 @@
  */
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 
-import { CONSTANTS } from '~/constants';
+import { PUBLIC_CONFIG } from '~/config/public';
 
 export class MyDocument extends Document {
   render() {
     return (
-      <Html lang={CONSTANTS.DEFAULT_LANGUAGE}>
+      <Html lang={PUBLIC_CONFIG.LANGUAGE}>
         <Head>
           <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="true" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />

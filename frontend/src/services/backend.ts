@@ -4,12 +4,12 @@
 
 import axios, { AxiosError } from 'axios';
 
-import { CONFIG } from '~/config';
+import { SERVER_CONFIG } from '~/config/server';
 import { CONSTANTS } from '~/constants';
 import { ItemResult, SearchParams, SearchResultWithCategories } from '~/types/services/backend';
 import { handleError, handleResult } from '~/utils/axiosHelper';
 
-const { BASE_URL, API_KEY } = CONFIG.SERVICES.BACKEND;
+const { BASE_URL, API_KEY } = SERVER_CONFIG.SERVICES.BACKEND;
 
 const APIClient = axios.create({
   baseURL: BASE_URL,
