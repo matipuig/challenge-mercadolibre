@@ -17,35 +17,47 @@ import { searchProductsByQuery } from '~/services/backend';
 import { getDispatcher, dispatchSearchResults } from '~/state/hooks/searchResults';
 import { SearchResultWithCategories } from '~/types/services/backend';
 import { getQueryParamValue, getQueryParamValueAsPositiveInteger } from '~/utils/queryParams';
+import ErrorPageContent from '~/components/Pages/Error/ErrorPageContent';
+import { isNull } from 'lodash';
 
 const { DEFAULT_LIMIT_COUNT, MAX_LIMIT_COUNT } = CONSTANTS.SERVICES.BACKEND.SEARCH;
 
 interface ItemsPageProps {
-  searchResult: SearchResultWithCategories;
+  searchResult: SearchResultWithCategories | null;
 }
 
 export const getServerSideProps: GetServerSideProps<ItemsPageProps> = async (context) => {
-  const { SEARCH, LIMIT, CATEGORY, OFFSET } = CONSTANTS.ROUTES.QUERY_PARAMS;
-  const { query } = context;
-  const q = getQueryParamValue(query, SEARCH);
-  const category = getQueryParamValue(query, CATEGORY);
-  const limitInQuery = getQueryParamValueAsPositiveInteger(query, LIMIT) || DEFAULT_LIMIT_COUNT;
-  const limit = limitInQuery < MAX_LIMIT_COUNT ? limitInQuery : DEFAULT_LIMIT_COUNT;
-  const offset = getQueryParamValueAsPositiveInteger(query, OFFSET);
-  const searchResult = await searchProductsByQuery({ q, limit, offset, category });
-  return { props: { searchResult } };
+  try {
+    const { SEARCH, LIMIT, CATEGORY, OFFSET } = CONSTANTS.ROUTES.QUERY_PARAMS;
+    const { query } = context;
+    const q = getQueryParamValue(query, SEARCH);
+    const category = getQueryParamValue(query, CATEGORY);
+    const limitInQuery = getQueryParamValueAsPositiveInteger(query, LIMIT) || DEFAULT_LIMIT_COUNT;
+    const limit = limitInQuery < MAX_LIMIT_COUNT ? limitInQuery : DEFAULT_LIMIT_COUNT;
+    const offset = getQueryParamValueAsPositiveInteger(query, OFFSET);
+    const searchResult = await searchProductsByQuery({ q, limit, offset, category });
+    return { props: { searchResult } };
+  } catch (error) {
+    return { props: { searchResult: null } };
+  }
 };
 
 export const ItemsPage = (props: ItemsPageProps) => {
-  const { items, categories } = props.searchResult;
   const { t } = useTranslation();
   const texts = getAvailableI18nTexts();
   const { title, description } = texts.pages.items;
   const dispatcher = getDispatcher();
+  const { searchResult } = props;
   useEffect(() => {
-    dispatchSearchResults(dispatcher, props.searchResult);
+    if (!isNull(searchResult)) {
+      dispatchSearchResults(dispatcher, searchResult);
+    }
   }, []);
 
+  if (isNull(searchResult)) {
+    return <ErrorPageContent />;
+  }
+  const { categories, items } = searchResult;
   const itemsCount = items.length;
   return (
     <Fragment>

@@ -20,6 +20,11 @@ export const components = {
       alt: 'The product [?] has free shipping.',
       title: 'The product has free shipping.',
     },
+    noResults: {
+      mainText: 'Sin resultados.',
+      linkToMainManu:
+        'Poné al menos 2 caracteres para la búsqueda y tratá de no ser muy específico con las mismas.',
+    },
   },
   item: {
     detailedItem: {

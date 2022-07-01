@@ -3,7 +3,7 @@
  */
 
 import { AxiosError, AxiosResponse } from 'axios';
-import { pick } from 'lodash';
+import { isUndefined, pick } from 'lodash';
 
 import { APIErrorResult, APISuccessResult } from '~/types/services/common';
 import { logger, LABELS } from '~/utils/logger';
@@ -30,7 +30,7 @@ export const handleResult = <Payload>(response: AxiosResponse): APISuccessResult
 };
 
 /**
- * Gets the axios response and returns it as an API expected result.
+ * Gets the axios response and returns it as an API expected result. Returns error -1 if there is no response (proabbly network error)
  * @param axiosError Axios error response.
  */
 export const handleError = (axiosError: AxiosError): APIErrorResult => {
@@ -41,8 +41,15 @@ export const handleError = (axiosError: AxiosError): APIErrorResult => {
     responseInformation,
   });
   const response = axiosError.response as AxiosResponse;
-  const code = response.status;
   const description = axiosError.message;
+  if (isUndefined(response)) {
+    return {
+      code: -1,
+      description,
+      success: false,
+    };
+  }
+  const code = response.status;
   return {
     code,
     description,

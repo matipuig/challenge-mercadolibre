@@ -1,11 +1,10 @@
 /**
  * Contains the errored page.
  */
-import { ReactElement, useEffect } from 'react';
+import { ReactElement } from 'react';
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import { useTranslation } from 'react-i18next';
 
 import { CONSTANTS } from '~/constants';
@@ -17,14 +16,9 @@ import styles from './index.module.scss';
 const { MAIN } = CONSTANTS.ROUTES;
 
 export const ErrorPageContent = (): ReactElement => {
-  const router = useRouter();
   const { t } = useTranslation();
   const texts = getAvailableI18nTexts();
   const { mainText, linkToMainManu } = texts.components.erroredPageContent;
-  useEffect(() => {
-    const redirectorTimeout = setTimeout(() => router.replace(MAIN), 3000);
-    return () => clearTimeout(redirectorTimeout);
-  }, []);
 
   return (
     <section className={styles.container}>

@@ -20,13 +20,13 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   }, []);
   return (
     <I18nextProvider i18n={i18n}>
-      <Providers>
-        <ErrorBoundary>
+      <ErrorBoundary>
+        <Providers>
           <Layout>
             <Component {...pageProps} />
           </Layout>
-        </ErrorBoundary>
-      </Providers>
+        </Providers>
+      </ErrorBoundary>
     </I18nextProvider>
   );
 };

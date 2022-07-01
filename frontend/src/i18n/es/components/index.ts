@@ -20,6 +20,11 @@ export const components = {
       alt: 'El producto [?] tiene envío gratis.',
       title: 'El producto tiene envío gratis.',
     },
+    noResults: {
+      mainText: 'Sin resultados.',
+      linkToMainManu:
+        'Poné al menos 2 caracteres para la búsqueda y tratá de no ser muy específico con las mismas.',
+    },
   },
   item: {
     detailedItem: {

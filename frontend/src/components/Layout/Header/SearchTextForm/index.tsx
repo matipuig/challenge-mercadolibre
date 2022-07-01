@@ -10,8 +10,8 @@ import { useTranslation } from 'react-i18next';
 
 import { CONSTANTS } from '~/constants';
 import { getAvailableI18nTexts } from '~/i18n';
-import { getURLForPublicContent } from '~/utils/components';
 import { getQueryParamValue } from '~/utils/queryParams';
+import { getURLForPublicContent } from '~/utils/components';
 
 import styles from './index.module.scss';
 
@@ -36,9 +36,6 @@ export const SearchTextForm = (): ReactElement => {
   const search = getQueryParamValue(router.query, QUERY_PARAMS.SEARCH) || '';
   const defaultValues = { search };
   const executeSubmit = (data: SearchFormData) => {
-    if (data.search.length <= 2) {
-      return;
-    }
     const destination = getDestinationRoute(data);
     router.push(destination);
   };
