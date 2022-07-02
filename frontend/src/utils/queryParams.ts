@@ -7,6 +7,19 @@ import { ParsedUrlQuery } from 'querystring';
 import { isArray, isUndefined } from 'lodash';
 
 /**
+ * Returns the text being URL friendly.
+ * @param string String to make query friendly.
+ */
+export const getURLFriendlyString = (string: string): string => {
+  console.log(string);
+  const spacesReplaced = string.replace(/\s+/gim, ' ');
+  const normalizedText = spacesReplaced.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  const urlParams = new URLSearchParams();
+  urlParams.set('friendly', normalizedText);
+  return urlParams.toString().replace('friendly=', '');
+};
+
+/**
  * Returns the searched query param by its name or undefined.
  * @param query Query received.
  * @param queryParamName Name of the query param.

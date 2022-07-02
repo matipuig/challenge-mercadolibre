@@ -18,6 +18,8 @@ import { getAvailableI18nTexts } from '~/i18n';
 import { searchProductsByQuery } from '~/services/backend';
 import { getDispatcher, dispatchSearchResults } from '~/state/hooks/searchResults';
 import { SearchResultWithCategories } from '~/types/services/backend';
+import { getURLForPublicContent } from '~/utils/components';
+import { logger, LABELS } from '~/utils/logger';
 import { getQueryParamValue, getQueryParamValueAsPositiveInteger } from '~/utils/queryParams';
 
 interface ItemsPageProps {
@@ -40,6 +42,8 @@ export const getServerSideProps: GetServerSideProps<ItemsPageProps> = async (con
     const searchResult = await searchProductsByQuery({ q, limit, offset, category });
     return { props: { searchResult } };
   } catch (error) {
+    const err = error as Error;
+    logger.error(err.message, LABELS.RENDERING, { error });
     return { props: { searchResult: null } };
   }
 };
@@ -55,15 +59,43 @@ export const ItemsPage = (props: ItemsPageProps) => {
   }, []);
 
   if (isNull(searchResult)) {
-    return <ErrorPageContent />;
+    return (
+      <Fragment>
+        <NextSeo noindex />
+        <ErrorPageContent />
+      </Fragment>
+    );
   }
   const { categories, items } = searchResult;
-  const itemsCount = items.length;
+  if (items.length === 0) {
+    return (
+      <Fragment>
+        <NextSeo noindex />
+        <NoResults />
+      </Fragment>
+    );
+  }
   return (
     <Fragment>
-      <NextSeo title={t(title)} description={t(description)} />
+      <NextSeo
+        title={t(title)}
+        description={t(description)}
+        openGraph={{
+          type: 'website',
+          title: t(title),
+          description: t(description),
+          images: [
+            {
+              url: getURLForPublicContent('/images/logos/logo-medium.png'),
+              width: 106,
+              height: 72,
+              alt: t(description),
+            },
+          ],
+        }}
+      />
       <Breadcrumbs categories={categories} />
-      {itemsCount === 0 ? <NoResults /> : <ListItems items={items} />}
+      <ListItems items={items} />
     </Fragment>
   );
 };

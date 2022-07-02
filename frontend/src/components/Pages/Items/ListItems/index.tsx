@@ -7,11 +7,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 
+import { PriceDisplay } from '~/components/Pages/Common/PriceDisplay';
 import { CONSTANTS } from '~/constants';
 import { getAvailableI18nTexts } from '~/i18n';
-import { Item, Price, SellerAddress } from '~/types/services/backend';
+import { Item, SellerAddress } from '~/types/services/backend';
 import { getURLForPublicContent } from '~/utils/components';
-import { makeHumanFriendly } from '~/utils/conversors';
+import { getURLFriendlyString } from '~/utils/queryParams';
 
 import styles from './index.module.scss';
 
@@ -23,19 +24,16 @@ const { ROUTES } = CONSTANTS;
 const texts = getAvailableI18nTexts();
 const { productImageAlt, freeShippingImage } = texts.components.listItems;
 
-const getPrice = (price: Price): string => {
-  const { currency, amount } = price;
-  const currencySign = currency !== 'ARS' ? currency : '$';
-  const humanFriendlyAmount = makeHumanFriendly(amount);
-  return `${currencySign} ${humanFriendlyAmount}`;
-};
-
 const getAddress = (sellerAddress: SellerAddress): string => {
   const { city, state } = sellerAddress;
   return `${state.name}, ${city.name}`;
 };
 
-const getIitemLinkDirection = (listItem: Item): string => ROUTES.ITEM.replace(':id', listItem.id);
+const getIitemLinkDirection = (listItem: Item): string => {
+  const queriedTitle = getURLFriendlyString(listItem.title);
+  const urlWithId = ROUTES.ITEM.replace(':id', listItem.id);
+  return `${urlWithId}?descripcion=${queriedTitle}`;
+};
 
 export const ListItems = ({ items }: ListItemsProps): ReactElement => {
   const { t } = useTranslation();
@@ -60,7 +58,9 @@ export const ListItems = ({ items }: ListItemsProps): ReactElement => {
           <div className={styles.descriptionContainer}>
             <div className={styles.descriptionUpperPart}>
               <div className={styles.priceAndShippingContainer}>
-                <div className={styles.price}>{getPrice(item.price)}</div>
+                <div className={styles.price}>
+                  <PriceDisplay price={item.price} withDecimals={false} />
+                </div>
                 <div className={styles.freeShipping}>
                   {item.free_shipping || (
                     <Image

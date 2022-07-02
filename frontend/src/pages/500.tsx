@@ -17,7 +17,7 @@ export const Error500Page = () => {
   const { t } = useTranslation();
   return (
     <Fragment>
-      <NextSeo title={t(title)} description={t(description)} />
+      <NextSeo title={t(title)} description={t(description)} noindex />
       <ErrorPageContent />
     </Fragment>
   );

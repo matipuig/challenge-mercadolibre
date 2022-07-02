@@ -19,7 +19,6 @@ interface SearchFormData {
   search: string;
 }
 const { ROUTES } = CONSTANTS;
-const { t } = useTranslation();
 const texts = getAvailableI18nTexts();
 const { QUERY_PARAMS } = ROUTES;
 
@@ -31,6 +30,7 @@ const getDestinationRoute = (data: SearchFormData): string => {
 };
 
 export const SearchTextForm = (): ReactElement => {
+  const { t } = useTranslation();
   const { placeholder, tooltip } = texts.components.layout.header.searchTextForm;
   const router = useRouter();
   const search = getQueryParamValue(router.query, QUERY_PARAMS.SEARCH) || '';

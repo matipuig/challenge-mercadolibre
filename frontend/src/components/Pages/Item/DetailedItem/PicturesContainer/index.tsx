@@ -20,7 +20,7 @@ export const PicturesContainer = ({ pictures, altText }: PicturesContainerProps)
   <picture className={styles.container}>
     <Carousel
       autoPlay
-      ariaLabel=""
+      aria-hidden
       dynamicHeight={false}
       emulateTouch
       infiniteLoop

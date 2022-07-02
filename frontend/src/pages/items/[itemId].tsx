@@ -14,6 +14,7 @@ import { DetailedItem as DetailedItemComponent } from '~/components/Pages/Item/D
 import { NotFound } from '~/components/Pages/NotFound';
 import { getItemById } from '~/services/backend';
 import { DetailedItem } from '~/types/services/backend';
+import { logger, LABELS } from '~/utils/logger';
 import { getQueryParamValue } from '~/utils/queryParams';
 
 interface DetailedItemPageProps {
@@ -29,6 +30,8 @@ export const getServerSideProps: GetServerSideProps<DetailedItemPageProps> = asy
     const detailedItem = isNull(itemResult) ? null : itemResult?.item;
     return { props: { detailedItem, errored: false } };
   } catch (error) {
+    const err = error as Error;
+    logger.error(err.message, LABELS.RENDERING, { error });
     return { props: { detailedItem: null, errored: true } };
   }
 };
@@ -41,9 +44,27 @@ export const DetailedItemPage = (props: DetailedItemPageProps) => {
   if (isNull(detailedItem)) {
     return <NotFound />;
   }
+
+  const [firstPicure] = detailedItem.all_pictures;
   return (
     <Fragment>
-      <NextSeo title={detailedItem.title} description={detailedItem.description} />
+      <NextSeo
+        title={detailedItem.title}
+        description={detailedItem.description}
+        openGraph={{
+          type: 'website',
+          title: detailedItem.title,
+          description: detailedItem.description,
+          images: [
+            {
+              url: firstPicure.url,
+              width: firstPicure.width,
+              height: firstPicure.height,
+              alt: detailedItem.description,
+            },
+          ],
+        }}
+      />
       <Breadcrumbs categories={detailedItem.categories} />
       <DetailedItemComponent detailedItem={detailedItem} />
     </Fragment>

@@ -10,6 +10,9 @@ export const components = {
     breadcrumbs: {
       ariaLabel: 'Categoría [?]',
     },
+    priceDisplay: {
+      withPesos: '[?] pesos',
+    },
   },
   errorBoundary: {
     title: 'Ha ocurrido un error.',

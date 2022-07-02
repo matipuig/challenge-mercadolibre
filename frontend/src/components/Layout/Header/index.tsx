@@ -15,10 +15,10 @@ import styles from './index.module.scss';
 import { SearchTextForm } from './SearchTextForm';
 
 const { ROUTES } = CONSTANTS;
-const [t] = useTranslation();
 const texts = getAvailableI18nTexts();
 
 export const Header = (): ReactElement => {
+  const [t] = useTranslation();
   const { logo } = texts.components.layout.header;
   return (
     <header className={styles.header}>

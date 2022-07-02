@@ -6,9 +6,9 @@ import { ReactElement } from 'react';
 
 import { useTranslation } from 'react-i18next';
 
+import { PriceDisplay } from '~/components/Pages/Common/PriceDisplay';
 import { getAvailableI18nTexts } from '~/i18n';
-import { DetailedItem as DetailedItemType, Price } from '~/types/services/backend';
-import { makeHumanFriendly } from '~/utils/conversors';
+import { DetailedItem as DetailedItemType } from '~/types/services/backend';
 
 import { BuyButton } from './BuyButton';
 import styles from './index.module.scss';
@@ -21,22 +21,11 @@ interface DetailedItemProps {
 const texts = getAvailableI18nTexts();
 const { conditionAndSoldCount, descriptionLabel, picturesAlt } = texts.components.item.detailedItem;
 
-const getPrice = (price: Price): string => {
-  const { currency, amount } = price;
-  const currencySign = currency !== 'ARS' ? currency : '$';
-  const humanFriendlyAmount = makeHumanFriendly(amount);
-  return `${currencySign} ${humanFriendlyAmount}`;
-};
-
-const getDecimals = (decimals: number): string => {
-  const strDecimals = decimals.toString();
-  return strDecimals.length < 2 ? `0${strDecimals}` : strDecimals;
-};
-
 export const DetailedItem = ({ detailedItem }: DetailedItemProps): ReactElement => {
   const { t } = useTranslation();
   const itemCondition = detailedItem.condition;
   const strSoldQuantity = detailedItem.sold_quantity.toString();
+
   return (
     <section>
       <article className={styles.container}>
@@ -57,10 +46,7 @@ export const DetailedItem = ({ detailedItem }: DetailedItemProps): ReactElement 
             </div>
             <h1 className={styles.title}>{detailedItem.title}</h1>
             <div className={styles.price}>
-              <span className={styles.amount}>{getPrice(detailedItem.price)}</span>
-              <span className={styles.decimals}>
-                <sup>{getDecimals(detailedItem.price.decimals)}</sup>
-              </span>
+              <PriceDisplay price={detailedItem.price} withDecimals />
             </div>
             <div className={styles.buyButtonContainer}>
               <BuyButton detailedItem={detailedItem} />

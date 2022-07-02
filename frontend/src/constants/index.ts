@@ -6,6 +6,8 @@ import LOGS from './logs';
 import ROUTES from './routes';
 import SERVICES from './services';
 
-export const CONSTANTS = { LOGS, ROUTES, SERVICES };
+const AUTHOR = 'Matías Puig';
+
+export const CONSTANTS = { AUTHOR, LOGS, ROUTES, SERVICES };
 
 export default CONSTANTS;

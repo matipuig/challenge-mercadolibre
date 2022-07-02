@@ -8,13 +8,14 @@ import { useTranslation } from 'react-i18next';
 
 import { getAvailableI18nTexts } from '~/i18n';
 import { getURLForPublicContent } from '~/utils/components';
+
 import styles from './index.module.scss';
 
-const { t } = useTranslation();
 const texts = getAvailableI18nTexts();
+const { mainText, textAdvice } = texts.components.listItems.noResults;
 
 export const NoResults = (): ReactElement => {
-  const { mainText, textAdvice } = texts.components.listItems.noResults;
+  const { t } = useTranslation();
   return (
     <section className={styles.container}>
       <div className={styles.imageContainer}>

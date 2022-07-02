@@ -1,0 +1,8 @@
+@use '~/scss/variables/fontSizes' as fontSizes;
+
+.container {
+  font-size: inherit;
+  span {
+    font-size: inherit;
+  }
+}

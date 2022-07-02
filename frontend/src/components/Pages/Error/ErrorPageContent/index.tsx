@@ -14,11 +14,11 @@ import { getURLForPublicContent } from '~/utils/components';
 import styles from './index.module.scss';
 
 const { MAIN } = CONSTANTS.ROUTES;
-const { t } = useTranslation();
 const texts = getAvailableI18nTexts();
+const { mainText, linkToMainManu } = texts.components.erroredPageContent;
 
 export const ErrorPageContent = (): ReactElement => {
-  const { mainText, linkToMainManu } = texts.components.erroredPageContent;
+  const { t } = useTranslation();
   return (
     <section className={styles.container}>
       <div className={styles.imageContainer}>

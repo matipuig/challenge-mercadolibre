@@ -13,6 +13,11 @@ export default {
     ENVIRONMENT: 'ENVIRONMENT',
 
     /**
+     * Rendering errors.
+     */
+    RENDERING: 'RENDERING',
+
+    /**
      * Server related logs.
      */
     SERVER: 'SERVER',

@@ -10,6 +10,9 @@ export const components = {
     breadcrumbs: {
       ariaLabel: 'Category [?]',
     },
+    priceDisplay: {
+      withPesos: '[?] pesos',
+    },
   },
   errorBoundary: {
     title: 'Error.',
@@ -21,6 +24,7 @@ export const components = {
   },
   listItems: {
     productImageAlt: '[?] image.',
+
     freeShippingImage: {
       alt: 'The product [?] has free shipping.',
       title: 'The product has free shipping.',

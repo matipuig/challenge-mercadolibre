@@ -30,14 +30,21 @@ export const Breadcrumbs = ({ categories }: BreadcrumbProps): ReactElement => {
   const lastCategoryIndex = categories.length - 1;
   return (
     <nav className={styles.breadcrumbsContainer}>
-      {categories.map((e, i) => (
-        <Fragment key={e.id}>
-          <Link href={getDestinationRoute(e.id)} aria-label={t(ariaLabel)}>
+      {categories.map((category, i) => (
+        <Fragment key={category.id}>
+          <Link
+            href={getDestinationRoute(category.id)}
+            aria-label={t(ariaLabel.replace('[?]', category.name))}
+          >
             <a className={styles.breadcrumb} data-testid="breadcrumbLink">
-              {e.name}
+              {category.name}
             </a>
           </Link>
-          {i < lastCategoryIndex && <div className={styles.separator}>&gt;</div>}
+          {i < lastCategoryIndex && (
+            <div className={styles.separator} aria-hidden>
+              &gt;
+            </div>
+          )}
         </Fragment>
       ))}
     </nav>
