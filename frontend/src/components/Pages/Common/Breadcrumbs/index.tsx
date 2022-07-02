@@ -3,9 +3,11 @@
  */
 import { Fragment, ReactElement } from 'react';
 
+import { t } from 'i18next';
 import Link from 'next/link';
 
 import { CONSTANTS } from '~/constants';
+import { getAvailableI18nTexts } from '~/i18n';
 import { ItemCategory } from '~/types/services/backend';
 
 import styles from './index.module.scss';
@@ -15,6 +17,8 @@ interface BreadcrumbProps {
 }
 
 const { ROUTES } = CONSTANTS;
+const texts = getAvailableI18nTexts();
+const { ariaLabel } = texts.components.common.breadcrumbs;
 
 const getDestinationRoute = (categoryId: string): string => {
   const queryParams = new URLSearchParams();
@@ -28,7 +32,7 @@ export const Breadcrumbs = ({ categories }: BreadcrumbProps): ReactElement => {
     <nav className={styles.breadcrumbsContainer}>
       {categories.map((e, i) => (
         <Fragment key={e.id}>
-          <Link href={getDestinationRoute(e.id)}>
+          <Link href={getDestinationRoute(e.id)} aria-label={t(ariaLabel)}>
             <a className={styles.breadcrumb} data-testid="breadcrumbLink">
               {e.name}
             </a>

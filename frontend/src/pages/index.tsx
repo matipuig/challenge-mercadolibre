@@ -7,10 +7,11 @@ import { useTranslation } from 'react-i18next';
 
 import { getAvailableI18nTexts } from '~/i18n';
 
+const texts = getAvailableI18nTexts();
+const { title, description } = texts.pages.home;
+
 export const HomePage = () => {
   const { t } = useTranslation();
-  const texts = getAvailableI18nTexts();
-  const { title, description } = texts.pages.home;
   return <NextSeo title={t(title)} description={t(description)} />;
 };
 

@@ -6,6 +6,11 @@ import { layout } from './layout';
 
 export const components = {
   layout,
+  common: {
+    breadcrumbs: {
+      ariaLabel: 'Category [?]',
+    },
+  },
   errorBoundary: {
     title: 'Error.',
     text: 'There was an error. Please try again later.',

@@ -36,6 +36,7 @@ export const PicturesContainer = ({ pictures, altText }: PicturesContainerProps)
             alt={altText}
             className={styles.image}
             height={picture.height}
+            quality={100}
             src={picture.url}
             title={altText}
             width={picture.width}

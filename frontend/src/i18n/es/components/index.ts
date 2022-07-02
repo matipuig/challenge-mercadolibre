@@ -6,6 +6,11 @@ import { layout } from './layout';
 
 export const components = {
   layout,
+  common: {
+    breadcrumbs: {
+      ariaLabel: 'Categoría [?]',
+    },
+  },
   errorBoundary: {
     title: 'Ha ocurrido un error.',
     text: 'Ha ocurrido un error inesperado, por favor intente nuevamente más tarde.',

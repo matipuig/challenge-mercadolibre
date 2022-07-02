@@ -20,11 +20,13 @@ import { getDispatcher, dispatchSearchResults } from '~/state/hooks/searchResult
 import { SearchResultWithCategories } from '~/types/services/backend';
 import { getQueryParamValue, getQueryParamValueAsPositiveInteger } from '~/utils/queryParams';
 
-const { DEFAULT_LIMIT_COUNT, MAX_LIMIT_COUNT } = CONSTANTS.SERVICES.BACKEND.SEARCH;
-
 interface ItemsPageProps {
   searchResult: SearchResultWithCategories | null;
 }
+
+const { DEFAULT_LIMIT_COUNT, MAX_LIMIT_COUNT } = CONSTANTS.SERVICES.BACKEND.SEARCH;
+const texts = getAvailableI18nTexts();
+const { title, description } = texts.pages.items;
 
 export const getServerSideProps: GetServerSideProps<ItemsPageProps> = async (context) => {
   try {
@@ -44,8 +46,6 @@ export const getServerSideProps: GetServerSideProps<ItemsPageProps> = async (con
 
 export const ItemsPage = (props: ItemsPageProps) => {
   const { t } = useTranslation();
-  const texts = getAvailableI18nTexts();
-  const { title, description } = texts.pages.items;
   const dispatcher = getDispatcher();
   const { searchResult } = props;
   useEffect(() => {

@@ -16,6 +16,9 @@ interface BuyButtonProps {
   detailedItem: DetailedItem;
 }
 
+const { t } = useTranslation();
+const texts = getAvailableI18nTexts();
+
 const handleSubmit = (successText: string): void => {
   swal.fire({
     icon: 'success',
@@ -25,8 +28,6 @@ const handleSubmit = (successText: string): void => {
 };
 
 export const BuyButton = ({ detailedItem }: BuyButtonProps): ReactElement => {
-  const { t } = useTranslation();
-  const texts = getAvailableI18nTexts();
   const { caption, onClickText } = texts.components.item.detailedItem.buyButton;
   const { title } = detailedItem;
   const successText = t(onClickText).replace('[?]', title);

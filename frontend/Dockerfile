@@ -3,13 +3,7 @@
 # Use https://hub.docker.com/_/node and check for the recommended version in: https://nodejs.org/en/
 # Important: Big images come with more vulnerabilities. Try to use something like alpine. 
 ARG NODE_VERSION
-
 FROM node:${NODE_VERSION}
-ARG FRONTEND_URL
-ARG LANGUAGE
-ARG LOGS_LEVEL silly
-ARG BACKEND_BASE_URL
-ARG BACKEND_API_KEY
 
 # Install node packages and apply permissions on the begining.
 RUN mkdir -p /home/node/app/node_modules \
@@ -26,6 +20,11 @@ RUN npm install
 COPY --chown=node:node . .
 
 # Add environment variables before building.
+ARG FRONTEND_URL
+ARG LANGUAGE
+ARG LOGS_LEVEL silly
+ARG BACKEND_BASE_URL
+ARG BACKEND_API_KEY
 RUN echo "NEXT_PUBLIC_FRONTEND_BASE_URL=${FRONTEND_URL}" >> /home/node/app/.env \
     && echo "NEXT_PUBLIC_LANGUAGE=${LANGUAGE}" >> /home/node/app/.env \
     && echo "LOGS_LEVEL=${LOGS_LEVEL}" >> /home/node/app/.env \

@@ -10,12 +10,12 @@ import { useTranslation } from 'react-i18next';
 import { CONSTANTS } from '~/constants';
 import { getAvailableI18nTexts } from '~/i18n';
 import { getURLForPublicContent } from '~/utils/components';
-
 import styles from './index.module.scss';
 
+const { t } = useTranslation();
+const texts = getAvailableI18nTexts();
+
 export const NotFound = (): ReactElement => {
-  const { t } = useTranslation();
-  const texts = getAvailableI18nTexts();
   const { mainText, linkToMainManu } = texts.components.notFound;
   return (
     <section className={styles.container}>
@@ -26,6 +26,7 @@ export const NotFound = (): ReactElement => {
           width={250}
           height={100}
           alt=""
+          quality={100}
         />
       </div>
       <h3 className={styles.mainText}>{t(mainText)}</h3>

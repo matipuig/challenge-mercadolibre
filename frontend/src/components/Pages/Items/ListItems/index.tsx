@@ -20,6 +20,8 @@ interface ListItemsProps {
 }
 
 const { ROUTES } = CONSTANTS;
+const texts = getAvailableI18nTexts();
+const { productImageAlt, freeShippingImage } = texts.components.listItems;
 
 const getPrice = (price: Price): string => {
   const { currency, amount } = price;
@@ -37,8 +39,6 @@ const getIitemLinkDirection = (listItem: Item): string => ROUTES.ITEM.replace(':
 
 export const ListItems = ({ items }: ListItemsProps): ReactElement => {
   const { t } = useTranslation();
-  const texts = getAvailableI18nTexts();
-  const { productImageAlt, freeShippingImage } = texts.components.listItems;
   return (
     <section className={styles.container}>
       {items.map((item) => (
@@ -51,7 +51,7 @@ export const ListItems = ({ items }: ListItemsProps): ReactElement => {
                   src={item.picture}
                   width={160}
                   height={160}
-                  quality="100"
+                  quality={100}
                   alt={t(productImageAlt).replace('[?]', item.title)}
                 />
               </a>
@@ -66,9 +66,9 @@ export const ListItems = ({ items }: ListItemsProps): ReactElement => {
                     <Image
                       src={getURLForPublicContent('/images/icons/shipping-small.png')}
                       alt={t(freeShippingImage.alt).replace('[?]', item.title)}
+                      height={16}
                       title={t(freeShippingImage.title)}
                       width={16}
-                      height={16}
                       quality={100}
                     />
                   )}

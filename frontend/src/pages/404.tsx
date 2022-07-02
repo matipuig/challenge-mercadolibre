@@ -10,10 +10,11 @@ import { useTranslation } from 'react-i18next';
 import { NotFound } from '~/components/Pages/NotFound';
 import { getAvailableI18nTexts } from '~/i18n';
 
+const texts = getAvailableI18nTexts();
+const { title, description } = texts.pages.error404;
+
 export const Error404Page = () => {
   const { t } = useTranslation();
-  const texts = getAvailableI18nTexts();
-  const { title, description } = texts.pages.error404;
   return (
     <Fragment>
       <NextSeo title={t(title)} description={t(description)} />
