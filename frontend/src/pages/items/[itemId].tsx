@@ -52,7 +52,7 @@ export const DetailedItemPage = (props: DetailedItemPageProps) => {
         title={detailedItem.title}
         description={detailedItem.description}
         openGraph={{
-          type: 'website',
+          type: 'article',
           title: detailedItem.title,
           description: detailedItem.description,
           images: [
