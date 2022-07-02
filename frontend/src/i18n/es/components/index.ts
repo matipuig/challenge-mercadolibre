@@ -22,7 +22,7 @@ export const components = {
     },
     noResults: {
       mainText: 'Sin resultados.',
-      linkToMainManu:
+      textAdvice:
         'Poné al menos 2 caracteres para la búsqueda y tratá de no ser muy específico con las mismas.',
     },
   },

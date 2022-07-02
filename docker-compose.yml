@@ -1,27 +1,39 @@
 
-version: '3'
+version: '3.7'
 
 services:
   backend:
+    container_name: backend
+    restart: unless-stopped
     build:
       context: ./backend
       dockerfile: Dockerfile
       args:
         - NODE_VERSION=18-alpine
-    container_name: backend
-    restart: unless-stopped
     environment:
       - NODE_ENV=development
       - PORT=8080
       - LOGS_LEVEL=silly
-      - TZ=America/Argentina/Buenos_Aires
       - API_KEY=unsafe_api_key
       - SSL_MUST_USE=0
       - SSL_CERT_PATH=/no-cert
       - SSL_KEY_PATH=/no-cert
+    logging:
+      driver: 'json-file'
+      options:
+        max-file: "10"
+        max-size: "20m"
+    networks:
+      - mercadolibre
+#    volumes:
+#      - /etc/localtime:/etc/localtime:ro
+#      - /etc/timezone:/etc/timezone:ro
 
   frontend:
     container_name: frontend
+    depends_on:
+      - backend
+    restart: unless-stopped
     build:
       context: ./frontend
       dockerfile: Dockerfile
@@ -32,12 +44,24 @@ services:
         - LOGS_LEVEL=silly
         - BACKEND_BASE_URL=http://backend:8080
         - BACKEND_API_KEY=unsafe_api_key
-    restart: unless-stopped
+    logging:
+      driver: 'json-file'
+      options:
+        max-file: "10"
+        max-size: "20m"
     ports:
       - "3000:3000"
+    networks:
+      - mercadolibre
+#    volumes:
+#      - /etc/localtime:/etc/localtime:ro
+#      - /etc/timezone:/etc/timezone:ro
 
   frontend_en:
     container_name: frontend_en
+    restart: unless-stopped
+    depends_on:
+      - backend
     build:
       context: ./frontend
       dockerfile: Dockerfile
@@ -48,6 +72,20 @@ services:
         - LOGS_LEVEL=silly
         - BACKEND_BASE_URL=http://backend:8080
         - BACKEND_API_KEY=unsafe_api_key
-    restart: unless-stopped
+    logging:
+      driver: 'json-file'
+      options:
+        max-file: "10"
+        max-size: "20m"
     ports:
       - "3001:3000"
+    networks:
+      - mercadolibre
+#    volumes:
+#      - /etc/localtime:/etc/localtime:ro
+#      - /etc/timezone:/etc/timezone:ro
+
+
+networks:
+  mercadolibre:
+    driver: bridge

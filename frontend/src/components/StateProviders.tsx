@@ -1,5 +1,5 @@
 /**
- * Gives all providers to the children.
+ * Gives all state providers to the children.
  */
 
 import { PropsWithChildren } from 'react';
@@ -9,8 +9,8 @@ import {
   initialState as SearchResultsInitialState,
 } from '~/state/contexts/searchResults';
 
-export const Providers = ({ children }: PropsWithChildren<unknown>) => (
+export const StateProviders = ({ children }: PropsWithChildren<unknown>) => (
   <SearchResultsProvider value={{ ...SearchResultsInitialState }}>{children}</SearchResultsProvider>
 );
 
-export default { Providers };
+export default { StateProviders };

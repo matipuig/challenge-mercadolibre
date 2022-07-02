@@ -1,9 +1,10 @@
 # Should ignore this things...
+Dockerfile
+docs
 node_modules
+scripts
 .git
 .results
-scripts
-Dockerfile
 .dockerignore
 .pem
 .env

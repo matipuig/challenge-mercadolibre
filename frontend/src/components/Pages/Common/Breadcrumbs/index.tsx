@@ -29,7 +29,9 @@ export const Breadcrumbs = ({ categories }: BreadcrumbProps): ReactElement => {
       {categories.map((e, i) => (
         <Fragment key={e.id}>
           <Link href={getDestinationRoute(e.id)}>
-            <a className={styles.breadcrumb}>{e.name}</a>
+            <a className={styles.breadcrumb} data-testid="breadcrumbLink">
+              {e.name}
+            </a>
           </Link>
           {i < lastCategoryIndex && <div className={styles.separator}>&gt;</div>}
         </Fragment>

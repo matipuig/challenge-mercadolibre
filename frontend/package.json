@@ -13,20 +13,22 @@
   ],
   "scripts": {
     "_clean": "rimraf .next out build",
-    "_control": "run-s lint format type-check test:unit && yarn audit --production && echo \"\nControl finished!\n\"",
+    "_control": "run-s lint format type-check test:unit && echo \"\nControl finished!\n\"",
     "lint": "eslint --fix --ignore-path .eslintignore \"src/**/*.+(ts|tsx|js|jsx)\" && stylelint --fix --aei --config .stylelintrc \"src/**/*.+(css|scss|sass)\"",
     "format": "prettier --write --ignore-path .gitignore \"src/**/*.+(ts|tsx|js|jsx)\"",
-    "type-check": "tsc",
-    "test:unit": "cross-env JEST_HTML_REPORTER_OUTPUT_PATH=docs/tests/unit.html jest --no-cache --forceExit --config jest.config.js --detectOpenHandles ./tests/unit",
-    "test:integration": "cross-env JEST_HTML_REPORTER_OUTPUT_PATH=docs/tests/integration.html jest --no-cache --forceExit --config jest.config.js --detectOpenHandles ./tests/integration",
+    "test": "jest",
+    "test_coverage": "jest --coverage --collectCoverageFrom=\"./src/**\"",
+    "test_update_snapshots": "jest -u",
+    "test_unit": "jest --no-cache --forceExit --config jest.config.js --detectOpenHandles ./tests/unit",
+    "test_integration": "jest --no-cache --forceExit --config jest.config.js --detectOpenHandles ./tests/integration",
     "dev": "next dev",
-    "build-stats": "ANALYZE=true run-s build",
     "build": "npm run lint && npm run _clean && next build",
     "next_build": "next build",
     "export": "npm run build && next export",
     "start": "next start"
   },
   "dependencies": {
+    "@testing-library/jest-dom": "5.16.2",
     "axios": "0.26.0",
     "i18n": "0.15.0",
     "i18next": "21.6.11",
@@ -43,6 +45,7 @@
     "winston": "3.8.0"
   },
   "devDependencies": {
+    "@testing-library/react": "12.1.3",
     "@types/i18n": "0.13.3",
     "@types/jest": "27.4.0",
     "@types/lodash": "4.14.182",
@@ -64,6 +67,7 @@
     "eslint-plugin-testing-library": "5.0.5",
     "jest": "27.5.1",
     "prettier": "2.5.1",
+    "rimraf": "3.0.2",
     "sass": "1.49.8",
     "stylelint": "14.5.1",
     "stylelint-config-recommended": "7.0.0",

@@ -31,7 +31,7 @@ export const ErrorPageContent = (): ReactElement => {
           alt=""
         />
       </div>
-      <h3 className={styles.mainText}>{t(mainText)} </h3>
+      <h3 className={styles.mainText}>{t(mainText)}</h3>
       <p className={styles.linkToMainPageContainer}>
         <Link href={MAIN}>
           <a>{t(linkToMainManu)}</a>

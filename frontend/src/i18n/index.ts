@@ -10,22 +10,26 @@ import { PUBLIC_CONFIG } from '~/config/public';
 import { en } from './en';
 import { es } from './es';
 
-type Translations = typeof es | typeof en;
+export type Translations = typeof es | typeof en;
 
 const { LANGUAGE } = PUBLIC_CONFIG;
 
-const resources = {
+export const resources = {
   es: { ...es },
   en: { ...en },
 };
 
-const availableLanguages = Object.keys(resources);
-if (!availableLanguages.includes(LANGUAGE)) {
-  const languagesList = availableLanguages.join('" , "');
-  throw new Error(
-    `The setted language "${LANGUAGE}" is not valid. The available languages are "${languagesList}".`,
-  );
-}
+export const getAvailableLanguages = (): string[] => {
+  const availableLanguages = Object.keys(resources);
+  if (!availableLanguages.includes(LANGUAGE)) {
+    const languagesList = availableLanguages.join('" , "');
+    throw new Error(
+      `The setted language "${LANGUAGE}" is not valid. The available languages are "${languagesList}".`,
+    );
+  }
+  return availableLanguages;
+};
+getAvailableLanguages();
 
 i18next.use(initReactI18next).init({
   lng: LANGUAGE,
@@ -50,4 +54,4 @@ export const getAvailableI18nTexts = (): Translations =>
 
 export const i18n = i18next;
 
-export default { i18n, t, getAvailableI18nTexts };
+export default { i18n, t, getAvailableI18nTexts, getAvailableLanguages };

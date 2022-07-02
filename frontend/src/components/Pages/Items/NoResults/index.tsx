@@ -14,7 +14,7 @@ import styles from './index.module.scss';
 export const NoResults = (): ReactElement => {
   const { t } = useTranslation();
   const texts = getAvailableI18nTexts();
-  const { mainText, linkToMainManu } = texts.components.listItems.noResults;
+  const { mainText, textAdvice } = texts.components.listItems.noResults;
   return (
     <section className={styles.container}>
       <div className={styles.imageContainer}>
@@ -27,9 +27,7 @@ export const NoResults = (): ReactElement => {
         />
       </div>
       <h3 className={styles.mainText}>{t(mainText)}</h3>
-      <p className={styles.textAdvice}>
-        <a>{t(linkToMainManu)}</a>
-      </p>
+      <p className={styles.textAdvice}>{t(textAdvice)}</p>
     </section>
   );
 };
