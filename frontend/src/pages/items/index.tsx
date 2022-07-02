@@ -4,11 +4,13 @@
 
 import { Fragment, useEffect } from 'react';
 
+import { isNull } from 'lodash';
 import { GetServerSideProps } from 'next';
 import { NextSeo } from 'next-seo';
 import { useTranslation } from 'react-i18next';
 
 import { Breadcrumbs } from '~/components/Pages/Common/Breadcrumbs';
+import { ErrorPageContent } from '~/components/Pages/Error/ErrorPageContent';
 import { ListItems } from '~/components/Pages/Items/ListItems';
 import { NoResults } from '~/components/Pages/Items/NoResults';
 import { CONSTANTS } from '~/constants';
@@ -17,8 +19,6 @@ import { searchProductsByQuery } from '~/services/backend';
 import { getDispatcher, dispatchSearchResults } from '~/state/hooks/searchResults';
 import { SearchResultWithCategories } from '~/types/services/backend';
 import { getQueryParamValue, getQueryParamValueAsPositiveInteger } from '~/utils/queryParams';
-import ErrorPageContent from '~/components/Pages/Error/ErrorPageContent';
-import { isNull } from 'lodash';
 
 const { DEFAULT_LIMIT_COUNT, MAX_LIMIT_COUNT } = CONSTANTS.SERVICES.BACKEND.SEARCH;
 

@@ -10,8 +10,8 @@ import { useTranslation } from 'react-i18next';
 
 import { CONSTANTS } from '~/constants';
 import { getAvailableI18nTexts } from '~/i18n';
-import { getQueryParamValue } from '~/utils/queryParams';
 import { getURLForPublicContent } from '~/utils/components';
+import { getQueryParamValue } from '~/utils/queryParams';
 
 import styles from './index.module.scss';
 

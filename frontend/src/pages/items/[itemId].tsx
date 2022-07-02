@@ -9,7 +9,7 @@ import { GetServerSideProps } from 'next';
 import { NextSeo } from 'next-seo';
 
 import { Breadcrumbs } from '~/components/Pages/Common/Breadcrumbs';
-import ErrorPageContent from '~/components/Pages/Error/ErrorPageContent';
+import { ErrorPageContent } from '~/components/Pages/Error/ErrorPageContent';
 import { DetailedItem as DetailedItemComponent } from '~/components/Pages/Item/DetailedItem';
 import { NotFound } from '~/components/Pages/NotFound';
 import { getItemById } from '~/services/backend';
