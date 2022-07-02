@@ -86,6 +86,7 @@ export const ItemsPage = (props: ItemsPageProps) => {
           description: t(description),
           images: [
             {
+              secureUrl: getURLForPublicContent('/images/logos/logo-medium.png'),
               url: getURLForPublicContent('/images/logos/logo-medium.png'),
               width: 106,
               height: 72,

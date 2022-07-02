@@ -57,7 +57,8 @@ export const DetailedItemPage = (props: DetailedItemPageProps) => {
           description: detailedItem.description,
           images: [
             {
-              url: firstPicure.url,
+              secureUrl: firstPicure.url,
+              url: firstPicure.url.replace('https', 'http'),
               width: firstPicure.width,
               height: firstPicure.height,
               alt: detailedItem.description,

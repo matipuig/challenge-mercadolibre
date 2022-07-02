@@ -33,6 +33,7 @@ export const PicturesContainer = ({ pictures, altText }: PicturesContainerProps)
       {pictures.map((picture) => (
         <div key={picture.url} className={styles.imageContainer}>
           <Image
+            aria-hidden
             alt={altText}
             className={styles.image}
             height={picture.height}

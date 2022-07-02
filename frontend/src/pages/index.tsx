@@ -24,6 +24,7 @@ export const HomePage = () => {
         images: [
           {
             url: getURLForPublicContent('/images/logos/logo-medium.png'),
+            secureUrl: getURLForPublicContent('/images/logos/logo-medium.png'),
             width: 106,
             height: 72,
             alt: t(description),

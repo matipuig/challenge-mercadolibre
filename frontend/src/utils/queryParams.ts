@@ -11,11 +11,11 @@ import { isArray, isUndefined } from 'lodash';
  * @param string String to make query friendly.
  */
 export const getURLFriendlyString = (string: string): string => {
-  console.log(string);
   const spacesReplaced = string.replace(/\s+/gim, ' ');
-  const normalizedText = spacesReplaced.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  const normalizedText = spacesReplaced.normalize('NFD');
+  const noSpecialCharsText = normalizedText.replace(/[\u0300-\u036f]/g, '');
   const urlParams = new URLSearchParams();
-  urlParams.set('friendly', normalizedText);
+  urlParams.set('friendly', noSpecialCharsText);
   return urlParams.toString().replace('friendly=', '');
 };
 
