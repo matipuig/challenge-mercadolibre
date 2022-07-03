@@ -34,6 +34,7 @@ export const BuyButton = ({ detailedItem }: BuyButtonProps): ReactElement => {
   return (
     <button
       type="button"
+      name="buy"
       onClick={() => handleSubmit(successText)}
       className={styles.button}
       data-testid="buyButton"

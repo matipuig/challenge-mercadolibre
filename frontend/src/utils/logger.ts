@@ -10,6 +10,7 @@ import { SERVER_CONFIG } from '~/config/server';
 import { CONSTANTS } from '~/constants';
 import { LogContext, LogLevels } from '~/types/logger';
 
+const { APP_NAME, APP_VERSION, NODE_ENV, LOGS_LEVEL } = SERVER_CONFIG;
 const LOG_LABELS = CONSTANTS.LOGS.LABELS;
 
 const { combine, prettyPrint, json } = winston.format;
@@ -18,7 +19,7 @@ const consoleTransport = new winston.transports.Console();
 const transports: winston.transport[] = [consoleTransport];
 const winstonLogger = winston.createLogger({
   transports,
-  level: SERVER_CONFIG.LOGS_LEVEL,
+  level: LOGS_LEVEL,
   format: combine(json(), prettyPrint()),
   handleExceptions: true,
 });
@@ -27,8 +28,9 @@ const log = (message: string, level: LogLevels, label: string, logContext = {}):
   const contextCopy = cloneDeep(logContext);
   const meta = {
     ...contextCopy,
-    app: SERVER_CONFIG.APP_NAME,
-    appVersion: SERVER_CONFIG.APP_VERSION,
+    app: APP_NAME,
+    appVersion: APP_VERSION,
+    environment: NODE_ENV,
   };
   const timestamp = new Date();
   winstonLogger.log(level, message, { label, timestamp, context: { ...meta } });

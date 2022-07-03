@@ -22,6 +22,7 @@
     "test_watch": "jest --no-cache --forceExit --config jest.config.js --detectOpenHandles --watch ./tests/unit",
     "dev": "next dev",
     "build": "npm run lint && npm run _clean && next build",
+    "test_unit_update_snapshots": "jest -u",
     "next_build": "next build",
     "export": "npm run build && next export",
     "start": "next start"

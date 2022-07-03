@@ -1,4 +1,6 @@
 # Should ignore this things...
+cypress
+cypress.env.json
 Dockerfile
 docs
 node_modules
@@ -8,5 +10,7 @@ scripts
 .dockerignore
 .pem
 .env
+.env.production
+.env.test
 .next
 .swc

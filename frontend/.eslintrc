@@ -2,7 +2,6 @@
   "env": {
     "browser": true,
     "node": true,
-    // "jest": true,
     "es2020": true
   },
   "parser": "@typescript-eslint/parser",
@@ -105,10 +104,10 @@
       "node": {
         "paths": ["src"],
         "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      },
+      "jest": {
+        "paths": ["./tests"]
       }
-      // "jest": {
-      //   "paths": ["./tests"]
-      // }
     },
     "react": {
       "version": "detect"

@@ -25,6 +25,7 @@ export const PicturesContainer = ({ pictures, altText }: PicturesContainerProps)
       emulateTouch
       infiniteLoop
       interval={3000}
+      showArrows={false}
       showIndicators={false}
       showStatus={false}
       showThumbs={false}

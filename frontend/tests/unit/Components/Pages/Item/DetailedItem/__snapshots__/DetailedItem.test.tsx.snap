@@ -21,7 +21,7 @@ Object {
                   >
                     <button
                       aria-label="previous slide / item"
-                      class="control-arrow control-prev"
+                      class="control-arrow control-prev control-disabled"
                       type="button"
                     />
                     <div
@@ -314,7 +314,7 @@ Object {
                     </div>
                     <button
                       aria-label="next slide / item"
-                      class="control-arrow control-next"
+                      class="control-arrow control-next control-disabled"
                       type="button"
                     />
                   </div>
@@ -350,6 +350,7 @@ Object {
               <div>
                 <button
                   data-testid="buyButton"
+                  name="buy"
                   type="button"
                 >
                   Comprar
@@ -406,7 +407,7 @@ RAZA DE PELO LARGO (NO MUDA PELO)
                 >
                   <button
                     aria-label="previous slide / item"
-                    class="control-arrow control-prev"
+                    class="control-arrow control-prev control-disabled"
                     type="button"
                   />
                   <div
@@ -699,7 +700,7 @@ RAZA DE PELO LARGO (NO MUDA PELO)
                   </div>
                   <button
                     aria-label="next slide / item"
-                    class="control-arrow control-next"
+                    class="control-arrow control-next control-disabled"
                     type="button"
                   />
                 </div>
@@ -735,6 +736,7 @@ RAZA DE PELO LARGO (NO MUDA PELO)
             <div>
               <button
                 data-testid="buyButton"
+                name="buy"
                 type="button"
               >
                 Comprar
