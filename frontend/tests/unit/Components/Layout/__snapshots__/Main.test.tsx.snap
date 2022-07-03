@@ -1,65 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Common breadcrumbs component matches snapshot. 1`] = `
+exports[`Layout main matches snapshot. 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <nav>
-        <a
-          data-testid="breadcrumbLink"
-          href="/items?category=MLA1071"
-        >
-          Animales y Mascotas
-        </a>
+      <main
+        data-testid="main"
+      >
         <div>
-          &gt;
+          <div />
         </div>
-        <a
-          data-testid="breadcrumbLink"
-          href="/items?category=MLA1072"
-        >
-          Perros
-        </a>
-        <div>
-          &gt;
-        </div>
-        <a
-          data-testid="breadcrumbLink"
-          href="/items?category=MLA1073"
-        >
-          Perros de Raza
-        </a>
-      </nav>
+      </main>
     </div>
   </body>,
   "container": <div>
-    <nav>
-      <a
-        data-testid="breadcrumbLink"
-        href="/items?category=MLA1071"
-      >
-        Animales y Mascotas
-      </a>
+    <main
+      data-testid="main"
+    >
       <div>
-        &gt;
+        <div />
       </div>
-      <a
-        data-testid="breadcrumbLink"
-        href="/items?category=MLA1072"
-      >
-        Perros
-      </a>
-      <div>
-        &gt;
-      </div>
-      <a
-        data-testid="breadcrumbLink"
-        href="/items?category=MLA1073"
-      >
-        Perros de Raza
-      </a>
-    </nav>
+    </main>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

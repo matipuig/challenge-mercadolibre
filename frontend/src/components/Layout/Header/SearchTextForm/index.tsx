@@ -41,11 +41,17 @@ export const SearchTextForm = (): ReactElement => {
   };
   const { register, handleSubmit } = useForm({ defaultValues });
   return (
-    <form onSubmit={handleSubmit(executeSubmit)} className={styles.searchForm}>
+    <form
+      onSubmit={handleSubmit(executeSubmit)}
+      className={styles.searchForm}
+      data-testid="searchTextForm"
+    >
+      <input type="hidden" value={search} data-testid="originalInputValueFromQuery" />
       <input
         {...register('search')}
         className={styles.searchInputText}
         placeholder={t(placeholder)}
+        maxLength={CONSTANTS.SERVICES.BACKEND.SEARCH.MAX_TEXT_LENGTH}
       />
       <button
         type="submit"

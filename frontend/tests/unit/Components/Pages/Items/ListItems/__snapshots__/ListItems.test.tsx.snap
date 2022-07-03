@@ -1,0 +1,698 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List items component matches snapshot. 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <section>
+        <article
+          data-testid="listItemsItem"
+        >
+          <figure
+            data-testid="listItemsItemImage"
+          >
+            <a
+              href="/items/MLA1144829687?description=Motosierra+A+Nafta+Philco+52cc+Mjpmo217+2.4hp"
+            >
+              <span
+                style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+              >
+                <span
+                  style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+                >
+                  <img
+                    alt=""
+                    aria-hidden="true"
+                    src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27160%27%20height=%27160%27/%3e"
+                    style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                  />
+                </span>
+                <img
+                  alt="Imagen de Motosierra A Nafta Philco 52cc Mjpmo217 2.4hp."
+                  data-nimg="intrinsic"
+                  decoding="async"
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                  style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                />
+                <noscript />
+              </span>
+            </a>
+          </figure>
+          <div>
+            <div>
+              <div>
+                <div>
+                  <div
+                    aria-label="17399 pesos"
+                    data-testid="priceDisplay"
+                  >
+                    <span>
+                      $
+                       
+                      17.399
+                    </span>
+                  </div>
+                </div>
+                <div />
+              </div>
+              <div>
+                Córdoba, Córdoba
+              </div>
+            </div>
+            <a
+              href="/items/MLA1144829687?description=Motosierra+A+Nafta+Philco+52cc+Mjpmo217+2.4hp"
+            >
+              <h2>
+                Motosierra A Nafta Philco 52cc Mjpmo217 2.4hp
+              </h2>
+            </a>
+          </div>
+        </article>
+        <article
+          data-testid="listItemsItem"
+        >
+          <figure
+            data-testid="listItemsItemImage"
+          >
+            <a
+              href="/items/MLA926186472?description=Silla+Plastica+X+10+Apilable+Reforzada+Negro+Reina+Quality+"
+            >
+              <span
+                style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+              >
+                <span
+                  style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+                >
+                  <img
+                    alt=""
+                    aria-hidden="true"
+                    src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27160%27%20height=%27160%27/%3e"
+                    style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                  />
+                </span>
+                <img
+                  alt="Imagen de Silla Plástica X 10 Apilable Reforzada Negro Reina Quality ."
+                  data-nimg="intrinsic"
+                  decoding="async"
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                  style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                />
+                <noscript />
+              </span>
+            </a>
+          </figure>
+          <div>
+            <div>
+              <div>
+                <div>
+                  <div
+                    aria-label="19199 pesos"
+                    data-testid="priceDisplay"
+                  >
+                    <span>
+                      $
+                       
+                      19.199
+                    </span>
+                  </div>
+                </div>
+                <div />
+              </div>
+              <div>
+                Santa Fe, Villa Gobernador Gálvez
+              </div>
+            </div>
+            <a
+              href="/items/MLA926186472?description=Silla+Plastica+X+10+Apilable+Reforzada+Negro+Reina+Quality+"
+            >
+              <h2>
+                Silla Plástica X 10 Apilable Reforzada Negro Reina Quality 
+              </h2>
+            </a>
+          </div>
+        </article>
+        <article
+          data-testid="listItemsItem"
+        >
+          <figure
+            data-testid="listItemsItemImage"
+          >
+            <a
+              href="/items/MLA850868389?description=Sopladora+Aspiradora+Philco+Mjpsa116+Electrica+2600w+220v+-+240v"
+            >
+              <span
+                style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+              >
+                <span
+                  style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+                >
+                  <img
+                    alt=""
+                    aria-hidden="true"
+                    src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27160%27%20height=%27160%27/%3e"
+                    style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                  />
+                </span>
+                <img
+                  alt="Imagen de Sopladora Aspiradora Philco Mjpsa116  Eléctrica 2600w 220v - 240v."
+                  data-nimg="intrinsic"
+                  decoding="async"
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                  style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                />
+                <noscript />
+              </span>
+            </a>
+          </figure>
+          <div>
+            <div>
+              <div>
+                <div>
+                  <div
+                    aria-label="10899 pesos"
+                    data-testid="priceDisplay"
+                  >
+                    <span>
+                      $
+                       
+                      10.899
+                    </span>
+                  </div>
+                </div>
+                <div />
+              </div>
+              <div>
+                Buenos Aires, Tristán Suarez
+              </div>
+            </div>
+            <a
+              href="/items/MLA850868389?description=Sopladora+Aspiradora+Philco+Mjpsa116+Electrica+2600w+220v+-+240v"
+            >
+              <h2>
+                Sopladora Aspiradora Philco Mjpsa116  Eléctrica 2600w 220v - 240v
+              </h2>
+            </a>
+          </div>
+        </article>
+        <article
+          data-testid="listItemsItem"
+        >
+          <figure
+            data-testid="listItemsItemImage"
+          >
+            <a
+              href="/items/MLA1121494420?description=Sopladora+Daewoo+Daeb600+Electrica+600w+240v"
+            >
+              <span
+                style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+              >
+                <span
+                  style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+                >
+                  <img
+                    alt=""
+                    aria-hidden="true"
+                    src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27160%27%20height=%27160%27/%3e"
+                    style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                  />
+                </span>
+                <img
+                  alt="Imagen de Sopladora Daewoo Daeb600  Eléctrica 600w 240v."
+                  data-nimg="intrinsic"
+                  decoding="async"
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                  style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                />
+                <noscript />
+              </span>
+            </a>
+          </figure>
+          <div>
+            <div>
+              <div>
+                <div>
+                  <div
+                    aria-label="7820 pesos"
+                    data-testid="priceDisplay"
+                  >
+                    <span>
+                      $
+                       
+                      7.820
+                    </span>
+                  </div>
+                </div>
+                <div />
+              </div>
+              <div>
+                Buenos Aires, San Justo
+              </div>
+            </div>
+            <a
+              href="/items/MLA1121494420?description=Sopladora+Daewoo+Daeb600+Electrica+600w+240v"
+            >
+              <h2>
+                Sopladora Daewoo Daeb600  Eléctrica 600w 240v
+              </h2>
+            </a>
+          </div>
+        </article>
+        <article
+          data-testid="listItemsItem"
+        >
+          <figure
+            data-testid="listItemsItemImage"
+          >
+            <a
+              href="/items/MLA883353487?description=Sillas+Plasticas+Reforzadas+Apilables+Reina+Pack+10"
+            >
+              <span
+                style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+              >
+                <span
+                  style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+                >
+                  <img
+                    alt=""
+                    aria-hidden="true"
+                    src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27160%27%20height=%27160%27/%3e"
+                    style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                  />
+                </span>
+                <img
+                  alt="Imagen de Sillas Plasticas Reforzadas Apilables Reina Pack 10."
+                  data-nimg="intrinsic"
+                  decoding="async"
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                  style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                />
+                <noscript />
+              </span>
+            </a>
+          </figure>
+          <div>
+            <div>
+              <div>
+                <div>
+                  <div
+                    aria-label="20490 pesos"
+                    data-testid="priceDisplay"
+                  >
+                    <span>
+                      $
+                       
+                      20.490
+                    </span>
+                  </div>
+                </div>
+                <div />
+              </div>
+              <div>
+                Buenos Aires, Vicente López
+              </div>
+            </div>
+            <a
+              href="/items/MLA883353487?description=Sillas+Plasticas+Reforzadas+Apilables+Reina+Pack+10"
+            >
+              <h2>
+                Sillas Plasticas Reforzadas Apilables Reina Pack 10
+              </h2>
+            </a>
+          </div>
+        </article>
+      </section>
+    </div>
+  </body>,
+  "container": <div>
+    <section>
+      <article
+        data-testid="listItemsItem"
+      >
+        <figure
+          data-testid="listItemsItemImage"
+        >
+          <a
+            href="/items/MLA1144829687?description=Motosierra+A+Nafta+Philco+52cc+Mjpmo217+2.4hp"
+          >
+            <span
+              style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+            >
+              <span
+                style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27160%27%20height=%27160%27/%3e"
+                  style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                />
+              </span>
+              <img
+                alt="Imagen de Motosierra A Nafta Philco 52cc Mjpmo217 2.4hp."
+                data-nimg="intrinsic"
+                decoding="async"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+              />
+              <noscript />
+            </span>
+          </a>
+        </figure>
+        <div>
+          <div>
+            <div>
+              <div>
+                <div
+                  aria-label="17399 pesos"
+                  data-testid="priceDisplay"
+                >
+                  <span>
+                    $
+                     
+                    17.399
+                  </span>
+                </div>
+              </div>
+              <div />
+            </div>
+            <div>
+              Córdoba, Córdoba
+            </div>
+          </div>
+          <a
+            href="/items/MLA1144829687?description=Motosierra+A+Nafta+Philco+52cc+Mjpmo217+2.4hp"
+          >
+            <h2>
+              Motosierra A Nafta Philco 52cc Mjpmo217 2.4hp
+            </h2>
+          </a>
+        </div>
+      </article>
+      <article
+        data-testid="listItemsItem"
+      >
+        <figure
+          data-testid="listItemsItemImage"
+        >
+          <a
+            href="/items/MLA926186472?description=Silla+Plastica+X+10+Apilable+Reforzada+Negro+Reina+Quality+"
+          >
+            <span
+              style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+            >
+              <span
+                style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27160%27%20height=%27160%27/%3e"
+                  style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                />
+              </span>
+              <img
+                alt="Imagen de Silla Plástica X 10 Apilable Reforzada Negro Reina Quality ."
+                data-nimg="intrinsic"
+                decoding="async"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+              />
+              <noscript />
+            </span>
+          </a>
+        </figure>
+        <div>
+          <div>
+            <div>
+              <div>
+                <div
+                  aria-label="19199 pesos"
+                  data-testid="priceDisplay"
+                >
+                  <span>
+                    $
+                     
+                    19.199
+                  </span>
+                </div>
+              </div>
+              <div />
+            </div>
+            <div>
+              Santa Fe, Villa Gobernador Gálvez
+            </div>
+          </div>
+          <a
+            href="/items/MLA926186472?description=Silla+Plastica+X+10+Apilable+Reforzada+Negro+Reina+Quality+"
+          >
+            <h2>
+              Silla Plástica X 10 Apilable Reforzada Negro Reina Quality 
+            </h2>
+          </a>
+        </div>
+      </article>
+      <article
+        data-testid="listItemsItem"
+      >
+        <figure
+          data-testid="listItemsItemImage"
+        >
+          <a
+            href="/items/MLA850868389?description=Sopladora+Aspiradora+Philco+Mjpsa116+Electrica+2600w+220v+-+240v"
+          >
+            <span
+              style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+            >
+              <span
+                style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27160%27%20height=%27160%27/%3e"
+                  style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                />
+              </span>
+              <img
+                alt="Imagen de Sopladora Aspiradora Philco Mjpsa116  Eléctrica 2600w 220v - 240v."
+                data-nimg="intrinsic"
+                decoding="async"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+              />
+              <noscript />
+            </span>
+          </a>
+        </figure>
+        <div>
+          <div>
+            <div>
+              <div>
+                <div
+                  aria-label="10899 pesos"
+                  data-testid="priceDisplay"
+                >
+                  <span>
+                    $
+                     
+                    10.899
+                  </span>
+                </div>
+              </div>
+              <div />
+            </div>
+            <div>
+              Buenos Aires, Tristán Suarez
+            </div>
+          </div>
+          <a
+            href="/items/MLA850868389?description=Sopladora+Aspiradora+Philco+Mjpsa116+Electrica+2600w+220v+-+240v"
+          >
+            <h2>
+              Sopladora Aspiradora Philco Mjpsa116  Eléctrica 2600w 220v - 240v
+            </h2>
+          </a>
+        </div>
+      </article>
+      <article
+        data-testid="listItemsItem"
+      >
+        <figure
+          data-testid="listItemsItemImage"
+        >
+          <a
+            href="/items/MLA1121494420?description=Sopladora+Daewoo+Daeb600+Electrica+600w+240v"
+          >
+            <span
+              style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+            >
+              <span
+                style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27160%27%20height=%27160%27/%3e"
+                  style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                />
+              </span>
+              <img
+                alt="Imagen de Sopladora Daewoo Daeb600  Eléctrica 600w 240v."
+                data-nimg="intrinsic"
+                decoding="async"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+              />
+              <noscript />
+            </span>
+          </a>
+        </figure>
+        <div>
+          <div>
+            <div>
+              <div>
+                <div
+                  aria-label="7820 pesos"
+                  data-testid="priceDisplay"
+                >
+                  <span>
+                    $
+                     
+                    7.820
+                  </span>
+                </div>
+              </div>
+              <div />
+            </div>
+            <div>
+              Buenos Aires, San Justo
+            </div>
+          </div>
+          <a
+            href="/items/MLA1121494420?description=Sopladora+Daewoo+Daeb600+Electrica+600w+240v"
+          >
+            <h2>
+              Sopladora Daewoo Daeb600  Eléctrica 600w 240v
+            </h2>
+          </a>
+        </div>
+      </article>
+      <article
+        data-testid="listItemsItem"
+      >
+        <figure
+          data-testid="listItemsItemImage"
+        >
+          <a
+            href="/items/MLA883353487?description=Sillas+Plasticas+Reforzadas+Apilables+Reina+Pack+10"
+          >
+            <span
+              style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+            >
+              <span
+                style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27160%27%20height=%27160%27/%3e"
+                  style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                />
+              </span>
+              <img
+                alt="Imagen de Sillas Plasticas Reforzadas Apilables Reina Pack 10."
+                data-nimg="intrinsic"
+                decoding="async"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+              />
+              <noscript />
+            </span>
+          </a>
+        </figure>
+        <div>
+          <div>
+            <div>
+              <div>
+                <div
+                  aria-label="20490 pesos"
+                  data-testid="priceDisplay"
+                >
+                  <span>
+                    $
+                     
+                    20.490
+                  </span>
+                </div>
+              </div>
+              <div />
+            </div>
+            <div>
+              Buenos Aires, Vicente López
+            </div>
+          </div>
+          <a
+            href="/items/MLA883353487?description=Sillas+Plasticas+Reforzadas+Apilables+Reina+Pack+10"
+          >
+            <h2>
+              Sillas Plasticas Reforzadas Apilables Reina Pack 10
+            </h2>
+          </a>
+        </div>
+      </article>
+    </section>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

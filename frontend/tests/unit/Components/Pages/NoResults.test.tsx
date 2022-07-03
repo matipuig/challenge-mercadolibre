@@ -2,17 +2,17 @@
  * Contains the unit tests for not found content.
  */
 import { cleanup, render, RenderResult, screen } from '@testing-library/react';
-import { NoResults } from '../../../src/components/Pages/Items/NoResults';
-import { t, getAvailableI18nTexts, Translations } from '../../../src/i18n';
+import { NoResults } from '../../../../src/components/Pages/Items/NoResults';
+import { t, getAvailableI18nTexts } from '../../../../src/i18n';
 import '@testing-library/jest-dom/extend-expect';
+
+const texts = getAvailableI18nTexts();
 
 describe('Not results component', () => {
   let noResults: RenderResult;
-  let texts: Translations;
 
   beforeEach(() => {
     noResults = render(<NoResults />);
-    texts = getAvailableI18nTexts();
   });
 
   afterEach(() => {

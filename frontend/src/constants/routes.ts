@@ -41,5 +41,10 @@ export default {
      * Category query param.
      */
     CATEGORY: 'category',
+
+    /**
+     * Description query param.
+     */
+    DESCRIPTION: 'description',
   },
 };

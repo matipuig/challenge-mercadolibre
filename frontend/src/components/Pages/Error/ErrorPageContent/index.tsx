@@ -20,7 +20,7 @@ const { mainText, linkToMainManu } = texts.components.erroredPageContent;
 export const ErrorPageContent = (): ReactElement => {
   const { t } = useTranslation();
   return (
-    <section className={styles.container}>
+    <section className={styles.container} data-testid="errorPageContentComponent">
       <div className={styles.imageContainer}>
         <Image
           className={styles.image}

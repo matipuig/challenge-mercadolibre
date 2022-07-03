@@ -1,0 +1,828 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Detailed item component matches snapshot. 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <section>
+        <article>
+          <div>
+            <div>
+              <picture
+                data-testid="picturesContainer"
+              >
+                <div
+                  class="carousel-root"
+                >
+                  <div
+                    class="carousel carousel-slider"
+                    style="width: 100%;"
+                  >
+                    <button
+                      aria-label="previous slide / item"
+                      class="control-arrow control-prev"
+                      type="button"
+                    />
+                    <div
+                      class="slider-wrapper axis-horizontal"
+                    >
+                      <ul
+                        class="slider animated"
+                        style="transform: translate3d(-100%,0,0); transition-duration: 350ms;"
+                      >
+                        <li
+                          class="slide"
+                        >
+                          <div>
+                            <span
+                              style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+                            >
+                              <span
+                                style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+                              >
+                                <img
+                                  alt=""
+                                  aria-hidden="true"
+                                  src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27375%27%20height=%27500%27/%3e"
+                                  style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                                />
+                              </span>
+                              <img
+                                alt="Imagen de Perro De Raza /cachorros Shitzu Tzu Mini Hembra-macho."
+                                aria-hidden="true"
+                                data-nimg="intrinsic"
+                                data-testid="picturesContainerPicture"
+                                decoding="async"
+                                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                                title="Imagen de Perro De Raza /cachorros Shitzu Tzu Mini Hembra-macho."
+                              />
+                              <noscript />
+                            </span>
+                          </div>
+                        </li>
+                        <li
+                          class="slide selected previous"
+                        >
+                          <div>
+                            <span
+                              style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+                            >
+                              <span
+                                style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+                              >
+                                <img
+                                  alt=""
+                                  aria-hidden="true"
+                                  src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27281%27%20height=%27500%27/%3e"
+                                  style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                                />
+                              </span>
+                              <img
+                                alt="Imagen de Perro De Raza /cachorros Shitzu Tzu Mini Hembra-macho."
+                                aria-hidden="true"
+                                data-nimg="intrinsic"
+                                data-testid="picturesContainerPicture"
+                                decoding="async"
+                                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                                title="Imagen de Perro De Raza /cachorros Shitzu Tzu Mini Hembra-macho."
+                              />
+                              <noscript />
+                            </span>
+                          </div>
+                        </li>
+                        <li
+                          class="slide"
+                        >
+                          <div>
+                            <span
+                              style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+                            >
+                              <span
+                                style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+                              >
+                                <img
+                                  alt=""
+                                  aria-hidden="true"
+                                  src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27375%27%20height=%27500%27/%3e"
+                                  style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                                />
+                              </span>
+                              <img
+                                alt="Imagen de Perro De Raza /cachorros Shitzu Tzu Mini Hembra-macho."
+                                aria-hidden="true"
+                                data-nimg="intrinsic"
+                                data-testid="picturesContainerPicture"
+                                decoding="async"
+                                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                                title="Imagen de Perro De Raza /cachorros Shitzu Tzu Mini Hembra-macho."
+                              />
+                              <noscript />
+                            </span>
+                          </div>
+                        </li>
+                        <li
+                          class="slide"
+                        >
+                          <div>
+                            <span
+                              style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+                            >
+                              <span
+                                style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+                              >
+                                <img
+                                  alt=""
+                                  aria-hidden="true"
+                                  src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27308%27%20height=%27500%27/%3e"
+                                  style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                                />
+                              </span>
+                              <img
+                                alt="Imagen de Perro De Raza /cachorros Shitzu Tzu Mini Hembra-macho."
+                                aria-hidden="true"
+                                data-nimg="intrinsic"
+                                data-testid="picturesContainerPicture"
+                                decoding="async"
+                                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                                title="Imagen de Perro De Raza /cachorros Shitzu Tzu Mini Hembra-macho."
+                              />
+                              <noscript />
+                            </span>
+                          </div>
+                        </li>
+                        <li
+                          class="slide"
+                        >
+                          <div>
+                            <span
+                              style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+                            >
+                              <span
+                                style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+                              >
+                                <img
+                                  alt=""
+                                  aria-hidden="true"
+                                  src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27375%27%20height=%27500%27/%3e"
+                                  style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                                />
+                              </span>
+                              <img
+                                alt="Imagen de Perro De Raza /cachorros Shitzu Tzu Mini Hembra-macho."
+                                aria-hidden="true"
+                                data-nimg="intrinsic"
+                                data-testid="picturesContainerPicture"
+                                decoding="async"
+                                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                                title="Imagen de Perro De Raza /cachorros Shitzu Tzu Mini Hembra-macho."
+                              />
+                              <noscript />
+                            </span>
+                          </div>
+                        </li>
+                        <li
+                          class="slide"
+                        >
+                          <div>
+                            <span
+                              style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+                            >
+                              <span
+                                style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+                              >
+                                <img
+                                  alt=""
+                                  aria-hidden="true"
+                                  src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27375%27%20height=%27500%27/%3e"
+                                  style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                                />
+                              </span>
+                              <img
+                                alt="Imagen de Perro De Raza /cachorros Shitzu Tzu Mini Hembra-macho."
+                                aria-hidden="true"
+                                data-nimg="intrinsic"
+                                data-testid="picturesContainerPicture"
+                                decoding="async"
+                                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                                title="Imagen de Perro De Raza /cachorros Shitzu Tzu Mini Hembra-macho."
+                              />
+                              <noscript />
+                            </span>
+                          </div>
+                        </li>
+                        <li
+                          class="slide"
+                        >
+                          <div>
+                            <span
+                              style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+                            >
+                              <span
+                                style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+                              >
+                                <img
+                                  alt=""
+                                  aria-hidden="true"
+                                  src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27407%27%20height=%27500%27/%3e"
+                                  style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                                />
+                              </span>
+                              <img
+                                alt="Imagen de Perro De Raza /cachorros Shitzu Tzu Mini Hembra-macho."
+                                aria-hidden="true"
+                                data-nimg="intrinsic"
+                                data-testid="picturesContainerPicture"
+                                decoding="async"
+                                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                                title="Imagen de Perro De Raza /cachorros Shitzu Tzu Mini Hembra-macho."
+                              />
+                              <noscript />
+                            </span>
+                          </div>
+                        </li>
+                        <li
+                          class="slide"
+                        >
+                          <div>
+                            <span
+                              style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+                            >
+                              <span
+                                style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+                              >
+                                <img
+                                  alt=""
+                                  aria-hidden="true"
+                                  src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27375%27%20height=%27500%27/%3e"
+                                  style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                                />
+                              </span>
+                              <img
+                                alt="Imagen de Perro De Raza /cachorros Shitzu Tzu Mini Hembra-macho."
+                                aria-hidden="true"
+                                data-nimg="intrinsic"
+                                data-testid="picturesContainerPicture"
+                                decoding="async"
+                                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                                title="Imagen de Perro De Raza /cachorros Shitzu Tzu Mini Hembra-macho."
+                              />
+                              <noscript />
+                            </span>
+                          </div>
+                        </li>
+                        <li
+                          class="slide selected previous"
+                        >
+                          <div>
+                            <span
+                              style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+                            >
+                              <span
+                                style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+                              >
+                                <img
+                                  alt=""
+                                  aria-hidden="true"
+                                  src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27281%27%20height=%27500%27/%3e"
+                                  style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                                />
+                              </span>
+                              <img
+                                alt="Imagen de Perro De Raza /cachorros Shitzu Tzu Mini Hembra-macho."
+                                aria-hidden="true"
+                                data-nimg="intrinsic"
+                                data-testid="picturesContainerPicture"
+                                decoding="async"
+                                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                                title="Imagen de Perro De Raza /cachorros Shitzu Tzu Mini Hembra-macho."
+                              />
+                              <noscript />
+                            </span>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <button
+                      aria-label="next slide / item"
+                      class="control-arrow control-next"
+                      type="button"
+                    />
+                  </div>
+                </div>
+              </picture>
+            </div>
+            <div>
+              <div>
+                Nuevo | 0 vendidos
+              </div>
+              <h1>
+                Perro De Raza /cachorros Shitzu Tzu Mini Hembra-macho
+              </h1>
+              <div>
+                <div
+                  aria-label="45000 pesos"
+                  data-testid="priceDisplay"
+                >
+                  <span>
+                    $
+                     
+                    45.000
+                  </span>
+                  <span
+                    aria-hidden="true"
+                  >
+                    <sup>
+                      00
+                    </sup>
+                  </span>
+                </div>
+              </div>
+              <div>
+                <button
+                  data-testid="buyButton"
+                  type="button"
+                >
+                  Comprar
+                </button>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h2>
+              Descripción del produco
+            </h2>
+            <p
+              data-testid="detailedItemDescription"
+            >
+              LEER :
+no se me permite pasar ningún tipo de contacto ni dirección por este medio a no ser que compre mi publicación de 200.
+COMPRAR CON TRANQUILIDAD PUBLICACION ACCESORIOS SHITZU MELI Y COORDINAMOS. (si no hay disponibilidad se puede cancelar dicha compra)
+En caso de querer comprar por mercado libre con tarjeta COMPRAR PUBLICACION CACHORROS SHITZU MACHO/ HEMBRA PAGO CON TARJETA . 
+
+VACUNADOS Y DESPARACITADOS!
+
+MACHITO NEGRO DOS MESES
+LISTO PARA ENTREGA!! 
+para más info comprar la publicación Accesorios shitzu meli y coordinamos por privado!
+
+ Se entregan a partir de los 45 días en adelante una vez que han sido vacunados y previamente desparacitados. Se alimentan con royal canin y están super cuidados y mimados!!
+
+HERMOSOS MIMOSOS Y COMPAÑEROS SHITZU MINI.
+RAZA DE PELO LARGO (NO MUDA PELO)
+-FACIL DE DOMESTICAR
+-MUY INTELIGENTES Y TRANQUILOS.
+-RAZA PEQUEÑA IDEAL PARA DEPARTAMENTOS.
+-BUENOS CON NIÑOS U OTRAS MASCOTAS.
+            </p>
+          </div>
+        </article>
+      </section>
+    </div>
+  </body>,
+  "container": <div>
+    <section>
+      <article>
+        <div>
+          <div>
+            <picture
+              data-testid="picturesContainer"
+            >
+              <div
+                class="carousel-root"
+              >
+                <div
+                  class="carousel carousel-slider"
+                  style="width: 100%;"
+                >
+                  <button
+                    aria-label="previous slide / item"
+                    class="control-arrow control-prev"
+                    type="button"
+                  />
+                  <div
+                    class="slider-wrapper axis-horizontal"
+                  >
+                    <ul
+                      class="slider animated"
+                      style="transform: translate3d(-100%,0,0); transition-duration: 350ms;"
+                    >
+                      <li
+                        class="slide"
+                      >
+                        <div>
+                          <span
+                            style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+                          >
+                            <span
+                              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+                            >
+                              <img
+                                alt=""
+                                aria-hidden="true"
+                                src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27375%27%20height=%27500%27/%3e"
+                                style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                              />
+                            </span>
+                            <img
+                              alt="Imagen de Perro De Raza /cachorros Shitzu Tzu Mini Hembra-macho."
+                              aria-hidden="true"
+                              data-nimg="intrinsic"
+                              data-testid="picturesContainerPicture"
+                              decoding="async"
+                              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                              title="Imagen de Perro De Raza /cachorros Shitzu Tzu Mini Hembra-macho."
+                            />
+                            <noscript />
+                          </span>
+                        </div>
+                      </li>
+                      <li
+                        class="slide selected previous"
+                      >
+                        <div>
+                          <span
+                            style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+                          >
+                            <span
+                              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+                            >
+                              <img
+                                alt=""
+                                aria-hidden="true"
+                                src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27281%27%20height=%27500%27/%3e"
+                                style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                              />
+                            </span>
+                            <img
+                              alt="Imagen de Perro De Raza /cachorros Shitzu Tzu Mini Hembra-macho."
+                              aria-hidden="true"
+                              data-nimg="intrinsic"
+                              data-testid="picturesContainerPicture"
+                              decoding="async"
+                              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                              title="Imagen de Perro De Raza /cachorros Shitzu Tzu Mini Hembra-macho."
+                            />
+                            <noscript />
+                          </span>
+                        </div>
+                      </li>
+                      <li
+                        class="slide"
+                      >
+                        <div>
+                          <span
+                            style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+                          >
+                            <span
+                              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+                            >
+                              <img
+                                alt=""
+                                aria-hidden="true"
+                                src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27375%27%20height=%27500%27/%3e"
+                                style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                              />
+                            </span>
+                            <img
+                              alt="Imagen de Perro De Raza /cachorros Shitzu Tzu Mini Hembra-macho."
+                              aria-hidden="true"
+                              data-nimg="intrinsic"
+                              data-testid="picturesContainerPicture"
+                              decoding="async"
+                              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                              title="Imagen de Perro De Raza /cachorros Shitzu Tzu Mini Hembra-macho."
+                            />
+                            <noscript />
+                          </span>
+                        </div>
+                      </li>
+                      <li
+                        class="slide"
+                      >
+                        <div>
+                          <span
+                            style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+                          >
+                            <span
+                              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+                            >
+                              <img
+                                alt=""
+                                aria-hidden="true"
+                                src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27308%27%20height=%27500%27/%3e"
+                                style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                              />
+                            </span>
+                            <img
+                              alt="Imagen de Perro De Raza /cachorros Shitzu Tzu Mini Hembra-macho."
+                              aria-hidden="true"
+                              data-nimg="intrinsic"
+                              data-testid="picturesContainerPicture"
+                              decoding="async"
+                              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                              title="Imagen de Perro De Raza /cachorros Shitzu Tzu Mini Hembra-macho."
+                            />
+                            <noscript />
+                          </span>
+                        </div>
+                      </li>
+                      <li
+                        class="slide"
+                      >
+                        <div>
+                          <span
+                            style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+                          >
+                            <span
+                              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+                            >
+                              <img
+                                alt=""
+                                aria-hidden="true"
+                                src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27375%27%20height=%27500%27/%3e"
+                                style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                              />
+                            </span>
+                            <img
+                              alt="Imagen de Perro De Raza /cachorros Shitzu Tzu Mini Hembra-macho."
+                              aria-hidden="true"
+                              data-nimg="intrinsic"
+                              data-testid="picturesContainerPicture"
+                              decoding="async"
+                              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                              title="Imagen de Perro De Raza /cachorros Shitzu Tzu Mini Hembra-macho."
+                            />
+                            <noscript />
+                          </span>
+                        </div>
+                      </li>
+                      <li
+                        class="slide"
+                      >
+                        <div>
+                          <span
+                            style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+                          >
+                            <span
+                              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+                            >
+                              <img
+                                alt=""
+                                aria-hidden="true"
+                                src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27375%27%20height=%27500%27/%3e"
+                                style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                              />
+                            </span>
+                            <img
+                              alt="Imagen de Perro De Raza /cachorros Shitzu Tzu Mini Hembra-macho."
+                              aria-hidden="true"
+                              data-nimg="intrinsic"
+                              data-testid="picturesContainerPicture"
+                              decoding="async"
+                              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                              title="Imagen de Perro De Raza /cachorros Shitzu Tzu Mini Hembra-macho."
+                            />
+                            <noscript />
+                          </span>
+                        </div>
+                      </li>
+                      <li
+                        class="slide"
+                      >
+                        <div>
+                          <span
+                            style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+                          >
+                            <span
+                              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+                            >
+                              <img
+                                alt=""
+                                aria-hidden="true"
+                                src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27407%27%20height=%27500%27/%3e"
+                                style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                              />
+                            </span>
+                            <img
+                              alt="Imagen de Perro De Raza /cachorros Shitzu Tzu Mini Hembra-macho."
+                              aria-hidden="true"
+                              data-nimg="intrinsic"
+                              data-testid="picturesContainerPicture"
+                              decoding="async"
+                              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                              title="Imagen de Perro De Raza /cachorros Shitzu Tzu Mini Hembra-macho."
+                            />
+                            <noscript />
+                          </span>
+                        </div>
+                      </li>
+                      <li
+                        class="slide"
+                      >
+                        <div>
+                          <span
+                            style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+                          >
+                            <span
+                              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+                            >
+                              <img
+                                alt=""
+                                aria-hidden="true"
+                                src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27375%27%20height=%27500%27/%3e"
+                                style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                              />
+                            </span>
+                            <img
+                              alt="Imagen de Perro De Raza /cachorros Shitzu Tzu Mini Hembra-macho."
+                              aria-hidden="true"
+                              data-nimg="intrinsic"
+                              data-testid="picturesContainerPicture"
+                              decoding="async"
+                              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                              title="Imagen de Perro De Raza /cachorros Shitzu Tzu Mini Hembra-macho."
+                            />
+                            <noscript />
+                          </span>
+                        </div>
+                      </li>
+                      <li
+                        class="slide selected previous"
+                      >
+                        <div>
+                          <span
+                            style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+                          >
+                            <span
+                              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+                            >
+                              <img
+                                alt=""
+                                aria-hidden="true"
+                                src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27281%27%20height=%27500%27/%3e"
+                                style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                              />
+                            </span>
+                            <img
+                              alt="Imagen de Perro De Raza /cachorros Shitzu Tzu Mini Hembra-macho."
+                              aria-hidden="true"
+                              data-nimg="intrinsic"
+                              data-testid="picturesContainerPicture"
+                              decoding="async"
+                              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                              title="Imagen de Perro De Raza /cachorros Shitzu Tzu Mini Hembra-macho."
+                            />
+                            <noscript />
+                          </span>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <button
+                    aria-label="next slide / item"
+                    class="control-arrow control-next"
+                    type="button"
+                  />
+                </div>
+              </div>
+            </picture>
+          </div>
+          <div>
+            <div>
+              Nuevo | 0 vendidos
+            </div>
+            <h1>
+              Perro De Raza /cachorros Shitzu Tzu Mini Hembra-macho
+            </h1>
+            <div>
+              <div
+                aria-label="45000 pesos"
+                data-testid="priceDisplay"
+              >
+                <span>
+                  $
+                   
+                  45.000
+                </span>
+                <span
+                  aria-hidden="true"
+                >
+                  <sup>
+                    00
+                  </sup>
+                </span>
+              </div>
+            </div>
+            <div>
+              <button
+                data-testid="buyButton"
+                type="button"
+              >
+                Comprar
+              </button>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h2>
+            Descripción del produco
+          </h2>
+          <p
+            data-testid="detailedItemDescription"
+          >
+            LEER :
+no se me permite pasar ningún tipo de contacto ni dirección por este medio a no ser que compre mi publicación de 200.
+COMPRAR CON TRANQUILIDAD PUBLICACION ACCESORIOS SHITZU MELI Y COORDINAMOS. (si no hay disponibilidad se puede cancelar dicha compra)
+En caso de querer comprar por mercado libre con tarjeta COMPRAR PUBLICACION CACHORROS SHITZU MACHO/ HEMBRA PAGO CON TARJETA . 
+
+VACUNADOS Y DESPARACITADOS!
+
+MACHITO NEGRO DOS MESES
+LISTO PARA ENTREGA!! 
+para más info comprar la publicación Accesorios shitzu meli y coordinamos por privado!
+
+ Se entregan a partir de los 45 días en adelante una vez que han sido vacunados y previamente desparacitados. Se alimentan con royal canin y están super cuidados y mimados!!
+
+HERMOSOS MIMOSOS Y COMPAÑEROS SHITZU MINI.
+RAZA DE PELO LARGO (NO MUDA PELO)
+-FACIL DE DOMESTICAR
+-MUY INTELIGENTES Y TRANQUILOS.
+-RAZA PEQUEÑA IDEAL PARA DEPARTAMENTOS.
+-BUENOS CON NIÑOS U OTRAS MASCOTAS.
+          </p>
+        </div>
+      </article>
+    </section>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

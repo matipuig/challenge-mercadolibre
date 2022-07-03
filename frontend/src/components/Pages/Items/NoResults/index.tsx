@@ -17,7 +17,7 @@ const { mainText, textAdvice } = texts.components.listItems.noResults;
 export const NoResults = (): ReactElement => {
   const { t } = useTranslation();
   return (
-    <section className={styles.container}>
+    <section className={styles.container} data-testid="noResultsComponent">
       <div className={styles.imageContainer}>
         <Image
           className={styles.image}

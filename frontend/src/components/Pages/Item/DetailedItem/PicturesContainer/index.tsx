@@ -17,7 +17,7 @@ interface PicturesContainerProps {
 }
 
 export const PicturesContainer = ({ pictures, altText }: PicturesContainerProps): ReactElement => (
-  <picture className={styles.container}>
+  <picture className={styles.container} data-testid="picturesContainer">
     <Carousel
       autoPlay
       aria-hidden
@@ -41,6 +41,7 @@ export const PicturesContainer = ({ pictures, altText }: PicturesContainerProps)
             src={picture.url}
             title={altText}
             width={picture.width}
+            data-testid="picturesContainerPicture"
           />
         </div>
       ))}

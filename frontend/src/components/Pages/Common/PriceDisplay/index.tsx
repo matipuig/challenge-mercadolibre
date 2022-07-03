@@ -5,7 +5,7 @@ import { ReactElement } from 'react';
 
 import { useTranslation } from 'react-i18next';
 
-import { getAvailableI18nTexts } from '~/i18n';
+import { getAvailableI18nTexts, i18nReplace } from '~/i18n';
 import { Price } from '~/types/services/backend';
 import { makeHumanFriendly } from '~/utils/conversors';
 
@@ -30,10 +30,10 @@ export const PriceDisplay = ({ price, withDecimals }: PriceDisplayProps): ReactE
   const friendlyAmount = makeHumanFriendly(amount);
   const isPesos = currency === 'ARS';
   const currencyDisplay = isPesos ? '$' : currency;
-  const ariaLabel = isPesos ? t(withPesos).replace('[?]', `${amount}`) : `${amount} ${currency}`;
+  const ariaLabel = isPesos ? i18nReplace(t(withPesos), amount) : `${amount} ${currency}`;
   const finalDecimals = getDecimals(decimals);
   return (
-    <div className={styles.container} aria-label={ariaLabel}>
+    <div className={styles.container} aria-label={ariaLabel} data-testid="priceDisplay">
       <span className={styles.amount}>
         {currencyDisplay} {friendlyAmount}
       </span>

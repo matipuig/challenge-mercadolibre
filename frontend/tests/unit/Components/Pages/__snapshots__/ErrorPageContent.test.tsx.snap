@@ -1,11 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Not found component matches snapshot. 1`] = `
+exports[`Error page content component matches snapshot. 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <section>
+      <section
+        data-testid="errorPageContentComponent"
+      >
         <div>
           <span
             style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
@@ -31,7 +33,7 @@ Object {
           </span>
         </div>
         <h3>
-          No se pudo encontrar la página que estás buscando..
+          Lo sentimos, ha ocurrido un error. Por favor, pruebe nuevamente más tarde.
         </h3>
         <p>
           <a
@@ -44,7 +46,9 @@ Object {
     </div>
   </body>,
   "container": <div>
-    <section>
+    <section
+      data-testid="errorPageContentComponent"
+    >
       <div>
         <span
           style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
@@ -70,7 +74,7 @@ Object {
         </span>
       </div>
       <h3>
-        No se pudo encontrar la página que estás buscando..
+        Lo sentimos, ha ocurrido un error. Por favor, pruebe nuevamente más tarde.
       </h3>
       <p>
         <a

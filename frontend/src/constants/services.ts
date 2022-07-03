@@ -20,6 +20,11 @@ export default {
        * Max limit the request can have
        */
       MAX_LIMIT_COUNT: 50,
+
+      /**
+       * Max text length.
+       */
+      MAX_TEXT_LENGTH: 200,
     },
 
     /**

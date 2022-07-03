@@ -7,7 +7,7 @@ import { ReactElement } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { PriceDisplay } from '~/components/Pages/Common/PriceDisplay';
-import { getAvailableI18nTexts } from '~/i18n';
+import { getAvailableI18nTexts, i18nReplace } from '~/i18n';
 import { DetailedItem as DetailedItemType } from '~/types/services/backend';
 
 import { BuyButton } from './BuyButton';
@@ -24,7 +24,7 @@ const { conditionAndSoldCount, descriptionLabel, picturesAlt } = texts.component
 export const DetailedItem = ({ detailedItem }: DetailedItemProps): ReactElement => {
   const { t } = useTranslation();
   const itemCondition = detailedItem.condition;
-  const strSoldQuantity = detailedItem.sold_quantity.toString();
+  const soldQuantity = detailedItem.sold_quantity.toString();
 
   return (
     <section>
@@ -33,16 +33,14 @@ export const DetailedItem = ({ detailedItem }: DetailedItemProps): ReactElement 
           <div className={styles.picturesContainer}>
             <PicturesContainer
               pictures={detailedItem.all_pictures}
-              altText={t(picturesAlt).replace('[?]', detailedItem.title)}
+              altText={i18nReplace(t(picturesAlt), detailedItem.title)}
             />
           </div>
           <div className={styles.informationContainer}>
             <div className={styles.conditionAndSoldCount}>
-              {`${
-                itemCondition === 'new'
-                  ? t(conditionAndSoldCount.new.replace('[?]', strSoldQuantity))
-                  : t(conditionAndSoldCount.used.replace('[?]', strSoldQuantity))
-              }`}
+              {itemCondition === 'new'
+                ? i18nReplace(t(conditionAndSoldCount.new), soldQuantity)
+                : i18nReplace(t(conditionAndSoldCount.used), soldQuantity)}
             </div>
             <h1 className={styles.title}>{detailedItem.title}</h1>
             <div className={styles.price}>
@@ -55,7 +53,9 @@ export const DetailedItem = ({ detailedItem }: DetailedItemProps): ReactElement 
         </div>
         <div className={styles.descriptionContainer}>
           <h2 className={styles.descriptionLabel}>{t(descriptionLabel)}</h2>
-          <p className={styles.description}>{detailedItem.description}</p>
+          <p className={styles.description} data-testid="detailedItemDescription">
+            {detailedItem.description}
+          </p>
         </div>
       </article>
     </section>

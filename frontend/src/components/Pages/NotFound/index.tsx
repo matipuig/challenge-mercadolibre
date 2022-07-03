@@ -19,7 +19,7 @@ const { mainText, linkToMainManu } = texts.components.notFound;
 export const NotFound = (): ReactElement => {
   const { t } = useTranslation();
   return (
-    <section className={styles.container}>
+    <section className={styles.container} data-testid="notFoundComponent">
       <div className={styles.imageContainer}>
         <Image
           className={styles.image}

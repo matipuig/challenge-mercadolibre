@@ -1,0 +1,134 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Common breadcrumbs component matches snapshot. 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <nav
+        data-testid="breadcrumbs"
+      >
+        <a
+          aria-label="Categoría Animales y Mascotas"
+          data-testid="breadcrumbLink"
+          href="/items?category=MLA1071&description=Animales+y+Mascotas"
+        >
+          Animales y Mascotas
+        </a>
+        <div
+          aria-hidden="true"
+        >
+          &gt;
+        </div>
+        <a
+          aria-label="Categoría Perros"
+          data-testid="breadcrumbLink"
+          href="/items?category=MLA1072&description=Perros"
+        >
+          Perros
+        </a>
+        <div
+          aria-hidden="true"
+        >
+          &gt;
+        </div>
+        <a
+          aria-label="Categoría Perros de Raza"
+          data-testid="breadcrumbLink"
+          href="/items?category=MLA1073&description=Perros+de+Raza"
+        >
+          Perros de Raza
+        </a>
+      </nav>
+    </div>
+  </body>,
+  "container": <div>
+    <nav
+      data-testid="breadcrumbs"
+    >
+      <a
+        aria-label="Categoría Animales y Mascotas"
+        data-testid="breadcrumbLink"
+        href="/items?category=MLA1071&description=Animales+y+Mascotas"
+      >
+        Animales y Mascotas
+      </a>
+      <div
+        aria-hidden="true"
+      >
+        &gt;
+      </div>
+      <a
+        aria-label="Categoría Perros"
+        data-testid="breadcrumbLink"
+        href="/items?category=MLA1072&description=Perros"
+      >
+        Perros
+      </a>
+      <div
+        aria-hidden="true"
+      >
+        &gt;
+      </div>
+      <a
+        aria-label="Categoría Perros de Raza"
+        data-testid="breadcrumbLink"
+        href="/items?category=MLA1073&description=Perros+de+Raza"
+      >
+        Perros de Raza
+      </a>
+    </nav>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

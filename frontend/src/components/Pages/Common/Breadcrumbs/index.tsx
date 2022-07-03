@@ -7,7 +7,7 @@ import { t } from 'i18next';
 import Link from 'next/link';
 
 import { CONSTANTS } from '~/constants';
-import { getAvailableI18nTexts } from '~/i18n';
+import { getAvailableI18nTexts, i18nReplace } from '~/i18n';
 import { ItemCategory } from '~/types/services/backend';
 import { getURLFriendlyString } from '~/utils/queryParams';
 
@@ -18,6 +18,7 @@ interface BreadcrumbProps {
 }
 
 const { ROUTES } = CONSTANTS;
+const { QUERY_PARAMS } = ROUTES;
 const texts = getAvailableI18nTexts();
 const { ariaLabel } = texts.components.common.breadcrumbs;
 
@@ -26,21 +27,20 @@ const getDestinationRoute = (category: ItemCategory): string => {
   const queryParams = new URLSearchParams();
   const friendlyCategoryName = getURLFriendlyString(name);
   queryParams.set('category', id);
-  queryParams.set('description', friendlyCategoryName);
-  return `${ROUTES.ITEMS}?${queryParams}`;
+  return `${ROUTES.ITEMS}?${queryParams}&${QUERY_PARAMS.DESCRIPTION}=${friendlyCategoryName}`;
 };
 
 export const Breadcrumbs = ({ categories }: BreadcrumbProps): ReactElement => {
   const lastCategoryIndex = categories.length - 1;
   return (
-    <nav className={styles.breadcrumbsContainer}>
+    <nav className={styles.breadcrumbsContainer} data-testid="breadcrumbs">
       {categories.map((category, i) => (
         <Fragment key={category.id}>
           <Link href={getDestinationRoute(category)}>
             <a
               className={styles.breadcrumb}
               data-testid="breadcrumbLink"
-              aria-label={t(ariaLabel.replace('[?]', category.name))}
+              aria-label={i18nReplace(t(ariaLabel), category.name)}
             >
               {category.name}
             </a>

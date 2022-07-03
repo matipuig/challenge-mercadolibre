@@ -21,7 +21,7 @@ export const Header = (): ReactElement => {
   const [t] = useTranslation();
   const { logo } = texts.components.layout.header;
   return (
-    <header className={styles.header}>
+    <header className={styles.header} data-testid="header">
       <div className={styles.controlsContainer}>
         <Link href={ROUTES.MAIN}>
           <a>
@@ -33,6 +33,7 @@ export const Header = (): ReactElement => {
                 quality={100}
                 src={getURLForPublicContent('/images/logos/logo-medium.png')}
                 width={76}
+                data-testid="logo"
               />
             </div>
           </a>

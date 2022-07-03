@@ -2,17 +2,17 @@
  * Contains the unit tests for Error page content.
  */
 import { cleanup, render, RenderResult } from '@testing-library/react';
-import { ErrorPageContent } from '../../../src/components/Pages/Error/ErrorPageContent';
-import { t, getAvailableI18nTexts, Translations } from '../../../src/i18n';
+import { ErrorPageContent } from '../../../../src/components/Pages/Error/ErrorPageContent';
+import { t, getAvailableI18nTexts } from '../../../../src/i18n';
 import '@testing-library/jest-dom/extend-expect';
+
+const texts = getAvailableI18nTexts();
 
 describe('Error page content component', () => {
   let errorPageContent: RenderResult;
-  let texts: Translations;
 
   beforeEach(() => {
     errorPageContent = render(<ErrorPageContent />);
-    texts = getAvailableI18nTexts();
   });
 
   afterEach(() => {

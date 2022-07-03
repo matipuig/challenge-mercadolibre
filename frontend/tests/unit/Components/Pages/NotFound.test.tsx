@@ -2,17 +2,17 @@
  * Contains the unit tests for not found content.
  */
 import { cleanup, render, RenderResult } from '@testing-library/react';
-import { NotFound } from '../../../src/components/Pages/NotFound';
-import { t, getAvailableI18nTexts, Translations } from '../../../src/i18n';
+import { NotFound } from '../../../../src/components/Pages/NotFound';
+import { t, getAvailableI18nTexts } from '../../../../src/i18n';
 import '@testing-library/jest-dom/extend-expect';
+
+const texts = getAvailableI18nTexts();
 
 describe('Not found component', () => {
   let notFound: RenderResult;
-  let texts: Translations;
 
   beforeEach(() => {
     notFound = render(<NotFound />);
-    texts = getAvailableI18nTexts();
   });
 
   afterEach(() => {

@@ -3,6 +3,7 @@
  */
 
 import i18next from 'i18next';
+import { isArray } from 'lodash';
 import { initReactI18next } from 'react-i18next';
 
 import { PUBLIC_CONFIG } from '~/config/public';
@@ -45,6 +46,24 @@ i18next.use(initReactI18next).init({
  * Contains "t" function from i18n.
  */
 export const { t } = i18next;
+
+/**
+ * Replaces the i18n texts using the specified array.
+ * @param translatedText Text to replace with.
+ * @param replacements Texts to insert into the replacements.
+ */
+export const i18nReplace = (
+  translatedText: string,
+  replacements: number | string | (string | number)[],
+): string => {
+  const arrReplacements = isArray(replacements) ? replacements : [replacements];
+  const strReplacements = arrReplacements.map((e) => e.toString());
+  let replacedText = translatedText;
+  strReplacements.forEach((replacement) => {
+    replacedText = replacedText.replace('[?]', replacement);
+  });
+  return replacedText;
+};
 
 /**
  * Returns the available texts  by the language for translations.
