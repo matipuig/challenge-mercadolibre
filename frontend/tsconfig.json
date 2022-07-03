@@ -36,7 +36,7 @@
     "target": "es5",
     "typeRoots": ["node_modules/@types"]
   },
-  "exclude": ["node_modules", "docs", "build", "dist", "out", "tests", "next.config.js", "cypress"],
+  "exclude": ["node_modules", "docs", "build", "dist", "out", "tests", "next.config.js"],
   "include": ["next-env.d.ts", "/src/**/*.ts", "/src/**/*.tsx"],
   "watchOptions": {
     "fallbackPolling": "dynamicPriority",
