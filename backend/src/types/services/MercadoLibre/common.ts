@@ -17,13 +17,16 @@ export interface ShippingType {
   tags: unknown[];
   logistic_type: string;
   store_pick_up: boolean;
+  methods?: unknown;
+  dimensions?: unknown;
+  local_pick_up?: unknown;
 }
 
 export interface SellerAddress {
-  id: string;
-  comment: string;
-  address_line: string;
-  zip_code: string;
+  id: string | number;
+  comment?: string;
+  address_line?: string;
+  zip_code?: string;
   country: {
     id: string;
     name: string;
@@ -33,11 +36,12 @@ export interface SellerAddress {
     name: string;
   };
   city: {
-    id: string;
+    id: string | null;
     name: string;
   };
-  latitude: string;
-  longitude: string;
+  latitude?: string;
+  longitude?: string;
+  search_location?: unknown;
 }
 
 export interface ProductCategory {

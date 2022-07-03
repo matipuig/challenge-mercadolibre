@@ -17,15 +17,15 @@ import { SearchParams } from '~/types/MercadoLibre';
 
 const { BASE_URL, TIMEOUT_MS } = CONSTANTS.SERVICES.MERCADO_LIBRE;
 
-const APIClient = axios.create({
+export const APIClient = axios.create({
   baseURL: BASE_URL,
   timeout: TIMEOUT_MS,
 });
 
-const GET_CATEGORY_URL = '/categories/:id';
-const GET_ITEM_URL = '/items/:id';
-const GET_ITEM_DESCRIPTION_URL = '/items/:id/description';
-const SEARCH_ITEMS_URL = '/sites/MLA/search';
+export const GET_CATEGORY_URL = '/categories/:id';
+export const GET_ITEM_URL = '/items/:id';
+export const GET_ITEM_DESCRIPTION_URL = '/items/:id/description';
+export const SEARCH_ITEMS_URL = '/sites/MLA/search';
 
 const NOT_FOUND_CODE = 404;
 

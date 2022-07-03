@@ -52,14 +52,14 @@ export interface MELIRawItem {
   attributes: unknown[];
   warnings: unknown[];
   listing_source: string;
-  variations: unknown[];
+  variations: unknown[] | null;
   status: string;
   sub_status: unknown[];
   tags: unknown[];
   warranty: string;
   catalog_product_id: unknown;
   domain_id: string;
-  parent_item_id: string;
+  parent_item_id: string | null;
   differential_pricing: unknown;
   deal_ids: unknown[];
   automatic_relist: boolean;
@@ -81,15 +81,15 @@ export interface MELIItemDescription {
 export interface MELIRawCategory {
   id: string;
   name: string;
-  picture: string;
-  permalink: string;
+  picture: string | null;
+  permalink: string | null;
   total_items_in_this_category: number;
   path_from_root: {
     id: string;
     name: string;
   }[];
   children_categories: unknown[];
-  attribute_types: 'attributes';
+  attribute_types: 'attributes' | 'variations' | string;
   settings: Record<string, unknown>;
   channels_settings: unknown[];
   meta_categ_id: unknown;

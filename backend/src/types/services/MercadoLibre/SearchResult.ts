@@ -22,7 +22,7 @@ interface FilterValue {
 export interface Filter {
   id: string;
   name: string;
-  type: 'text' | 'boolean';
+  type: 'text' | 'boolean' | unknown;
   values: FilterValue[];
 }
 
@@ -49,19 +49,20 @@ export interface MELISearchProductResult {
   address: {
     state_id: string;
     state_name: string;
-    city_id: string;
+    city_id: string | null;
     city_name: string;
   };
   shipping: ShippingType;
   seller_address: SellerAddress;
   attributes: unknown;
-  original_price: number;
+  original_price: number | null;
   category_id: string;
   official_store_id: string | null;
   domain_id: string;
-  catalog_product_id: string;
+  catalog_product_id: string | null;
+  differential_pricing?: unknown;
   tags: string[];
-  catalog_listing: boolean;
+  catalog_listing?: boolean;
   use_thumbnail_id: boolean;
   offer_score: unknown;
   offer_share: unknown;
