@@ -1,0 +1,117 @@
+{
+	"info": {
+		"_postman_id": "420c02a5-bbcf-4598-b264-b1cc79a9746b",
+		"name": "Matias Puig - Challenge Mercadolibre",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9132308"
+	},
+	"item": [
+		{
+			"name": "Search",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "es-AR",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://matiaspuig-challenge.com.ar/api/items?q=madnioca&limit=4&offset=2",
+					"protocol": "https",
+					"host": [
+						"matiaspuig-challenge",
+						"com",
+						"ar"
+					],
+					"path": [
+						"api",
+						"items"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "madnioca",
+							"description": "Texto de búsqueda"
+						},
+						{
+							"key": "limit",
+							"value": "4",
+							"description": "Cantidad de resultados a traer de la API de MELI"
+						},
+						{
+							"key": "offset",
+							"value": "2",
+							"description": "Cantidad de resultados a saltear."
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Item",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "es-AR",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://matiaspuig-challenge.com.ar/api/items/MLA869936033",
+					"protocol": "https",
+					"host": [
+						"matiaspuig-challenge",
+						"com",
+						"ar"
+					],
+					"path": [
+						"api",
+						"items",
+						"MLA869936033"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "key",
+				"value": "X-API-KEY",
+				"type": "string"
+			},
+			{
+				"key": "value",
+				"value": "unsafe_api_key",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

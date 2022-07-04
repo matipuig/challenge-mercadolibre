@@ -1,3 +1,7 @@
+# Challenge de Mercado Libre
+
+La presente entrega corresponde al Challenge de Mercado Libre y cómo he resuelto la misma:
+
 - [Challenge de Mercado Libre](#challenge-de-mercado-libre)
   - [Inicio](#inicio)
     - [Ejemplo del deploy](#ejemplo-del-deploy)
@@ -7,6 +11,7 @@
     - [Frontend](#frontend)
     - [Backend](#backend)
     - [Comunicación](#comunicación)
+    - [API REST del Backend](#api-rest-del-backend)
   - [Principios orientadores pedidos](#principios-orientadores-pedidos)
     - [Usabilidad](#usabilidad)
       - [Responsive](#responsive)
@@ -41,8 +46,6 @@
       - [SSL](#ssl)
       - [Cabeceras HTTP](#cabeceras-http)
   - [Posibles pasos a seguir:](#posibles-pasos-a-seguir)
-
-# Challenge de Mercado Libre
 
 ## Inicio
 
@@ -81,7 +84,7 @@ docker-compose up
 
 ## Arquitectura
 
-![arquitectura](https://github.com/matipuig/challenge-mercadolibre/blob/main/others/docs/imgs/arquitectura.png?raw=true)
+![arquitectura](https://github.com/matipuig/challenge-mercadolibre/blob/main/docs/imgs/arquitectura.png?raw=true)
 
 ### Frontend
 
@@ -100,6 +103,18 @@ docker-compose up
 
 El usuario solo puede comunicarse con el frontend. El backend no debería tener un puerto expuesto fuera de la red local, y su único consumo debería ser hecho por el frontend (y comparten una API KEY para tal fin).
 
+### API REST del Backend
+
+Aunque la idea es que el backend no sea expuesto y solo sea consumido por el front, a fines de prueba se expuso en el servidor a la API como:
+
+[[https://](https://matiaspuig-challenge.com.ar/api)](https://matiaspuig-challenge.com.ar/api)
+
+Se adjunto en la carpeta ["docs"](/docs) la colección de postman para importar y testear la misma.
+
+**Nota**:
+
+Se hicieron algunas modificaciones a la API para poder coincidir con los pedidos del frontend (por ejemplo, no devolver las categorías con formato String[], ya que si no, no es posible hacer los breadcrumbs). Se agregaron también los parámetros limit y offset en la búsqueda.
+
 ## Principios orientadores pedidos
 
 ### Usabilidad
@@ -116,7 +131,7 @@ El challenge fue probado sin utilizar el mouse, únicamente con el teclado utili
 
 El challenge fue probado con la aplicación mobile TalkBack de Android (no cuento con otras como VoiceOver o JAWS, por lo que no se probó en las mismas). Es posible utilizar y recorrer la aplicación sin mirar el dispositivo.
 
-![lighthouse](https://github.com/matipuig/challenge-mercadolibre/blob/main/others/docs/imgs/lighthouse.png?raw=true)
+![lighthouse](https://github.com/matipuig/challenge-mercadolibre/blob/main/docs/imgs/lighthouse.png?raw=true)
 
 **Nota:**
 
@@ -151,9 +166,9 @@ Se han colocado las cabeceras de Open Graph correspondientes para tener las dife
 
 Por ejemplo, el link [https://matiaspuig-challenge.com.ar/items/MLA1135447143?description=Alimento+Pedigree+Optima+Digestion+Etapa+2+Para+Perro+Adulto+Todos+Los+Tamanos+Sabor+Carne+Y+Vegetales+En+Bolsa+De+21+kg](https://matiaspuig-challenge.com.ar/items/MLA1135447143?description=Alimento+Pedigree+Optima+Digestion+Etapa+2+Para+Perro+Adulto+Todos+Los+Tamanos+Sabor+Carne+Y+Vegetales+En+Bolsa+De+21+kg) genera estos previews en Whatsapp y Telegram:
 
-![SEO](https://github.com/matipuig/challenge-mercadolibre/blob/main/others/docs/imgs/seo1.jpeg?raw=true)
+![SEO](https://github.com/matipuig/challenge-mercadolibre/blob/main/docs/imgs/seo1.jpeg?raw=true)
 
-![SEO](https://github.com/matipuig/challenge-mercadolibre/blob/main/others/docs/imgs/seo2.jpeg?raw=true)
+![SEO](https://github.com/matipuig/challenge-mercadolibre/blob/main/docs/imgs/seo2.jpeg?raw=true)
 
 Otros resultados fueron chequeados con la aplicación web: [dnschecker](https://dnschecker.org/open-graph-preview-generate-metatags.php).
 
@@ -169,7 +184,7 @@ Si bien es posible con i18next hacer a la aplicación traducible según el dispo
 
 Para mejor performance, se optó por side rendering con páginas estáticas precompiladas. Las dinámicas las genera el servidor según el request (a partir del getServerSideProps de NextJS). Los tiempos que afectan a la performance son principalmente los ocurridos entre el cliente y el servidor, y entre el servidor y el consumo de la API de MercadoLibre (se paralelizaron en el backend las consultas posibles para acelerar el tiempo de carga).
 
-![lighthouse](https://github.com/matipuig/challenge-mercadolibre/blob/main/others/docs/imgs/lighthouse.png?raw=true)
+![lighthouse](https://github.com/matipuig/challenge-mercadolibre/blob/main/docs/imgs/lighthouse.png?raw=true)
 
 ### Escalabilidad
 
@@ -267,7 +282,7 @@ Se priorizó el sentido y la calidad del test (que renderice y presente las part
 Se utilizó una estrategia bottom->top. Se realizó el testeo de un correcto renderizado de los componentes de más bajo nivel, y se "subió" hasta llegar a las capas más altas. A cada componente hijo se le asignò un "data-testid", y en el componente padre se verificó el renderizado solo con la presencia de este.
 
 Parte del coverage alcanzado de tests unitarios en frontend:
-![unit](https://github.com/matipuig/challenge-mercadolibre/blob/main/others/docs/imgs/unit.png?raw=true)
+![unit](https://github.com/matipuig/challenge-mercadolibre/blob/main/docs/imgs/unit.png?raw=true)
 
 ### Tests End To End
 
@@ -275,7 +290,7 @@ Los mismos fueron realizados en el frontend utilizando la herramienta Cypress. S
 
 Se utlizó como principio de testeo la accesibilidad de la página (buscar HTML semántico y ubicación, o botones o inputs a partir de su nombre), y no los tags. Los data-testid fueron evitados para el testeo E2E.
 
-![e2e](https://github.com/matipuig/challenge-mercadolibre/blob/main/others/docs/imgs/e2e.png?raw=true)
+![e2e](https://github.com/matipuig/challenge-mercadolibre/blob/main/docs/imgs/e2e.png?raw=true)
 
 ## Otros principios seguidos
 
@@ -284,6 +299,8 @@ Se utlizó como principio de testeo la accesibilidad de la página (buscar HTML 
 #### Clean code
 
 En todos los casos, se trató de seguir las propuestas de Clean Code para el código: funciones atómicas; poco nivel de anidación; modularización; variables, constantes y métodos con nombres semánticos; costumbres de la comunidad como el uso de camel case, etc.
+
+El estilo del código elegido es funcional, y se han colocado los comentarios a las funciones y constantes exportadas a modo de documentación.
 
 #### Linting y estilos
 
@@ -301,7 +318,7 @@ El frontend, en caso de tener error, devuelve al usuario la página personalizad
 
 EL challenge no tiene tantos frentes para ser vulnerable en seguridad informática (por ejemplo, no sería susceptible de SQL Injection, ataques CSRF, session riding, autenticación indebida, ataques a través de la API REST, etc.).
 
-Se decidió pasar el control de muchas cuestiones de seguridad informática a la capa superior: cabeceras HTTP, forzar el uso de SSL, protección contra DOS, slowloris, etc. Se consideró que configurar las mismas en el microservicio, siendo que puede estar protegido por otra capa, genera confusión en la configuración (pro ejemplo, cabeceras HTTP repetidas, o un apache que no pide SSL pero un microservicio que sí). En este caso, la configuración del servidor deployado se encuentra en la carpeta [nginx.conf](/others/nginx.conf)
+Se decidió pasar el control de muchas cuestiones de seguridad informática a la capa superior: cabeceras HTTP, forzar el uso de SSL, protección contra DOS, slowloris, etc. Se consideró que configurar las mismas en el microservicio, siendo que puede estar protegido por otra capa, genera confusión en la configuración (pro ejemplo, cabeceras HTTP repetidas, o un apache que no pide SSL pero un microservicio que sí). En este caso, la configuración del servidor deployado se encuentra en la carpeta [nginx.conf](/docs/nginx.conf)
 
 Sí se ha colocado en el backend, a modo de ejemplo, una protección contra consultas repetidas (en algunos casos, es correcto que el microservicio decida cuándo fallar).
 
@@ -311,7 +328,7 @@ Se probó que la aplicación funciona correctamente utilizando SSL. La misma en 
 
 [https://www.ssllabs.com/ssltest/analyze.html?d=www.matiaspuig-challenge.com.ar](https://www.ssllabs.com/ssltest/analyze.html?d=www.matiaspuig-challenge.com.ar)
 
-![ssl](https://github.com/matipuig/challenge-mercadolibre/blob/main/others/docs/imgs/ssl.png?raw=true)
+![ssl](https://github.com/matipuig/challenge-mercadolibre/blob/main/docs/imgs/ssl.png?raw=true)
 
 Se verificó que la aplicación no tuviera fallas por servir contenido seguro y no seguro a la vez.
 
@@ -320,7 +337,7 @@ Se verificó que la aplicación no tuviera fallas por servir contenido seguro y 
 La aplicación de ejemplo dr deployó puntuando como B+ en el observatorio de mozilla:
 [https://observatory.mozilla.org/analyze/matiaspuig-challenge.com.ar](https://observatory.mozilla.org/analyze/matiaspuig-challenge.com.ar)
 
-![headers](https://github.com/matipuig/challenge-mercadolibre/blob/main/others/docs/imgs/headers.png?raw=true)
+![headers](https://github.com/matipuig/challenge-mercadolibre/blob/main/docs/imgs/headers.png?raw=true)
 
 Se consideró improtante verificar que la misma funciona detrás de una correcta configuración (que no haya errores de contenido de iframe, por ejemplo.).
 
