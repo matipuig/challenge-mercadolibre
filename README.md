@@ -292,6 +292,8 @@ Se utlizó como principio de testeo la accesibilidad de la página (buscar HTML 
 
 ![e2e](https://github.com/matipuig/challenge-mercadolibre/blob/main/docs/imgs/e2e.png?raw=true)
 
+**Importante**: Recordar que para probar los tests punta a punta es importante tener levantadas las instancias de front y back (o cambiarle la baseUrl en la configuración de cypress).
+
 ## Otros principios seguidos
 
 ### Calidad del código
