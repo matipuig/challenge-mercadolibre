@@ -13,13 +13,13 @@
       - [Navegabilidad](#navegabilidad)
       - [Accesibildad](#accesibildad)
       - [Experiencia del usuario](#experiencia-del-usuario)
-  - [SEO](#seo)
-    - [Robots](#robots)
-    - [HTML semántico](#html-semántico)
-    - [Open Graph](#open-graph)
-    - [Internacionalización](#internacionalización)
-  - [Performance](#performance)
-    - [SSR](#ssr)
+    - [SEO](#seo)
+      - [Robots](#robots)
+      - [HTML semántico](#html-semántico)
+      - [Open Graph](#open-graph)
+      - [Internacionalización](#internacionalización)
+    - [Performance](#performance)
+      - [SSR](#ssr)
     - [Escalabilidad](#escalabilidad)
       - [Microservicios](#microservicios)
       - [Contenedores como recursos interconectables](#contenedores-como-recursos-interconectables)
@@ -37,6 +37,7 @@
       - [General](#general)
       - [SSL](#ssl)
       - [Cabeceras HTTP](#cabeceras-http)
+  - [Pendientes:](#pendientes)
 
 # Challenge de Mercado Libre
 
@@ -71,7 +72,7 @@ docker-compose up
 
 ## Arquitectura
 
-( TODO: IMAGEN ARQUITECTURA )
+![arquitectura](https://github.com/matipuig/challenge-mercadolibre/blob/main/others/docs/imgs/arquitectura.png?raw=true)
 
 ### Frontend
 
@@ -106,7 +107,9 @@ El challenge fue probado sin utilizar el mouse, únicamente con el teclado utili
 
 El challenge fue probado con la aplicación mobile TalkBack de Android (no cuento con otras como VoiceOver o JAWS, por lo que desconozco si funciona correctamente en las mismas). Es posible utilizar y recorrer la aplicación sin mirar el dispositivo.
 
-( TODO: IMAGEN LIGHTHOUSE )
+![lighthouse](https://github.com/matipuig/challenge-mercadolibre/blob/main/others/docs/imgs/lighthouse.png?raw=true)
+
+(En la vista de la aplicación del ítem específico, "Best practices" baja porque el componente del carrusel presenta una imagen de 1x1...).
 
 **Nota**:
 
@@ -118,46 +121,48 @@ Se utilizaron los tags ARIA para diferenciar la funcionalidad de los lectores de
 
 Para facilitar la navegación se agregaron detalles al funcionamiento para hacerlo más user friendly. Por ejemplo, las URLs agregan un query param cuya única función es ser descripción:
 
-[https://matiaspuig-challenge.com.ar/items/MLA1144571176?description=Alimento+Agility+Premium+Para+Gato+Adulto+Sabor+Mix+En+Bolsa+De+10+kg](https://matiaspuig-challenge.com.ar/items/MLA1144571176?description=Alimento+Agility+Premium+Para+Gato+Adulto+Sabor+Mix+En+Bolsa+De+10+kg)
+[https://matiaspuig-challenge.com.ar/items/MLA1144571176?description=Alimento-Agility-Premium-Para-Gato-Adulto-Sabor-Mix-En-Bolsa-De-10-kg](https://matiaspuig-challenge.com.ar/items/MLA1144571176?description=Alimento-Agility-Premium-Para-Gato-Adulto-Sabor-Mix-En-Bolsa-De-10-kg)
 
 Solo el itemId importa para obtener el resultado. Una posible mejora a futuro sería que la URL tuviera el formato "/[id]-[descripcion]" en vez de "/[id]?descripcion=[descripcion]". Esto también mejoraría la experiencia de los lectores de pantalla, al dar una URL con sentido en vez de solo un ID de MercadoLibre.
 
 **Nota:**
 La propuesta del challenge de hacer los breadcrumbs de los resultados de búsqueda a partir de la cantidad de resultados por categoría disponible genera experiencias raras. Por ejemplo, al buscar "moja", aparece como categoría "Ropa y accesorios", pero el primer resultado es una cerveza.
 
-## SEO
+### SEO
 
-### Robots
+#### Robots
 
 Todas las páginas tienen indexación para el seguimiento de los robots. Las únicas que cuentan con un norobots y nofollow son las correspondientes a errores (404, 500, etc.).
 
-### HTML semántico
+#### HTML semántico
 
 Para lograr este punto, cada elemento del HTML con un significado tiene una etiqueta correspondiente (se han utilizado los tags header, main, footer, nav, article, picture, etc.).
 
-### Open Graph
+#### Open Graph
 
 Se han colocado las cabeceras de Open Graph correspondientes para tener las diferentes previews de los microbrowsers.
 
 Por ejemplo, el link [https://matiaspuig-challenge.com.ar/items/MLA1135447143?description=Alimento+Pedigree+Optima+Digestion+Etapa+2+Para+Perro+Adulto+Todos+Los+Tamanos+Sabor+Carne+Y+Vegetales+En+Bolsa+De+21+kg](https://matiaspuig-challenge.com.ar/items/MLA1135447143?description=Alimento+Pedigree+Optima+Digestion+Etapa+2+Para+Perro+Adulto+Todos+Los+Tamanos+Sabor+Carne+Y+Vegetales+En+Bolsa+De+21+kg) genera el siguiente preview:
 
-( TODO: IMAGEN TELEGRAM, IMAGEN WHATSAPP ).
+![SEO](https://github.com/matipuig/challenge-mercadolibre/blob/main/others/docs/imgs/seo1.jpeg?raw=true)
+
+![SEO](https://github.com/matipuig/challenge-mercadolibre/blob/main/others/docs/imgs/seo2.jpeg?raw=true)
 
 Los resultados fueron chequeados con la aplicación web: [dnschecker](https://dnschecker.org/open-graph-preview-generate-metatags.php).
 
 **Nota**: No probar con Whatsapp web, ya que el mismo no se encuentra funcionando correctamente para generar thumbnails.
 
-### Internacionalización
+#### Internacionalización
 
 Si bien es posible con i18next hacer a la aplicación traducible en el cliente, se decidió hacerlo por variable de entorno para obligar exponer la aplicación en una URL distinta. Esto favorece al SEO al tener URLs que siempre ofrecen el mismo resultado.
 
-## Performance
+### Performance
 
-### SSR
+#### SSR
 
 El server side rendering permite tener páginas estáticas precompiladas. Las dinámicas las genera en el servidor previo a enviarlas al usuario (a partir del getServerSideProps de NextJS).
 
-( TODO :IMAGEN LIGHTHOUSE )
+![lighthouse](https://github.com/matipuig/challenge-mercadolibre/blob/main/others/docs/imgs/lighthouse.png?raw=true)
 
 ### Escalabilidad
 
@@ -272,7 +277,7 @@ La aplicación en línea funciona atrás de un nginx con la configuración de SS
 
 En SSL Labs puntúa como A+: [https://www.ssllabs.com/ssltest/analyze.html?d=www.matiaspuig-challenge.com.ar](https://www.ssllabs.com/ssltest/analyze.html?d=www.matiaspuig-challenge.com.ar)
 
-( TODO: IMAGEN SSLABS).
+![ssl](https://github.com/matipuig/challenge-mercadolibre/blob/main/others/docs/imgs/ssl.png?raw=true)
 
 Era importante probar que la aplicación funciona correctamente detrás de SSL (principalmente, que no haya URLs mal colocadas, o intente servir contenido seguro y no seguro a la vez).
 
@@ -281,8 +286,22 @@ Era importante probar que la aplicación funciona correctamente detrás de SSL (
 La aplicación deployada de ejemplo puntúa como B+ en el observatorio de mozilla:
 [https://observatory.mozilla.org/analyze/matiaspuig-challenge.com.ar](https://observatory.mozilla.org/analyze/matiaspuig-challenge.com.ar)
 
-( TODO: IMAGEN )
+![headers](https://github.com/matipuig/challenge-mercadolibre/blob/main/others/docs/imgs/headers.png?raw=true)
+
+Es importante verificar que la aplicación web continúe funcionando detrás de una correcta configuración web.
 
 **Importante**:
 
 En este caso, la aplicación no funciona correctamente si se establece el header CSP, debido a que NextJS utiliza "unsafes-inlines" en sí mismo. La solución correcta sería agregar un nonce para evitar ataques XSS, pero iría en contra de la performance.
+
+## Pendientes:
+
+1. Agregar más tests unitarios en frontend (estaría bueno hacer un coverage superior al 80%).
+2. Agregar más tests unitarios al backend (idem).
+3. Agregar los presets de babel para jest en Backend, así no rompe al correr el comando npm run test_unit_coverage.
+4. Documentar la API con Swagger (surgió en la entrevista).
+5. Agregar funcionalidades al frontend (por ejemplo, una paginación, que utilice los query params offset y limit que ya están disponibles).
+6. Agregar esos cambios a tests unitarios y de integración.
+7. Agregar ejemplos del manejo de estado (la app tiene un ejemplo con API Context, aunque prefiero redux toolkit). Pero no tengo grandes casos de uso para el estado...
+8. Describir el gitflow..
+9. ¿Sugerir alguna herramienta de health check como Prometheus?
