@@ -95,6 +95,14 @@ export const logger = {
    */
   silly: (message: string, label: string, context?: LogContext): boolean =>
     log(message, LogLevels.silly, label, context),
+
+  /**
+   * Turns on or off the logger
+   * @param active If it is or not active.
+   */
+  setActive: (active: boolean): void => {
+    winstonLogger.silent = !active;
+  },
 };
 
 /**

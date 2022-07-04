@@ -1,4 +1,7 @@
 /**
+ * @jest-environment jsdom
+ */
+/**
  * Interacts with the backend.
  */
 
@@ -11,7 +14,7 @@ import { handleError, handleResult } from '~/utils/axiosHelper';
 
 const { BASE_URL, API_KEY } = SERVER_CONFIG.SERVICES.BACKEND;
 
-const APIClient = axios.create({
+export const APIClient = axios.create({
   baseURL: BASE_URL,
   timeout: CONSTANTS.SERVICES.BACKEND.TIMEOUT_MS,
   headers: {
@@ -19,8 +22,8 @@ const APIClient = axios.create({
   },
 });
 
-const SEARCH_URL = '/api/items';
-const GET_ITEM_URL = '/api/items/:id';
+export const SEARCH_URL = '/api/items';
+export const GET_ITEM_URL = '/api/items/:id';
 
 /**
  * Return the item data from the specified item. Returns null if this is not found.

@@ -28,7 +28,7 @@ export const DetailedItem = ({ detailedItem }: DetailedItemProps): ReactElement 
 
   return (
     <section>
-      <article className={styles.container}>
+      <article className={styles.container} data-testid="detailedItem">
         <div className={styles.mainInfoContainer}>
           <div className={styles.picturesContainer}>
             <PicturesContainer

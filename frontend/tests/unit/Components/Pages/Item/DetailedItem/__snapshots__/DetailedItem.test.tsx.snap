@@ -6,7 +6,9 @@ Object {
   "baseElement": <body>
     <div>
       <section>
-        <article>
+        <article
+          data-testid="detailedItem"
+        >
           <div>
             <div>
               <picture
@@ -392,7 +394,9 @@ RAZA DE PELO LARGO (NO MUDA PELO)
   </body>,
   "container": <div>
     <section>
-      <article>
+      <article
+        data-testid="detailedItem"
+      >
         <div>
           <div>
             <picture

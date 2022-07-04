@@ -34,7 +34,7 @@ export interface SellerAddress {
     name: string;
   };
   city: {
-    id: string;
+    id: string | null;
     name: string;
   };
 }

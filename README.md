@@ -53,13 +53,13 @@ Inglés: [https://matiaspuig-challenge.com.ar/en](https://matiaspuig-challenge.c
 
 ### Prueba local
 
-Para probarlos localmente es posible utilizar en ambos servicios:
+Para probarlos localmente es posible utilizar en ambos servicios levantar el entorno de desarrollo:
 
 ```bash
-npm run dev
+npm run install && npm run dev
 ```
 
-Ambos están con la configuración de development por defecto, así que el backend levantará en el puerto 8080 y el frontend ne el puerto 3000.
+Ambos están con la configuración de development por defecto, así que el backend levantará en el puerto 8080 y el frontend en el puerto 3000.
 (No tuve tiempo de configurar algo como Lerna o workspaces).
 
 ### Prueba con docker
@@ -238,16 +238,17 @@ Los mismos fueron realizados utilizando Jest. Se mockeó el resultado de axios p
 
 Los mismos se realizaron utilizando Jest.
 
-La estrategia utilizada para los tests unitarios fue una bottom->top. Se realiza el testeo de un correcto renderizado de los componentes, y se empieza a "subir" hasta llegar a las capas más altas. De esta forma, se testea el componente, se le asigna un "data-testid", y en el componente padre solo se verifique que haya renderizado un hijo con ese identificador.
+La estrategia utilizada para los tests unitarios fue una bottom->top. Se realiza el testeo de un correcto renderizado de los componentes, y se empieza a "subir" hasta llegar a las capas más altas. De esta forma, se testea el componente, se le asigna un "data-testid", y en el componente padre solo se verifique que haya renderizado un hijo con ese identificador. Se priorizó el sentido y la calidad del test, antes que la cantidad.
 
-( TODO: IMAGEN DE TESTS UNITARIOS )
+![unit](https://github.com/matipuig/challenge-mercadolibre/blob/main/others/docs/imgs/unit.png?raw=true)
 
 ### Tests End To End
 
 Los mismos fueron realizados en el frontend utilizando la herramienta Cypress. Se testearon los casos de uso principales (búsqueda, navegación y botón de compra).
 
 Se utlizó como principio utilizar la accesibilidad de la página (buscar HTML semántico y ubicación, o botones o inputs a partir de su nombre), y no los tags. Los data-testid fueron evitados para el testeo E2E.
-( TODO: IMAGEN DE RESLUTADO D CYPRESS )
+
+![lighthouse](https://github.com/matipuig/challenge-mercadolibre/blob/main/others/docs/imgs/lighthouse.png?raw=true)
 
 ## Otros principios seguidos
 
@@ -255,7 +256,7 @@ Se utlizó como principio utilizar la accesibilidad de la página (buscar HTML s
 
 #### Clean code
 
-En todos los casos, traté de seguir las propuestas de Clean Code para la generación del código: funciones atómicas; poco nivel de anidación; modularización; variables, constantes y métodos con nombres semánticos; guías de la comunidad como el camel case, etc.
+En todos los casos, traté de seguir las propuestas de Clean Code para la generación del código: funciones atómicas; poco nivel de anidación; modularización; variables, constantes y métodos con nombres semánticos; costumbres de la comunidad como el uso de camel case, etc.
 
 #### Linting y estilos
 
@@ -294,14 +295,17 @@ Es importante verificar que la aplicación web continúe funcionando detrás de 
 
 En este caso, la aplicación no funciona correctamente si se establece el header CSP, debido a que NextJS utiliza "unsafes-inlines" en sí mismo. La solución correcta sería agregar un nonce para evitar ataques XSS, pero iría en contra de la performance.
 
+// TODO: Aclarar que el coverage d elos units no es lo más improtante.
+
 ## Pendientes:
 
 1. Agregar más tests unitarios en frontend (estaría bueno hacer un coverage superior al 80%).
 2. Agregar más tests unitarios al backend (idem).
 3. Agregar los presets de babel para jest en Backend, así no rompe al correr el comando npm run test_unit_coverage.
-4. Documentar la API con Swagger (surgió en la entrevista).
-5. Agregar funcionalidades al frontend (por ejemplo, una paginación, que utilice los query params offset y limit que ya están disponibles).
-6. Agregar esos cambios a tests unitarios y de integración.
-7. Agregar ejemplos del manejo de estado (la app tiene un ejemplo con API Context, aunque prefiero redux toolkit). Pero no tengo grandes casos de uso para el estado...
-8. Describir el gitflow..
-9. ¿Sugerir alguna herramienta de health check como Prometheus?
+4. Hacer que los tests unitarios tarden menos. Principalmente hay unos de front que tardan 5 segundos.
+5. Documentar la API con Swagger (surgió en la entrevista).
+6. Agregar funcionalidades al frontend (por ejemplo, una paginación, que utilice los query params offset y limit que ya están disponibles).
+7. Agregar esos cambios a tests unitarios y de integración.
+8. Agregar ejemplos del manejo de estado (la app tiene un ejemplo con API Context, aunque prefiero redux toolkit). Pero no tengo grandes casos de uso para el estado...
+9. Describir el gitflow..
+10. ¿Sugerir alguna herramienta de health check como Prometheus?
