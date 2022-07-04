@@ -11,7 +11,7 @@ Object {
         <a
           aria-label="Categoría Animales y Mascotas"
           data-testid="breadcrumbLink"
-          href="/items?category=MLA1071&description=Animales+y+Mascotas"
+          href="/items?category=MLA1071&description=Animales-y-Mascotas"
         >
           Animales y Mascotas
         </a>
@@ -35,7 +35,7 @@ Object {
         <a
           aria-label="Categoría Perros de Raza"
           data-testid="breadcrumbLink"
-          href="/items?category=MLA1073&description=Perros+de+Raza"
+          href="/items?category=MLA1073&description=Perros-de-Raza"
         >
           Perros de Raza
         </a>
@@ -49,7 +49,7 @@ Object {
       <a
         aria-label="Categoría Animales y Mascotas"
         data-testid="breadcrumbLink"
-        href="/items?category=MLA1071&description=Animales+y+Mascotas"
+        href="/items?category=MLA1071&description=Animales-y-Mascotas"
       >
         Animales y Mascotas
       </a>
@@ -73,7 +73,7 @@ Object {
       <a
         aria-label="Categoría Perros de Raza"
         data-testid="breadcrumbLink"
-        href="/items?category=MLA1073&description=Perros+de+Raza"
+        href="/items?category=MLA1073&description=Perros-de-Raza"
       >
         Perros de Raza
       </a>

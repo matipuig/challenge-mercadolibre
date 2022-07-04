@@ -10,6 +10,7 @@ Object {
       >
         <div>
           <a
+            aria-label="Logo de MercadoLibre"
             href="/"
           >
             <div>
@@ -92,6 +93,7 @@ Object {
     >
       <div>
         <a
+          aria-label="Logo de MercadoLibre"
           href="/"
         >
           <div>
