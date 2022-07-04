@@ -4,8 +4,8 @@
 /* eslint-disable camelcase */
 
 import { isNull, pick } from 'lodash';
-import CONSTANTS from '~/constants';
-import mercadoLibreService from '~/services/mercadoLibre';
+import { CONSTANTS } from '~/constants';
+import { getCategoryById as getMELICategoryById } from '~/services/mercadoLibre';
 import { Price, Author, Item, ItemCategory, SellerAddress } from '~/types/MercadoLibre';
 import { MELIRawItem } from '~/types/services/MercadoLibre/Item';
 import { MELISearchProductResult } from '~/types/services/MercadoLibre/SearchResult';
@@ -28,7 +28,7 @@ export const getAuthor = (): Author => ({
  */
 export const getCategoryBreadcrumb = async (id: string): Promise<ItemCategory[]> => {
   try {
-    const category = await mercadoLibreService.getCategoryById(id);
+    const category = await getMELICategoryById(id);
     if (isNull(category)) {
       return [];
     }
@@ -68,11 +68,4 @@ export const extractInformationFromProductResult = (product: MELIItemResult): It
     free_shipping: shipping.free_shipping,
     seller_address: pick(seller_address, ['state', 'country', 'city']) as SellerAddress,
   };
-};
-
-export default {
-  getAuthor,
-  getCategoryBreadcrumb,
-  getPriceInformation,
-  extractInformationFromProductResult,
 };

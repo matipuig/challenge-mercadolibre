@@ -44,8 +44,6 @@ docs/tests/**/*
 docs/code/**/*
 docs/api/swagger/content.js
 
-# Locks
-package-lock.json
 
 # Logs
 logs

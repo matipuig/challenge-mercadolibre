@@ -6,8 +6,8 @@ import fs from 'fs';
 import http from 'http';
 import https from 'https';
 
-import CONSTANTS from './constants';
-import CONFIG from './config';
+import { CONSTANTS } from './constants';
+import { CONFIG } from './config';
 import app from './app';
 import { logger, LABELS } from './utils/logger';
 

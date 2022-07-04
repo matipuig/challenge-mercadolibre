@@ -7,5 +7,3 @@ import { getItemsBySearch as importedGetItemsBySearch } from './search';
 
 export const getItemById = importedGetItemById;
 export const getItemsBySearch = importedGetItemsBySearch;
-
-export default { getItemById, getItemsBySearch };

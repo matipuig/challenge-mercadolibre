@@ -12,5 +12,3 @@ import {
 export const StateProviders = ({ children }: PropsWithChildren<unknown>) => (
   <SearchResultsProvider value={{ ...SearchResultsInitialState }}>{children}</SearchResultsProvider>
 );
-
-export default { StateProviders };

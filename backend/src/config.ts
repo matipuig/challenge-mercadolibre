@@ -82,5 +82,3 @@ export const CONFIG = {
     KEY_PATH: getFromEnvironmentOrError('SSL_KEY_PATH'),
   },
 };
-
-export default CONFIG;

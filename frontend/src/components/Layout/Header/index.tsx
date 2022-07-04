@@ -24,7 +24,7 @@ export const Header = (): ReactElement => {
     <header className={styles.header} data-testid="header">
       <div className={styles.controlsContainer}>
         <Link href={ROUTES.MAIN}>
-          <a>
+          <a aria-label={t(logo.alt)}>
             <div className={styles.logo}>
               <Image
                 alt={t(logo.alt)}
@@ -45,5 +45,3 @@ export const Header = (): ReactElement => {
     </header>
   );
 };
-
-export default Header;

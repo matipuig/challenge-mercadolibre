@@ -72,5 +72,3 @@ export const getAvailableI18nTexts = (): Translations =>
   i18next.getDataByLanguage(LANGUAGE) as unknown as Translations;
 
 export const i18n = i18next;
-
-export default { i18n, t, getAvailableI18nTexts, getAvailableLanguages };

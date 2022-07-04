@@ -39,5 +39,3 @@ export const NotFound = (): ReactElement => {
     </section>
   );
 };
-
-export default NotFound;

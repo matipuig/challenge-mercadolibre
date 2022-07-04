@@ -45,5 +45,3 @@ mock.onGet(urls.GET_ITEM_URL).reply(200, mockedMELIRawItem);
  * Gets the mock adapter.
  * */
 export const getAxiosMockAdapter = () => mockAdapter;
-
-export default mockAdapter;

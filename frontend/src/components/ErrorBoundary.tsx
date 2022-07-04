@@ -53,5 +53,3 @@ export class ErrorBoundary extends Component {
     return children;
   }
 }
-
-export default ErrorBoundary;

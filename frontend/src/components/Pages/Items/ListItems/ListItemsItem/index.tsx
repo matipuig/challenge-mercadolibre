@@ -84,5 +84,3 @@ export const ListItemsItem = ({ item }: ListItemsItemProps): ReactElement => {
     </article>
   );
 };
-
-export default ListItemsItem;

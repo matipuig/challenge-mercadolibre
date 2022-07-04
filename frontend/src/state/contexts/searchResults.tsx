@@ -50,5 +50,3 @@ export const SearchResultsProvider = ({
     <SearchResultsContext.Provider value={{ ...state }}>{children}</SearchResultsContext.Provider>
   );
 };
-
-export default { initialState, SearchResultsContext, SearchResultsProvider };

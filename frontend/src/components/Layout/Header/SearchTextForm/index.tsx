@@ -70,5 +70,3 @@ export const SearchTextForm = (): ReactElement => {
     </form>
   );
 };
-
-export default SearchTextForm;

@@ -2,29 +2,27 @@
  * Contains the different log constants.
  */
 
-export default {
+export const LOGS = {
   /**
    * Contains labels for logs.
    */
-  LABELS: {
-    /**
-     * Environment related logs.
-     */
-    ENVIRONMENT: 'ENVIRONMENT',
+  /**
+   * Environment related logs.
+   */
+  ENVIRONMENT: 'ENVIRONMENT',
 
-    /**
-     * Rendering errors.
-     */
-    RENDERING: 'RENDERING',
+  /**
+   * Rendering errors.
+   */
+  RENDERING: 'RENDERING',
 
-    /**
-     * Server related logs.
-     */
-    SERVER: 'SERVER',
+  /**
+   * Server related logs.
+   */
+  SERVER: 'SERVER',
 
-    /**
-     * Service consumption.
-     */
-    SERVICE_CONSUMPTION: 'SERVICE_CONSUMPTION',
-  },
+  /**
+   * Service consumption.
+   */
+  SERVICE_CONSUMPTION: 'SERVICE_CONSUMPTION',
 };

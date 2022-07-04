@@ -4,8 +4,8 @@
 import { Request, Response, NextFunction } from 'express';
 import { isNull, isUndefined } from 'lodash';
 
-import apiUtils from '~/api/apiUtils';
-import mercadoLibreController from '~/controller/mercadoLibre';
+import { sendResponse, sendError } from '~/api/apiUtils';
+import { getItemById, getItemsBySearch } from '~/controller/mercadoLibre';
 import { CodedError, CODES } from '~/errors';
 import { SearchParams } from '~/types/MercadoLibre';
 
@@ -65,8 +65,8 @@ export const searchByParams = async (
   let result;
   try {
     const searchParams = getValidatedSearchParams(req);
-    result = await mercadoLibreController.getItemsBySearch(searchParams);
-    apiUtils.sendResponse(res, result);
+    result = await getItemsBySearch(searchParams);
+    sendResponse(res, result);
     return;
   } catch (error) {
     next(error);
@@ -83,17 +83,15 @@ export const getById = async (req: Request, res: Response, next: NextFunction): 
   let result;
   try {
     const { id } = req.params;
-    result = await mercadoLibreController.getItemById(id);
+    result = await getItemById(id);
     if (isNull(result)) {
       const error = new CodedError(CODES.SERVICE_MERCADO_LIBRE_ITEM_NOT_FOUND, { id });
-      apiUtils.sendError(req, res, error, 404);
+      sendError(req, res, error, 404);
       return;
     }
-    apiUtils.sendResponse(res, result);
+    sendResponse(res, result);
     return;
   } catch (error) {
     next(error);
   }
 };
-
-export default { searchByParams, getById };

@@ -20,5 +20,3 @@ export const pages = {
     description: 'Buscá los productos que quieras en MercadoLibre.',
   },
 } as const;
-
-export default pages;

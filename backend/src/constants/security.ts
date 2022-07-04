@@ -2,7 +2,7 @@
  * Containts security constants.
  */
 
-export default {
+export const SECURITY = {
   /**
    * Max body size per requests.
    */

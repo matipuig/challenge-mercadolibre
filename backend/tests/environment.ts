@@ -3,7 +3,7 @@
  */
 
 const loadEnvironmentVariables = (): void => {
-  process.env.NODE_ENV = 'development';
+  (process.env as any).NODE_ENV = 'development';
   process.env.PORT = '8080';
   process.env.LOGS_LEVEL = 'silly';
   process.env.TZ = 'America/Argentina/Buenos_Aires';
@@ -14,5 +14,3 @@ const loadEnvironmentVariables = (): void => {
 };
 
 loadEnvironmentVariables();
-
-export default process.env;

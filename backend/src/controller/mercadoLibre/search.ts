@@ -4,7 +4,7 @@
 /* eslint-disable camelcase */
 
 import { isNull, isString, isUndefined } from 'lodash';
-import mercadoLibreService from '~/services/mercadoLibre';
+import { searchProductsByQuery } from '~/services/mercadoLibre';
 import { ItemCategory, SearchParams, SearchResultWithCategories } from '~/types/MercadoLibre';
 import { MELISeachByQueryResults } from '~/types/services/MercadoLibre/SearchResult';
 import { extractInformationFromProductResult, getAuthor, getCategoryBreadcrumb } from './common';
@@ -72,7 +72,7 @@ export const getItemsBySearch = async (
 ): Promise<SearchResultWithCategories> => {
   try {
     const author = getAuthor();
-    const searchResult = await mercadoLibreService.searchProductsByQuery(searchParams);
+    const searchResult = await searchProductsByQuery(searchParams);
     const items = searchResult.results.map(extractInformationFromProductResult);
     const categories = await getCategoryBreadcrumbBySearchResult(searchResult);
     return { author, categories, items };
@@ -80,5 +80,3 @@ export const getItemsBySearch = async (
     throw error;
   }
 };
-
-export default { getItemsBySearch };

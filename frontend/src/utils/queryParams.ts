@@ -13,9 +13,10 @@ import { isArray, isUndefined } from 'lodash';
 export const getURLFriendlyString = (string: string): string => {
   const spacesReplaced = string.replace(/\s+/gim, ' ');
   const normalizedText = spacesReplaced.normalize('NFD');
-  const noSpecialCharsText = normalizedText.replace(/[\u0300-\u036f]/g, '');
+  const noSpecialCharsText = normalizedText.replace(/[^a-zA-Z0-9 ]/g, '');
+  const noSpacesText = noSpecialCharsText.replace(/\s+/g, '-');
   const urlParams = new URLSearchParams();
-  urlParams.set('friendly', noSpecialCharsText);
+  urlParams.set('friendly', noSpacesText);
   return urlParams.toString().replace('friendly=', '');
 };
 
@@ -53,5 +54,3 @@ export const getQueryParamValueAsPositiveInteger = (
   }
   return Number.parseInt(queryParamValue, 10);
 };
-
-export default { getQueryParamValue, getQueryParamValueAsPositiveInteger };

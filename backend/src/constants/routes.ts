@@ -2,7 +2,7 @@
  * Contains the routes of the APIs.
  */
 
-export default {
+export const ROUTES = {
   /**
    * API routes.
    */

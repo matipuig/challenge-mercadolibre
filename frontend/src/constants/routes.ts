@@ -2,7 +2,7 @@
  * Contains the routes of the application.
  */
 
-export default {
+export const ROUTES = {
   /**
    * Contains the main screen of the application.
    */

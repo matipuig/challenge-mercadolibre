@@ -4,8 +4,8 @@
 
 import { get as lodashGet } from 'lodash';
 
-import CONSTANTS from '~/constants';
-import resources from './resources';
+import { CONSTANTS } from '~/constants';
+import { resources } from './resources';
 
 const { DEFAULT_LANGUAGE } = CONSTANTS;
 
@@ -22,5 +22,3 @@ export const get = (routeKey: string, language: string = DEFAULT_LANGUAGE): stri
   const arrSearch = search.split('.');
   return lodashGet(resources, arrSearch, routeKey);
 };
-
-export default { get };

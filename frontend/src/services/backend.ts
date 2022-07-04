@@ -59,5 +59,3 @@ export const searchProductsByQuery = async (
     throw new Error(serviceError.description);
   }
 };
-
-export default { getItemById, searchProductsByQuery };

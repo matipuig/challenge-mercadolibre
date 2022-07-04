@@ -43,5 +43,3 @@ export const BuyButton = ({ detailedItem }: BuyButtonProps): ReactElement => {
     </button>
   );
 };
-
-export default BuyButton;

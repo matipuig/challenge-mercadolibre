@@ -56,5 +56,3 @@ export const handleError = (axiosError: AxiosError): APIErrorResult => {
     success: false,
   };
 };
-
-export default { handleResult, handleError };

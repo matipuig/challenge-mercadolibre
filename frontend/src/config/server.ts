@@ -70,5 +70,3 @@ export const SERVER_CONFIG = {
     },
   },
 };
-
-export default SERVER_CONFIG;

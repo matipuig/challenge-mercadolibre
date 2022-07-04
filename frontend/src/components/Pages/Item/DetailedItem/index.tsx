@@ -61,5 +61,3 @@ export const DetailedItem = ({ detailedItem }: DetailedItemProps): ReactElement 
     </section>
   );
 };
-
-export default DetailedItem;

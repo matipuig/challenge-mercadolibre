@@ -6,10 +6,10 @@ import { Request, Response, NextFunction } from 'express';
 import { noop, isString, isArray, pick, isObject } from 'lodash';
 
 import { CodedError, CODES, CODES as ERROR_CODES } from '~/errors';
-import i18n from '~/internationalization';
+import { get as getI18n } from '~/internationalization';
 import { logger, LABELS } from '~/utils/logger';
 import { APIErrorResponse } from '~/types/APIResults';
-import CONFIG from '~/config';
+import { CONFIG } from '~/config';
 
 /**
  * Choose the response code by the error code.
@@ -88,11 +88,12 @@ export const logIP = (req: Request, res: Response, next: NextFunction): void => 
 export const sendError = (req: Request, res: Response, error: CodedError, code = 500): void => {
   noop(req);
   const language = getLanguageFromRequest(req);
-  const message = i18n.get(`Error.${error.code}`, language);
+  const errorCode = error.code.toString();
+  const message = getI18n(`Error.${errorCode}`, language);
   const response: APIErrorResponse = {
     code,
     message,
-    error: error.code,
+    error: errorCode,
     success: false,
   };
   res.statusCode = code;
@@ -166,16 +167,6 @@ export const handleError = (
     'query',
     'headers',
   ]);
-  logger.error(error.code, LABELS.API, { error, request: requestData });
+  logger.error(error.code.toString(), LABELS.API, { error, request: requestData });
   sendError(req, res, error, errorCode);
-};
-
-export default {
-  logIP,
-  getLanguageFromRequest,
-  sendError,
-  sendResponse,
-  rejectIfNotAuthorized,
-  sendMethodNotFoundError,
-  handleError,
 };

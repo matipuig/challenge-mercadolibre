@@ -53,5 +53,3 @@ export const components = {
     linkToMainManu: 'Volver a la página principal.',
   },
 } as const;
-
-export default { components };

@@ -49,5 +49,3 @@ export const PicturesContainer = ({ pictures, altText }: PicturesContainerProps)
     </Carousel>
   </picture>
 );
-
-export default PicturesContainer;

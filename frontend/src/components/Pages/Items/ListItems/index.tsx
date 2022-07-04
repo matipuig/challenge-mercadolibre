@@ -19,5 +19,3 @@ export const ListItems = ({ items }: ListItemsProps): ReactElement => (
     ))}
   </section>
 );
-
-export default ListItems;

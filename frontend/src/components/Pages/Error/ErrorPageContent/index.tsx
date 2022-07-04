@@ -39,5 +39,3 @@ export const ErrorPageContent = (): ReactElement => {
     </section>
   );
 };
-
-export default ErrorPageContent;

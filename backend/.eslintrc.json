@@ -17,7 +17,8 @@
     "prettier/prettier": ["error"], // Prettier validations should throw error.
     "import/extensions": "off",
     "func-style": ["error", "expression"], // Only anonymous as constants.
-    "no-useless-catch": "off" // Needed for the try{}catch{} of async functions, otherwise it could throw unhandled rejection .
+    "no-useless-catch": "off", // Needed for the try{}catch{} of async functions, otherwise it could throw unhandled rejection .
+    "import/prefer-default-export": "off" // Leys use just named.
   },
   "settings": {
     "import/resolver": {

@@ -3,7 +3,7 @@
  */
 import stacktrace from 'stack-trace';
 
-import CODES from './codes';
+import { ERROR_CODES as CODES } from './codes';
 
 type ErrorCode = keyof typeof CODES;
 type Context = Record<string, unknown>;
@@ -101,5 +101,3 @@ class CodedError extends Error {
 }
 
 export { CodedError, CODES };
-
-export default { CodedError, CODES };

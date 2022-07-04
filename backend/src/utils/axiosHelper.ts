@@ -6,7 +6,7 @@ import { AxiosError, AxiosResponse } from 'axios';
 import { pick } from 'lodash';
 
 import { APIErrorResult, APISuccessResult } from '~/types/services/common';
-import logger, { LABELS } from '~/utils/logger';
+import { logger, LABELS } from '~/utils/logger';
 
 const getRequestInformation = (
   axiosResponse: AxiosResponse | AxiosError,
@@ -49,5 +49,3 @@ export const handleError = (axiosError: AxiosError): APIErrorResult => {
     success: false,
   };
 };
-
-export default { handleResult, handleError };

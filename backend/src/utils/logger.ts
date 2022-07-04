@@ -6,8 +6,8 @@
 import { cloneDeep } from 'lodash';
 import winston from 'winston';
 
-import CONFIG from '~/config';
-import CONSTANTS from '~/constants';
+import { CONFIG } from '~/config';
+import { CONSTANTS } from '~/constants';
 import { LogContext, LogLevels } from '~/types/logger';
 
 const { APP_NAME, APP_VERSION, NODE_ENV } = CONFIG;
@@ -101,5 +101,3 @@ console.debug = (...args: unknown[]) => logger.debug('Console.debug', LogLevels.
 console.info = (...args: unknown[]) => logger.info('Console.info', LogLevels.info, { args });
 console.table = (...args: unknown[]) => logger.info('Console.table', LogLevels.info, { args });
 console.warn = (...args: unknown[]) => logger.warn('Console.warn', LogLevels.warn, { args });
-
-export default logger;

@@ -2,7 +2,7 @@
  * Exports the constants of myself...
  */
 
-export default {
+export const AUTHOR = {
   /**
    * Name of the author.
    */

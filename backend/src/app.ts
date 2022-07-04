@@ -5,8 +5,8 @@
 import express from 'express';
 
 import { logger, LABELS } from '~/utils/logger';
-import CONFIG from './config';
-import api from './api';
+import { CONFIG } from './config';
+import { router as api } from './api';
 
 const { APP_NAME } = CONFIG;
 const app = express();

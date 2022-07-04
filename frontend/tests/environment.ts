@@ -2,7 +2,7 @@
  * Mocks the environment variables.
  */
 
-const loadEnvironmentVariables = (): void => {
+export const loadEnvironmentVariables = (): void => {
   process.env.NEXT_PUBLIC_FRONTEND_BASE_URL = 'http://localhost:3000';
   process.env.NEXT_PUBLIC_LANGUAGE = 'es';
   process.env.LOGS_LEVEL = 'silly';
@@ -11,5 +11,3 @@ const loadEnvironmentVariables = (): void => {
 };
 
 loadEnvironmentVariables();
-
-export default process.env;

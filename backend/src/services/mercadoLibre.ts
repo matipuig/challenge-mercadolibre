@@ -4,7 +4,7 @@
 
 import axios, { AxiosError } from 'axios';
 
-import CONSTANTS from '~/constants';
+import { CONSTANTS } from '~/constants';
 import { CodedError, CODES } from '~/errors';
 import { handleError, handleResult } from '~/utils/axiosHelper';
 import { MELISeachByQueryResults } from '~/types/services/MercadoLibre/SearchResult';
@@ -104,5 +104,3 @@ export const searchProductsByQuery = async (
     throw new CodedError(CODES.SERVICE_MERCADO_LIBRE_SEARCH_ERROR, { serviceError });
   }
 };
-
-export default { getCategoryById, getItemById, getItemDescriptionById, searchProductsByQuery };

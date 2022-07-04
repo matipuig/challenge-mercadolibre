@@ -12,5 +12,3 @@ export const Footer = (): ReactElement => (
     <div className={styles.authorContainer}>{CONSTANTS.AUTHOR}</div>
   </footer>
 );
-
-export default Footer;

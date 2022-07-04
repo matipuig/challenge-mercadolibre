@@ -33,5 +33,3 @@ export const NoResults = (): ReactElement => {
     </section>
   );
 };
-
-export default NoResults;

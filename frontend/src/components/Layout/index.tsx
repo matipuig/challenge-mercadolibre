@@ -15,5 +15,3 @@ export const Layout = ({ children }: PropsWithChildren<unknown>): ReactElement =
     <Footer />
   </Fragment>
 );
-
-export default Layout;

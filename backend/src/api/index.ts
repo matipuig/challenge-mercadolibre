@@ -6,18 +6,18 @@ import express from 'express';
 import RateLimit from 'express-rate-limit';
 import SlowDown from 'express-slow-down';
 
-import CONSTANTS from '~/constants';
+import { CONSTANTS } from '~/constants';
 import { CODES } from '~/errors';
-import apiUtils from './apiUtils';
-import routes from './routes';
+import { logIP, rejectIfNotAuthorized, sendMethodNotFoundError, handleError } from './apiUtils';
+import { api } from './routes';
 
 const { ROUTES, SECURITY } = CONSTANTS;
-const router = express.Router();
+const _router = express.Router();
 
 /**
  * Security settings.
  */
-router.use(apiUtils.logIP);
+_router.use(logIP);
 const rateError = () =>
   JSON.stringify({
     success: false,
@@ -37,20 +37,20 @@ const slowDown = SlowDown({
   delayMs: SECURITY.SLOW_DOWN.DELAY_MS,
 });
 
-router.use(rateLimit);
-router.use(slowDown);
-router.use(apiUtils.rejectIfNotAuthorized);
+_router.use(rateLimit);
+_router.use(slowDown);
+_router.use(rejectIfNotAuthorized);
 
 /**
  * Entering the API.
  */
-router.use(express.json({ limit: SECURITY.MAX_REQUEST_BODY_SIZE }));
-router.use(ROUTES.API.BASE, routes);
+_router.use(express.json({ limit: SECURITY.MAX_REQUEST_BODY_SIZE }));
+_router.use(ROUTES.API.BASE, api);
 
 /**
  * Error handling.
  */
-router.all('*', apiUtils.sendMethodNotFoundError);
-router.use(apiUtils.handleError);
+_router.all('*', sendMethodNotFoundError);
+_router.use(handleError);
 
-export default router;
+export const router = _router;

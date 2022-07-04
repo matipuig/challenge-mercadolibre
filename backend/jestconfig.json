@@ -11,6 +11,6 @@
     "~(.*)$": "<rootDir>/src/$1"
   },
   "reporters": ["default"],
-  "setupFiles": ["dotenv/config"],
+  "setupFiles": ["./tests/environment.ts"],
   "verbose": true
 }

@@ -5,7 +5,7 @@
 /**
  *  Language resources.
  */
-const resources = {
+export const resources = {
   es: {
     Error: {
       NOT_DEFINED: 'Ha ocurrido un error no esperado.',
@@ -51,5 +51,3 @@ const resources = {
     },
   },
 };
-
-export default resources;

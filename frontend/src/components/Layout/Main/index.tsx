@@ -10,5 +10,3 @@ export const Main = ({ children }: PropsWithChildren<unknown>): ReactElement => 
     <div className={styles.componentsContainer}>{children}</div>
   </main>
 );
-
-export default Main;

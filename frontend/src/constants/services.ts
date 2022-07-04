@@ -2,7 +2,7 @@
  * Containts services constants.
  */
 
-export default {
+export const SERVICES = {
   /**
    * Backend constants.
    */

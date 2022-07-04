@@ -27,5 +27,3 @@ export const getURLForPublicContent = (url: string): string => {
   }
   return `${appsubPath}${url}`;
 };
-
-export default { getURLForPublicContent };

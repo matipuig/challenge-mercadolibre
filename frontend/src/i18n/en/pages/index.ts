@@ -20,5 +20,3 @@ export const pages = {
     description: 'Search products in MercadoLibre.',
   },
 } as const;
-
-export default pages;

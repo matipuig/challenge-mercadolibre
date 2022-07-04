@@ -8,5 +8,3 @@ export const es = {
   components,
   pages,
 } as const;
-
-export default { components, pages };

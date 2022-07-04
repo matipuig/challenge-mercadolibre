@@ -2,7 +2,7 @@
  * Contains the different log constants.
  */
 
-export default {
+export const LOGS = {
   /**
    * Contains labels for logs.
    */

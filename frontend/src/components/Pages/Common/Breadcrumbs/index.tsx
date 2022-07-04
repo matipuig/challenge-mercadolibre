@@ -55,5 +55,3 @@ export const Breadcrumbs = ({ categories }: BreadcrumbProps): ReactElement => {
     </nav>
   );
 };
-
-export default Breadcrumbs;

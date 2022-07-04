@@ -25,5 +25,3 @@ export const PUBLIC_CONFIG = {
     process.env.NEXT_PUBLIC_LANGUAGE ||
     throwMissingEnvironmentVariableError('NEXT_PUBLIC_LANGUAGE'),
 };
-
-export default PUBLIC_CONFIG;

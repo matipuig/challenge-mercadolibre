@@ -11,7 +11,7 @@ import { CONSTANTS } from '~/constants';
 import { LogContext, LogLevels } from '~/types/logger';
 
 const { APP_NAME, APP_VERSION, NODE_ENV, LOGS_LEVEL } = SERVER_CONFIG;
-const LOG_LABELS = CONSTANTS.LOGS.LABELS;
+const LOG_LABELS = CONSTANTS.LOGS;
 
 const { combine, prettyPrint, json } = winston.format;
 
@@ -109,5 +109,3 @@ if (process.env.NODE_ENV === 'production') {
   console.table = (...args: unknown[]) => logger.info('Console.table', LogLevels.info, { args });
   console.warn = (...args: unknown[]) => logger.warn('Console.warn', LogLevels.warn, { args });
 }
-
-export default logger;

@@ -4,14 +4,17 @@
 /* eslint-disable camelcase */
 
 import { isNull } from 'lodash';
-import mercadoLibreService from '~/services/mercadoLibre';
+import {
+  getItemById as getMELIItemById,
+  getItemDescriptionById as getMELIItemDescriptionById,
+} from '~/services/mercadoLibre';
 import { DetailedItem, ItemPicture, ItemResult } from '~/types/MercadoLibre';
 import { MELIRawItem } from '~/types/services/MercadoLibre/Item';
 import { extractInformationFromProductResult, getAuthor, getCategoryBreadcrumb } from './common';
 
 const getItemDescription = async (id: string): Promise<string> => {
   try {
-    const descriptionResult = await mercadoLibreService.getItemDescriptionById(id);
+    const descriptionResult = await getMELIItemDescriptionById(id);
     if (isNull(descriptionResult)) {
       return '';
     }
@@ -45,7 +48,7 @@ const getItemPictures = (rawItem: MELIRawItem): ItemPicture[] => {
 export const getItemById = async (id: string): Promise<ItemResult | null> => {
   try {
     const author = getAuthor();
-    const itemDataPromise = mercadoLibreService.getItemById(id);
+    const itemDataPromise = getMELIItemById(id);
     const itemDescriptionPromise = getItemDescription(id);
     const [serviceItem, description] = await Promise.all([itemDataPromise, itemDescriptionPromise]);
     if (isNull(serviceItem)) {
@@ -70,5 +73,3 @@ export const getItemById = async (id: string): Promise<ItemResult | null> => {
     throw error;
   }
 };
-
-export default { getItemById };
