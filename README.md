@@ -107,7 +107,7 @@ El usuario solo puede comunicarse con el frontend. El backend no debería tener 
 
 Aunque la idea es que el backend no sea expuesto y solo sea consumido por el front, a fines de prueba se expuso en el servidor a la API como:
 
-[[https://](https://matiaspuig-challenge.com.ar/api)](https://matiaspuig-challenge.com.ar/api)
+[https://matiaspuig-challenge.com.ar/api](https://matiaspuig-challenge.com.ar/api)
 
 Se adjunto en la carpeta ["docs"](/docs) la colección de postman para importar y testear la misma.
 
