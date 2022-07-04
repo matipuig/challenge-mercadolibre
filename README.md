@@ -293,9 +293,7 @@ Es importante verificar que la aplicación web continúe funcionando detrás de 
 
 **Importante**:
 
-En este caso, la aplicación no funciona correctamente si se establece el header CSP, debido a que NextJS utiliza "unsafes-inlines" en sí mismo. La solución correcta sería agregar un nonce para evitar ataques XSS, pero iría en contra de la performance.
-
-// TODO: Aclarar que el coverage d elos units no es lo más improtante.
+En este caso, la aplicación no funciona correctamente si se establece el header CSP, debido a que NextJS utiliza "unsafes-inlines" en sí mismo. La solución correcta sería agregar un nonce para evitar ataques XSS, lo cual lograría puntuar como A+, pero iría en contra de la performance.
 
 ## Pendientes:
 
