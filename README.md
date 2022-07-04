@@ -248,7 +248,7 @@ Los mismos fueron realizados en el frontend utilizando la herramienta Cypress. S
 
 Se utlizó como principio utilizar la accesibilidad de la página (buscar HTML semántico y ubicación, o botones o inputs a partir de su nombre), y no los tags. Los data-testid fueron evitados para el testeo E2E.
 
-![lighthouse](https://github.com/matipuig/challenge-mercadolibre/blob/main/others/docs/imgs/lighthouse.png?raw=true)
+![e2e](https://github.com/matipuig/challenge-mercadolibre/blob/main/others/docs/imgs/e2e.png?raw=true)
 
 ## Otros principios seguidos
 
