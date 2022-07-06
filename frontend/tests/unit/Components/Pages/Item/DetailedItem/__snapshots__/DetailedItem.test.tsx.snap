@@ -323,7 +323,7 @@ Object {
                 </div>
               </picture>
             </div>
-            <div>
+            <section>
               <div>
                 Nuevo | 0 vendidos
               </div>
@@ -358,7 +358,7 @@ Object {
                   Comprar
                 </button>
               </div>
-            </div>
+            </section>
           </div>
           <div>
             <h2>
@@ -711,7 +711,7 @@ RAZA DE PELO LARGO (NO MUDA PELO)
               </div>
             </picture>
           </div>
-          <div>
+          <section>
             <div>
               Nuevo | 0 vendidos
             </div>
@@ -746,7 +746,7 @@ RAZA DE PELO LARGO (NO MUDA PELO)
                 Comprar
               </button>
             </div>
-          </div>
+          </section>
         </div>
         <div>
           <h2>

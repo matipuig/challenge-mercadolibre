@@ -39,7 +39,7 @@ Object {
               </span>
             </a>
           </figure>
-          <div>
+          <section>
             <div>
               <div>
                 <div>
@@ -67,7 +67,7 @@ Object {
                 Motosierra A Nafta Philco 52cc Mjpmo217 2.4hp
               </h2>
             </a>
-          </div>
+          </section>
         </article>
         <article
           data-testid="listItemsItem"
@@ -102,7 +102,7 @@ Object {
               </span>
             </a>
           </figure>
-          <div>
+          <section>
             <div>
               <div>
                 <div>
@@ -130,7 +130,7 @@ Object {
                 Silla Plástica X 10 Apilable Reforzada Negro Reina Quality 
               </h2>
             </a>
-          </div>
+          </section>
         </article>
         <article
           data-testid="listItemsItem"
@@ -165,7 +165,7 @@ Object {
               </span>
             </a>
           </figure>
-          <div>
+          <section>
             <div>
               <div>
                 <div>
@@ -193,7 +193,7 @@ Object {
                 Sopladora Aspiradora Philco Mjpsa116  Eléctrica 2600w 220v - 240v
               </h2>
             </a>
-          </div>
+          </section>
         </article>
         <article
           data-testid="listItemsItem"
@@ -228,7 +228,7 @@ Object {
               </span>
             </a>
           </figure>
-          <div>
+          <section>
             <div>
               <div>
                 <div>
@@ -256,7 +256,7 @@ Object {
                 Sopladora Daewoo Daeb600  Eléctrica 600w 240v
               </h2>
             </a>
-          </div>
+          </section>
         </article>
         <article
           data-testid="listItemsItem"
@@ -291,7 +291,7 @@ Object {
               </span>
             </a>
           </figure>
-          <div>
+          <section>
             <div>
               <div>
                 <div>
@@ -319,7 +319,7 @@ Object {
                 Sillas Plasticas Reforzadas Apilables Reina Pack 10
               </h2>
             </a>
-          </div>
+          </section>
         </article>
       </section>
     </div>
@@ -359,7 +359,7 @@ Object {
             </span>
           </a>
         </figure>
-        <div>
+        <section>
           <div>
             <div>
               <div>
@@ -387,7 +387,7 @@ Object {
               Motosierra A Nafta Philco 52cc Mjpmo217 2.4hp
             </h2>
           </a>
-        </div>
+        </section>
       </article>
       <article
         data-testid="listItemsItem"
@@ -422,7 +422,7 @@ Object {
             </span>
           </a>
         </figure>
-        <div>
+        <section>
           <div>
             <div>
               <div>
@@ -450,7 +450,7 @@ Object {
               Silla Plástica X 10 Apilable Reforzada Negro Reina Quality 
             </h2>
           </a>
-        </div>
+        </section>
       </article>
       <article
         data-testid="listItemsItem"
@@ -485,7 +485,7 @@ Object {
             </span>
           </a>
         </figure>
-        <div>
+        <section>
           <div>
             <div>
               <div>
@@ -513,7 +513,7 @@ Object {
               Sopladora Aspiradora Philco Mjpsa116  Eléctrica 2600w 220v - 240v
             </h2>
           </a>
-        </div>
+        </section>
       </article>
       <article
         data-testid="listItemsItem"
@@ -548,7 +548,7 @@ Object {
             </span>
           </a>
         </figure>
-        <div>
+        <section>
           <div>
             <div>
               <div>
@@ -576,7 +576,7 @@ Object {
               Sopladora Daewoo Daeb600  Eléctrica 600w 240v
             </h2>
           </a>
-        </div>
+        </section>
       </article>
       <article
         data-testid="listItemsItem"
@@ -611,7 +611,7 @@ Object {
             </span>
           </a>
         </figure>
-        <div>
+        <section>
           <div>
             <div>
               <div>
@@ -639,7 +639,7 @@ Object {
               Sillas Plasticas Reforzadas Apilables Reina Pack 10
             </h2>
           </a>
-        </div>
+        </section>
       </article>
     </section>
   </div>,

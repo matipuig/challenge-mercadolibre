@@ -1,7 +1,8 @@
-/* eslint-disable no-console */
 /**
  * Contains some utils for testing.
  */
+/* I use the console to silence testings */
+/* eslint-disable no-console */
 
 import { isObject, noop } from 'lodash';
 
@@ -51,6 +52,7 @@ export const getURLWithBase = (urlWithoutBase: string): string =>
  * @param props Props that useRouter requires.
  */
 export const mockNextUseRouter = (props: UseRouterParams): void => {
+  /* I like to mock it once... Not in every file is needed. */
   // eslint-disable-next-line global-require
   const useRouter = jest.spyOn(require('next/router'), 'useRouter');
   useRouter.mockImplementation(() => props);

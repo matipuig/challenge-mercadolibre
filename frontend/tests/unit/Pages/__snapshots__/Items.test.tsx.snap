@@ -74,7 +74,7 @@ Object {
               </span>
             </a>
           </figure>
-          <div>
+          <section>
             <div>
               <div>
                 <div>
@@ -126,7 +126,7 @@ Object {
                 Perro De Raza /cachorros Shitzu Tzu Mini Hembra-macho
               </h2>
             </a>
-          </div>
+          </section>
         </article>
         <article
           data-testid="listItemsItem"
@@ -161,7 +161,7 @@ Object {
               </span>
             </a>
           </figure>
-          <div>
+          <section>
             <div>
               <div>
                 <div>
@@ -213,7 +213,7 @@ Object {
                 Shitzu Shihtzu Cachorros
               </h2>
             </a>
-          </div>
+          </section>
         </article>
         <article
           data-testid="listItemsItem"
@@ -248,7 +248,7 @@ Object {
               </span>
             </a>
           </figure>
-          <div>
+          <section>
             <div>
               <div>
                 <div>
@@ -300,7 +300,7 @@ Object {
                 Shitzu Cachorros 
               </h2>
             </a>
-          </div>
+          </section>
         </article>
         <article
           data-testid="listItemsItem"
@@ -335,7 +335,7 @@ Object {
               </span>
             </a>
           </figure>
-          <div>
+          <section>
             <div>
               <div>
                 <div>
@@ -387,7 +387,7 @@ Object {
                 Shitzu Machito
               </h2>
             </a>
-          </div>
+          </section>
         </article>
         <article
           data-testid="listItemsItem"
@@ -422,7 +422,7 @@ Object {
               </span>
             </a>
           </figure>
-          <div>
+          <section>
             <div>
               <div>
                 <div>
@@ -474,7 +474,7 @@ Object {
                 Cachorro Shitzu Shitzu !! Hermoso !! Listo Para Entregar
               </h2>
             </a>
-          </div>
+          </section>
         </article>
       </section>
     </div>
@@ -549,7 +549,7 @@ Object {
             </span>
           </a>
         </figure>
-        <div>
+        <section>
           <div>
             <div>
               <div>
@@ -601,7 +601,7 @@ Object {
               Perro De Raza /cachorros Shitzu Tzu Mini Hembra-macho
             </h2>
           </a>
-        </div>
+        </section>
       </article>
       <article
         data-testid="listItemsItem"
@@ -636,7 +636,7 @@ Object {
             </span>
           </a>
         </figure>
-        <div>
+        <section>
           <div>
             <div>
               <div>
@@ -688,7 +688,7 @@ Object {
               Shitzu Shihtzu Cachorros
             </h2>
           </a>
-        </div>
+        </section>
       </article>
       <article
         data-testid="listItemsItem"
@@ -723,7 +723,7 @@ Object {
             </span>
           </a>
         </figure>
-        <div>
+        <section>
           <div>
             <div>
               <div>
@@ -775,7 +775,7 @@ Object {
               Shitzu Cachorros 
             </h2>
           </a>
-        </div>
+        </section>
       </article>
       <article
         data-testid="listItemsItem"
@@ -810,7 +810,7 @@ Object {
             </span>
           </a>
         </figure>
-        <div>
+        <section>
           <div>
             <div>
               <div>
@@ -862,7 +862,7 @@ Object {
               Shitzu Machito
             </h2>
           </a>
-        </div>
+        </section>
       </article>
       <article
         data-testid="listItemsItem"
@@ -897,7 +897,7 @@ Object {
             </span>
           </a>
         </figure>
-        <div>
+        <section>
           <div>
             <div>
               <div>
@@ -949,7 +949,7 @@ Object {
               Cachorro Shitzu Shitzu !! Hermoso !! Listo Para Entregar
             </h2>
           </a>
-        </div>
+        </section>
       </article>
     </section>
   </div>,

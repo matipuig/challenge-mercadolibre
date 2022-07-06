@@ -2,7 +2,7 @@
  * Contains the search results state management.
  */
 
-import { createContext, PropsWithChildren, useReducer } from 'react';
+import { createContext, PropsWithChildren, useMemo, useReducer } from 'react';
 
 import { noop } from 'lodash';
 
@@ -38,15 +38,11 @@ SearchResultsContext.displayName = 'SearchResultsContext';
  * Provider to get the state from the search results.
  * @param children Components that are inside of it.
  */
-export const SearchResultsProvider = ({
-  children,
-  value,
-}: PropsWithChildren<{ value: SearchResultsState }>) => {
-  noop(value);
+export const SearchResultsProvider = ({ children }: PropsWithChildren<unknown>) => {
   const [searchResultsState, dispatch] = useReducer(reducer, initialState);
-  const state = { ...searchResultsState, dispatch };
-  return (
-    /* eslint-disable react/jsx-no-constructed-context-values  */
-    <SearchResultsContext.Provider value={{ ...state }}>{children}</SearchResultsContext.Provider>
+  const state = useMemo(
+    () => ({ ...searchResultsState, dispatch }),
+    [searchResultsState, dispatch],
   );
+  return <SearchResultsContext.Provider value={state}>{children}</SearchResultsContext.Provider>;
 };

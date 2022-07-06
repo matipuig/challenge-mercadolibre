@@ -16,7 +16,7 @@ import { NoResults } from '~/components/Pages/Items/NoResults';
 import { CONSTANTS } from '~/constants';
 import { getAvailableI18nTexts } from '~/i18n';
 import { searchProductsByQuery } from '~/services/backend';
-import { getDispatcher, dispatchSearchResults } from '~/state/hooks/searchResults';
+import { useGetDispatcher, dispatchSearchResults } from '~/state/hooks/searchResults';
 import { SearchResultWithCategories } from '~/types/services/backend';
 import { getURLForPublicContent } from '~/utils/components';
 import { logger, LABELS } from '~/utils/logger';
@@ -50,7 +50,7 @@ export const getServerSideProps: GetServerSideProps<ItemsPageProps> = async (con
 
 export const ItemsPage = (props: ItemsPageProps) => {
   const { t } = useTranslation();
-  const dispatcher = getDispatcher();
+  const dispatcher = useGetDispatcher();
   const { searchResult } = props;
   useEffect(() => {
     if (!isNull(searchResult)) {

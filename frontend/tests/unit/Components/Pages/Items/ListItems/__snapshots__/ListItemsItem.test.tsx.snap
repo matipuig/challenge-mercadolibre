@@ -38,7 +38,7 @@ Object {
             </span>
           </a>
         </figure>
-        <div>
+        <section>
           <div>
             <div>
               <div>
@@ -66,7 +66,7 @@ Object {
               Motosierra A Nafta Philco 52cc Mjpmo217 2.4hp
             </h2>
           </a>
-        </div>
+        </section>
       </article>
     </div>
   </body>,
@@ -104,7 +104,7 @@ Object {
           </span>
         </a>
       </figure>
-      <div>
+      <section>
         <div>
           <div>
             <div>
@@ -132,7 +132,7 @@ Object {
             Motosierra A Nafta Philco 52cc Mjpmo217 2.4hp
           </h2>
         </a>
-      </div>
+      </section>
     </article>
   </div>,
   "debug": [Function],

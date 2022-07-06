@@ -1,16 +1,17 @@
 /**
  * Contains the logger types.
  */
+/* Hay un global que se llama LogLevels */
 /* eslint-disable no-shadow */
 
 export enum LogLevels {
-  error = 'error',
-  warn = 'warn',
-  info = 'info',
-  http = 'http',
-  verbose = 'verbose',
-  debug = 'debug',
-  silly = 'silly',
+  Error = 'error',
+  Warn = 'warn',
+  Info = 'info',
+  Http = 'http',
+  Verbose = 'verbose',
+  Debug = 'debug',
+  Silly = 'silly',
 }
 
 export type LogContext = Record<string, unknown>;

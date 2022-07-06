@@ -54,7 +54,7 @@ export const ListItemsItem = ({ item }: ListItemsItemProps): ReactElement => {
           </a>
         </Link>
       </figure>
-      <div className={styles.descriptionContainer}>
+      <section className={styles.descriptionContainer}>
         <div className={styles.descriptionUpperPart}>
           <div className={styles.priceAndShippingContainer}>
             <div className={styles.price}>
@@ -80,7 +80,7 @@ export const ListItemsItem = ({ item }: ListItemsItemProps): ReactElement => {
             <h2 className={styles.title}>{item.title}</h2>
           </a>
         </Link>
-      </div>
+      </section>
     </article>
   );
 };

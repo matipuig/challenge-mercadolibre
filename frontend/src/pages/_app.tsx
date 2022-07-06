@@ -6,7 +6,6 @@
 import type { AppProps } from 'next/app';
 import { I18nextProvider } from 'react-i18next';
 
-/*  eslint-disable import/no-named-as-default */
 import { ErrorBoundary } from '~/components/ErrorBoundary';
 import { Layout } from '~/components/Layout';
 import { StateProviders } from '~/components/StateProviders';

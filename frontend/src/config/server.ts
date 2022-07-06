@@ -17,11 +17,11 @@ const getFromEnvironmentOrError = (variableName: string): string => {
 const getLogLevelFromEnvironment = (): LogLevels => {
   const value = process.env[LOGS_LEVEL_LABEL];
   if (typeof value === 'undefined') {
-    return LogLevels.silly;
+    return LogLevels.Silly;
   }
   const validLogLevels: string[] = Object.values(LogLevels);
   if (!validLogLevels.includes(value)) {
-    return LogLevels.silly;
+    return LogLevels.Silly;
   }
   return value as LogLevels;
 };

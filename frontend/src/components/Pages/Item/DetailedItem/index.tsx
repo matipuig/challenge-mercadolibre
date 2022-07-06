@@ -36,7 +36,7 @@ export const DetailedItem = ({ detailedItem }: DetailedItemProps): ReactElement 
               altText={i18nReplace(t(picturesAlt), detailedItem.title)}
             />
           </div>
-          <div className={styles.informationContainer}>
+          <section className={styles.informationContainer}>
             <div className={styles.conditionAndSoldCount}>
               {itemCondition === 'new'
                 ? i18nReplace(t(conditionAndSoldCount.new), soldQuantity)
@@ -49,7 +49,7 @@ export const DetailedItem = ({ detailedItem }: DetailedItemProps): ReactElement 
             <div className={styles.buyButtonContainer}>
               <BuyButton detailedItem={detailedItem} />
             </div>
-          </div>
+          </section>
         </div>
         <div className={styles.descriptionContainer}>
           <h2 className={styles.descriptionLabel}>{t(descriptionLabel)}</h2>

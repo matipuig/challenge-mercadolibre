@@ -46,7 +46,7 @@ export const logger = {
    * @param context Context of the log.
    */
   error: (message: string, label: string, context?: LogContext): boolean =>
-    log(message, LogLevels.error, label, context),
+    log(message, LogLevels.Error, label, context),
 
   /**
    * Logs a warning.
@@ -54,7 +54,7 @@ export const logger = {
    * @param context Context of the log.
    */
   warn: (message: string, label: string, context?: LogContext): boolean =>
-    log(message, LogLevels.warn, label, context),
+    log(message, LogLevels.Warn, label, context),
 
   /**
    * Logs information.
@@ -62,7 +62,7 @@ export const logger = {
    * @param context Context of the log.
    */
   info: (message: string, label: string, context?: LogContext): boolean =>
-    log(message, LogLevels.info, label, context),
+    log(message, LogLevels.Info, label, context),
 
   /**
    * Logs http information.
@@ -70,7 +70,7 @@ export const logger = {
    * @param context Context of the log.
    */
   http: (message: string, label: string, context?: LogContext): boolean =>
-    log(message, LogLevels.http, label, context),
+    log(message, LogLevels.Http, label, context),
 
   /**
    * Logs verbosily.
@@ -78,7 +78,7 @@ export const logger = {
    * @param context Context of the log.
    */
   verbose: (message: string, label: string, context?: LogContext): boolean =>
-    log(message, LogLevels.verbose, label, context),
+    log(message, LogLevels.Verbose, label, context),
 
   /**
    * Logs while debugging.
@@ -86,7 +86,7 @@ export const logger = {
    * @param context Context of the log.
    */
   debug: (message: string, label: string, context?: LogContext): boolean =>
-    log(message, LogLevels.debug, label, context),
+    log(message, LogLevels.Debug, label, context),
 
   /**
    * Logs silly.
@@ -94,7 +94,7 @@ export const logger = {
    * @param context Context of the log.
    */
   silly: (message: string, label: string, context?: LogContext): boolean =>
-    log(message, LogLevels.silly, label, context),
+    log(message, LogLevels.Silly, label, context),
 
   /**
    * Turns on or off the logger
@@ -110,10 +110,10 @@ export const logger = {
  * Only if in production. During development it also affects next js developing framework.
  */
 if (process.env.NODE_ENV === 'production') {
-  console.log = (...args: unknown[]) => logger.info('Console.log', LogLevels.info, { args });
-  console.error = (...args: unknown[]) => logger.error('Console.error', LogLevels.error, { args });
-  console.debug = (...args: unknown[]) => logger.debug('Console.debug', LogLevels.debug, { args });
-  console.info = (...args: unknown[]) => logger.info('Console.info', LogLevels.info, { args });
-  console.table = (...args: unknown[]) => logger.info('Console.table', LogLevels.info, { args });
-  console.warn = (...args: unknown[]) => logger.warn('Console.warn', LogLevels.warn, { args });
+  console.log = (...args: unknown[]) => logger.info('Console.log', LogLevels.Info, { args });
+  console.error = (...args: unknown[]) => logger.error('Console.error', LogLevels.Error, { args });
+  console.debug = (...args: unknown[]) => logger.debug('Console.debug', LogLevels.Debug, { args });
+  console.info = (...args: unknown[]) => logger.info('Console.info', LogLevels.Info, { args });
+  console.table = (...args: unknown[]) => logger.info('Console.table', LogLevels.Info, { args });
+  console.warn = (...args: unknown[]) => logger.warn('Console.warn', LogLevels.Warn, { args });
 }
